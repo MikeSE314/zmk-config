@@ -57,9 +57,9 @@
 // |SHFT |     |     |     |     |     ||PSCR |     |     |     |     |     |
 //                   | GUI |     | SPC || ENT |     | ALT |
             bindings = <
-    &trans  &trans  &trans  &trans  &trans  &trans      &kp HOME        &kp PG_DN   &kp PG_UP   &kp END     &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT        &kp DOWN    &kp UP      &kp RIGHT   &BSPC   &trans
-    &trans  &trans  &trans  &trans  &trans  &trans      &kp PRINTSCREEN &trans      &trans      &trans      &kp ESC &trans
+    &trans  &trans  &trans  &trans  &trans  &trans      &kp HOME        &kp PG_DN   &kp PG_UP   &kp END     &trans      &trans
+    &trans  &trans  &trans  &trans  &trans  &trans      &kp LEFT        &kp DOWN    &kp UP      &kp RIGHT   &kp BSPC    &trans
+    &trans  &trans  &trans  &trans  &trans  &trans      &kp PRINTSCREEN &trans      &trans      &trans      &kp ESC     &trans
 
     &trans  &trans  &trans      &trans  &trans  &trans
             >;
