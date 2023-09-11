@@ -15,6 +15,7 @@
 #define L_SYMBOL   3
 #define L_NUMBER   4
 #define L_FUNCTION 5
+#define L_BUTTON   6
 
 / {
     behaviors {
@@ -52,9 +53,9 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | DEL | SPC | LWR |   | ENT | RSE  | ALT |
             bindings = <
-    &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y   &kp U       &kp I           &kp O           &kp P           &kp BSPC
-    &kp LCTRL   &kp A       &kp S       &kp D       &kp F       &kp G       &kp H   &kp J       &kp K           &kp L           &kp SEMI        &kp SQT
-    &kp LSHFT   &hm LGUI Z  &hm LALT X  &hm LCTL C  &hm LSHFT V &kp B       &kp N   &hm RSHFT M &hm RCTL COMMA  &hm RALT DOT    &hm RGUI FSLH   &kp ESC
+    &kp TAB         &lt L_BUTTON Q  &kp W       &kp E       &kp R       &kp T       &kp Y   &kp U       &kp I           &kp O           &lt L_BUTTON P  &kp BSPC
+    &kp LCTRL       &kp A           &kp S       &kp D       &kp F       &kp G       &kp H   &kp J       &kp K           &kp L           &kp SEMI        &kp SQT
+    &mo L_BUTTON    &hm LGUI Z      &hm LALT X  &hm LCTL C  &hm LSHFT V &kp B       &kp N   &hm RSHFT M &hm RCTL COMMA  &hm RALT DOT    &hm RGUI FSLH   &kp ESC
 
     &lt L_NUMBER DEL    &lt L_NAV SPACE &kp TAB     &kp RET &lt L_SYMBOL BSPC   &lt L_MEDIA RET
             >;
@@ -139,6 +140,21 @@
     &trans  &trans      &trans      &trans      &trans      &trans      &trans  &kp F7  &kp F8  &kp F9  &kp F12 &trans
     &trans  &trans      &trans      &trans      &trans      &trans      &trans  &kp F4  &kp F5  &kp F6  &kp F11 &trans
     &trans  &kp LGUI    &kp LALT    &kp LCTL    &kp LSHFT   &trans      &trans  &kp F1  &kp F2  &kp F3  &kp F10 &trans
+
+    &trans  &trans  &trans       &trans  &trans  &trans
+            >;
+        };
+
+        button_layer {
+// -----------------------------------------------------------------------------------------
+// |     |     |     |     |     |     ||     |     |     |     |     |     |
+// |     |     |     |     |     |     ||     |     |     |     |     |     |
+// |     |     |     |     |     |     ||     |     |     |     |     |     |
+//                   |     |     |     ||     |     |     |
+            bindings = <
+    &trans  &kp C_AC_UNDO   &kp C_AC_CUT    &kp C_AC_COPY   &kp C_AC_PASTE  &trans       &trans  &kp C_AC_PASTE &kp C_AC_COPY   &kp C_AC_CUT    &kp C_AC_UNDO   &trans
+    &trans  &trans          &trans          &trans          &trans          &trans       &trans  &trans         &trans          &trans          &trans          &trans
+    &trans  &kp C_AC_UNDO   &kp C_AC_CUT    &kp C_AC_COPY   &kp C_AC_PASTE  &trans       &trans  &kp C_AC_PASTE &kp C_AC_COPY   &kp C_AC_CUT    &kp C_AC_UNDO   &trans
 
     &trans  &trans  &trans       &trans  &trans  &trans
             >;
