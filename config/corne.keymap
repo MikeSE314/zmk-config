@@ -58,7 +58,7 @@
     &kp LCTRL   &kp A           &kp S       &kp D       &kp F       &kp G   /**/    &kp H   &kp J       &kp K           &kp L           &kp SEMI        &kp SQT
     &kp LSFT    &hm LGUI Z      &hm LALT X  &hm LCTL C  &hm LSFT V  &kp B   /**/    &kp N   &hm RSFT M  &hm RCTL COMMA  &hm RALT DOT    &hm RGUI FSLH   &caps_word
 
-    &lt L_NUMBER DEL    &lt L_NAV SPACE &kp TAB /**/    &lt L_SYMBOL RET &lt L_NAV BSPC &lt L_MEDIA ESC
+    &lt L_NUMBER DEL    &lt L_NAV SPACE &lt L_SYMBOL TAB /**/    &lt L_SYMBOL RET &lt L_NAV BSPC &lt L_MEDIA ESC
             >;
         };
 
