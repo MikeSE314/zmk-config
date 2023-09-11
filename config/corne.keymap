@@ -98,14 +98,14 @@
 // -----------------------------------------------------------------------------------------
 // tap-only
 //
-// |     |  -  |  =  |  [  |  ]  |  ;  ||     |     |     |     |     |     |
-// |     |  &  |  *  |  (  |  )  |  ^  ||     |     |     |     |     |     |
-// |     |  !  |  @  |  #  |  $  |  %  ||     |SHFT | CTL | ALT | GUI |     |
+// |     |  !  |  @  |  #  |  $  |  %  ||  ^  |  &  |  *  |     |     |     |
+// |     |  `  |  -  |  (  |  )  |     ||     |  [  |  ]  |  =  |  \  |     |
+// |     | GUI | ALT | CTL |SHFT |     ||     |SHFT | CTL | ALT | GUI |     |
 //                   |     |     |     ||     |     |     |
             bindings = <
-    &kp GRAVE   &kp MINUS   &kp EQUAL       &kp LBKT    &kp RBKT    &kp SEMICOLON   /**/    &trans  &trans      &trans      &trans      &trans      &trans
-    &kp BSLH    &kp AMPS    &kp KP_ASTERISK &kp LPAR    &kp RPAR    &kp CARET       /**/    &trans  &trans      &trans      &trans      &trans      &trans
-    &trans      &kp EXCL    &kp AT_SIGN     &kp HASH    &kp DOLLAR  &kp PERCENT     /**/    &trans  &kp RSHFT   &kp RCTL    &kp RALT    &kp RGUI    &trans
+    &trans  &kp EXCL    &kp AT_SIGN &kp HASH    &kp DOLLAR  &kp PERCENT /**/    &kp CARET   &kp AMPS    &kp ASTERISK    &trans      &trans          &trans
+    &trans  &kp GRAVE   &kp MINUS   &kp LPAR    &kp RPAR    &trans      /**/    &trans      &kp LBKT    &kp RBKT        &kp EQUAL   &kp BACKSLASH   &trans
+    &trans  &kp LGUI    &kp LALT    &kp LCTL    &kp LSFT    &trans      /**/    &trans      &kp RSHFT   &kp RCTL        &kp RALT    &kp RGUI        &trans
 
     &trans  &trans  &trans  /**/    &trans  &trans  &trans
             >;
