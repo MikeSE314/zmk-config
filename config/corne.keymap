@@ -31,7 +31,7 @@
     &kp TAB     &kp Q       &kp W       &mt RCTL E  &mt LALT R  &mt LSHFT T &kp Y       &kp U   &mt RALT I  &mt RGUI O  &kp P       &kp BSPC
     &kp LCTRL   &mt LGUI A  &mt LCTRL S &kp D       &kp F       &kp G       &kp H       &kp J   &kp K       &kp L       &kp SEMI    &kp SQT
     &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &mt RSHFT N &kp M   &kp COMMA   &kp DOT     &kp FSLH    &kp ESC
-                &lt L_MEDIA DEL &lt L_NAV SPACE &kp TAB &kp RET &mo RAISE &kp RALT
+                &lt L_MEDIA DEL &lt L_NAV SPACE &kp TAB &kp RET &lt L_NAV RET &lt L_MEDIA BSPC
                         >;
                 };
                 nav_layer {
@@ -55,10 +55,10 @@
 // |     |     |     |     |     |     ||     |     |     |     |     |     |
 //                   |     |     |     ||     |     |     |
                         bindings = <
-    &trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans  &trans
-    &trans  &trans  &trans  &trans  &trans      &trans  &kp C_VOLUME_UP &C_VOLUME_DOWN  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans  &trans
-                    &trans  &trans  &trans      &trans  &trans  &trans
+    &bootloader &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans  &bootloader
+    &trans      &trans  &trans  &trans  &trans      &trans  &kp C_VOLUME_UP &C_VOLUME_DOWN  &trans  &trans
+    &trans      &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans  &trans
+                        &trans  &trans  &trans      &trans  &trans  &trans
                         >;
                 };
         };
