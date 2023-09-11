@@ -34,7 +34,7 @@
     &kp LCTRL   &kp A           &kp S           &kp D           &kp F           &kp G       &kp H   &kp J           &kp K               &kp L           &kp SEMI            &kp SQT
     &kp LSHFT   &ht_tp LGUI Z   &ht_tp LALT X   &ht_tp LCTL C   &ht_tp LSHFT V  &kp B       &kp N   &ht_tp RSHFT M  &ht_tp RCTL COMMA   &ht_tp RALT DOT &ht_tp RGUI FSLH    &kp ESC
 
-                                &lt L_NUM DEL   &lt L_NAV SPACE &kp TAB     &kp RET &lt L_SYMBOL BSPC   &lt L_MEDIA RET
+                                &lt L_NUMBER DEL    &lt L_NAV SPACE &kp TAB     &kp RET &lt L_SYMBOL BSPC   &lt L_MEDIA RET
                         >;
                 };
 
