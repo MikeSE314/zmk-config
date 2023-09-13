@@ -54,9 +54,9 @@
 // |SHFT |  Z  |  X  |  C  |  V  |  B  ||  N  |  M  |  ,  |  .  |  /  |CAPS |
 //                   | DEL | SPC | TAB || ENT |BSPC | ESC |
             bindings = <
-    &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T   /**/    &kp Y   &kp U       &kp I           &kp O           &kp P           &kp BSPC
-    &kp LCTRL   &kp A       &kp S       &kp D       &kp F       &kp G   /**/    &kp H   &kp J       &kp K           &kp L           &kp SEMI        &kp SINGLE_QUOTE
-    &kp LSFT    &hm LGUI Z  &hm LALT X  &hm LCTL C  &hm LSFT V  &kp B   /**/    &kp N   &hm RSFT M  &hm RCTL COMMA  &hm RALT DOT    &hm RGUI FSLH   &caps_word
+    &kp TAB     &kp Q       &kp W       &kp F       &kp P       &kp G   /**/    &kp J   &kp L       &kp U           &kp Y           &kp SEMI        &kp BSPC
+    &kp LCTRL   &kp A       &kp R       &kp S       &kp T       &kp D   /**/    &kp H   &kp N       &kp E           &kp I           &kp O           &kp SINGLE_QUOTE
+    &kp LSFT    &hm LGUI Z  &hm LALT X  &hm LCTL C  &hm LSFT V  &kp B   /**/    &kp K   &hm RSFT M  &hm RCTL COMMA  &hm RALT DOT    &hm RGUI FSLH   &caps_word
 
     &lt L_NUMBER DEL    &lt L_NAV SPACE &lt L_SYMBOL TAB /**/    &lt L_SYMBOL RET &lt L_NAV BSPC &lt L_MEDIA ESC
             >;
