@@ -99,13 +99,13 @@
 // tap-only
 //
 // |     |  !  |  @  |  #  |  $  |  %  ||  ^  |  &  |  *  |     |     |     |
-// |     |  `  |  -  |  (  |  )  |     ||     |  [  |  ]  |  =  |  \  |     |
+// |     |  `  |  \  |  [  |  ]  |     ||     |  (  |  )  |  -  |  =  |     |
 // |     | GUI | ALT | CTL |SHFT |     ||     |SHFT | CTL | ALT | GUI |     |
 //                   |     |     |     ||     |     |     |
             bindings = <
-    &trans  &kp EXCL    &kp AT_SIGN &kp HASH    &kp DOLLAR  &kp PERCENT /**/    &kp CARET   &kp AMPS    &kp ASTERISK    &trans      &trans          &trans
-    &trans  &kp GRAVE   &kp MINUS   &kp LPAR    &kp RPAR    &trans      /**/    &trans      &kp LBKT    &kp RBKT        &kp EQUAL   &kp BACKSLASH   &trans
-    &trans  &kp LGUI    &kp LALT    &kp LCTL    &kp LSFT    &trans      /**/    &trans      &kp RSHFT   &kp RCTL        &kp RALT    &kp RGUI        &trans
+    &trans  &kp EXCL    &kp AT_SIGN     &kp HASH    &kp DOLLAR  &kp PERCENT /**/    &kp CARET   &kp AMPS    &kp ASTERISK    &trans      &trans      &trans
+    &trans  &kp GRAVE   &kp BACKSLASH   &kp LBKT    &kp RBKT    &trans      /**/    &trans      &kp LPAR    &kp RPAR        &kp MINUS   &kp EQUAL   &trans
+    &trans  &kp LGUI    &kp LALT        &kp LCTL    &kp LSFT    &trans      /**/    &trans      &kp RSHFT   &kp RCTL        &kp RALT    &kp RGUI    &trans
 
     &trans  &trans  &trans  /**/    &trans  &trans  &trans
             >;
