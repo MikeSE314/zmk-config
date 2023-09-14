@@ -46,12 +46,13 @@
 // -----------------------------------------------------------------------------------------
 //                        GACS SCAG
 // HOMEROW/BELOW MODS FOR zxcv m,./
+// layer thumbs:
+// number nav symbol    symbol nav media
+//   └────────────function───────────┘
 //
-// (media|delete) (nav|space)
-//
-// | TAB |  Q  |  W  |  E  |  R  |  T  ||  Y  |  U  |  I  |  O  |  P  |BSPC |
-// |CTRL |  A  |  S  |  D  |  F  |  G  ||  H  |  J  |  K  |  L  |  ;  |  '  |
-// |SHFT |  Z  |  X  |  C  |  V  |  B  ||  N  |  M  |  ,  |  .  |  /  |CAPS |
+// |     |  q  |  w  |  f  |  p  |  g  ||  j  |  l  |  u  |  y  |  ;  |     |
+// |     |  a  |  r  |  s  |  t  |  d  ||  h  |  n  |  e  |  i  |  o  |  '  |
+// |     |  z  |  x  |  c  |  v  |  b  ||  k  |  m  |  ,  |  .  |  /  |CAPS |
 //                   | DEL | SPC | TAB || ENT |BSPC | ESC |
             bindings = <
     &kp TAB     &kp Q       &kp W       &kp F       &kp P       &kp G   /**/    &kp J   &kp L       &kp U           &kp Y           &kp SEMI        &kp BSPC
@@ -98,7 +99,7 @@
 // -----------------------------------------------------------------------------------------
 // tap-only
 //
-// |     |  !  |  @  |  #  |  $  |  %  ||  ^  |  &  |  *  |     |     |     |
+// |     |  !  |  @  |  #  |  $  |  %  ||  ^  |  &  |  *  |  (  |  )  |     |
 // |     |  `  |  \  |  [  |  ]  |     ||     |  (  |  )  |  -  |  =  |     |
 // |     | GUI | ALT | CTL |SHFT |     ||     |SHFT | CTL | ALT | GUI |     |
 //                   |     |     |     ||     |     |     |
@@ -114,13 +115,16 @@
         number_layer {
 // -----------------------------------------------------------------------------------------
 // tap-only
+// Adding more numbers because sometimes I reach for the numbers with my left hand.
+// Also adding 0s everywhere, because I _really_ don't want to add it under the thumb—
+// if i never modify the thuBs, i can never get locked into a layer.
 // 
-// |     |     |     |     |     |     ||     |  7  |  8  |  9  |     |     |
+// |     |  1  |  2  |  3  |  4  |  5  ||  6  |  7  |  8  |  9  |  0  |     |
 // |     |     |     |     |     |     ||     |  4  |  5  |  6  |     |     |
 // |     | GUI | ALT | CTL |SHFT |     ||  0  |  1  |  2  |  3  |  0  |     |
 //                   |     |     |     ||     |     |     |
             bindings = <
-    &trans  &trans      &trans      &trans      &trans      &trans  /**/    &trans  &kp N7  &kp N8  &kp N9  &trans  &trans
+    &trans  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5  /**/    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
     &trans  &trans      &trans      &trans      &trans      &trans  /**/    &trans  &kp N4  &kp N5  &kp N6  &trans  &trans
     &trans  &kp LGUI    &kp LALT    &kp LCTL    &kp LSHFT   &trans  /**/    &kp N0  &kp N1  &kp N2  &kp N3  &kp N0  &trans
 
@@ -133,14 +137,14 @@
 // tap-only
 // Function keys
 // 
-// |bootl|     |     |     |outtg|     ||     | f7  | f8  | f9  | f12 |bootl|
+// |bootl|     |     |     |outtg|     ||     | f7  | f8  | f9  | f10 |bootl|
 // |BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 ||     | f4  | f5  | f6  | f11 |     |
-// |     | GUI | ALT | CTL |SHFT |     ||     | f1  | f2  | f3  | f10 |     |
+// |     | GUI | ALT | CTL |SHFT |     ||     | f1  | f2  | f3  | f12 |     |
 //                   |     |     |     ||     |     |     |
             bindings = <
-    &bootloader &trans          &trans          &trans          &out OUT_TOG    &trans          /**/    &trans  &kp F7  &kp F8  &kp F9  &kp F12 &bootloader
+    &bootloader &trans          &trans          &trans          &out OUT_TOG    &trans          /**/    &trans  &kp F7  &kp F8  &kp F9  &kp F10 &bootloader
     &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    /**/    &trans  &kp F4  &kp F5  &kp F6  &kp F11 &trans
-    &trans      &kp LGUI        &kp LALT        &kp LCTL        &kp LSHFT       &trans          /**/    &trans  &kp F1  &kp F2  &kp F3  &kp F10 &trans
+    &trans      &kp LGUI        &kp LALT        &kp LCTL        &kp LSHFT       &trans          /**/    &trans  &kp F1  &kp F2  &kp F3  &kp F12 &trans
 
     &trans  &trans  &trans  /**/    &trans  &trans  &trans
             >;
