@@ -51,13 +51,13 @@
 //   └────────────function───────────┘
 //
 // |     |  q  |  w  |  f  |  p  |  g  ||  j  |  l  |  u  |  y  |  ;  |     |
-// |     |  a  |  r  |  s  |  t  |  d  ||  h  |  n  |  e  |  i  |  o  |  '  |
-// |     |  z  |  x  |  c  |  v  |  b  ||  k  |  m  |  ,  |  .  |  /  |CAPS |
-//                   | DEL | SPC | TAB || ENT |BSPC | ESC |
+// |     |  a  |  r  |  s  |  t  |  d  ||  h  |  n  |  e  |  i  |  o  |     |
+// |     |  z  |  x  |  c  |  v  |  b  ||  k  |  m  |  ,  |  .  |  /  |     |
+//                   | del |space| tab ||enter|bspc | esc |
             bindings = <
-    &kp TAB     &kp Q       &kp W       &kp F       &kp P       &kp G   /**/    &kp J   &kp L       &kp U           &kp Y           &kp SEMI        &kp BSPC
-    &kp LCTRL   &kp A       &kp R       &kp S       &kp T       &kp D   /**/    &kp H   &kp N       &kp E           &kp I           &kp O           &kp SINGLE_QUOTE
-    &kp LSFT    &hm LGUI Z  &hm LALT X  &hm LCTL C  &hm LSFT V  &kp B   /**/    &kp K   &hm RSFT M  &hm RCTL COMMA  &hm RALT DOT    &hm RGUI FSLH   &caps_word
+    &trans  &kp Q       &kp W       &kp F       &kp P       &kp G   /**/    &kp J   &kp L       &kp U           &kp Y           &kp SINGLE_QUOTE    &trans
+    &trans  &kp A       &kp R       &kp S       &kp T       &kp D   /**/    &kp H   &kp N       &kp E           &kp I           &kp O               &trans
+    &trans  &hm LGUI Z  &hm LALT X  &hm LCTL C  &hm LSFT V  &kp B   /**/    &kp K   &hm RSFT M  &hm RCTL COMMA  &hm RALT DOT    &hm RGUI FSLH       &trans
 
     &lt L_NUMBER DEL    &lt L_NAV SPACE &lt L_SYMBOL TAB /**/    &lt L_SYMBOL RET &lt L_NAV BSPC &lt L_MEDIA ESC
             >;
@@ -65,9 +65,9 @@
 
         nav_layer {
 // -----------------------------------------------------------------------------------------
-// |     |     |     |  UP |     |     ||HOME |PGDWN|PGUP | END |     |     |
-// |     |     | LFT | DWN | RGT |     || LFT | DWN |  UP | RGT |BSPC |     |
-// |     | GUI | ALT | CTL |SHFT |     ||PSCR |SHFT | CTL | ALT | GUI |     |
+// |     |     |home | up  | end |pgup ||home |pgdn |pgup | end | esc |     |
+// |     |     |left |down |right|pgdn ||left |pgup | up  |right|c+bsp|     |
+// |     | gui | alt | ctl |shift|     ||prscr|shift| ctl | alt | gui |     |
 //                   |     |     |     ||     |     |     |
             bindings = <
     &trans  &trans      &kp HOME    &kp UP      &kp END     &kp PG_UP   /**/    &kp HOME        &kp PG_DN   &kp PG_UP   &kp END     &kp ESC         &trans
@@ -99,8 +99,8 @@
 // -----------------------------------------------------------------------------------------
 // tap-only
 //
-// |     |  !  |  @  |  #  |  $  |  %  ||  ^  |  &  |  *  |  (  |  )  |     |
-// |     |  `  |  \  |  [  |  ]  |     ||     |  (  |  )  |  -  |  =  |     |
+// |     |  !  |  @  |  #  |  $  |  %  ||  ^  |  &  |  *  |  -  |  =  |     |
+// |     |  `  |  \  |  [  |  ]  |     ||     |  (  |  )  |  '  |  ;  |     |
 // |     | GUI | ALT | CTL |SHFT |     ||     |SHFT | CTL | ALT | GUI |     |
 //                   |     |     |     ||     |     |     |
             bindings = <
@@ -120,12 +120,12 @@
 // if i never modify the thuBs, i can never get locked into a layer.
 // 
 // |     |  1  |  2  |  3  |  4  |  5  ||  6  |  7  |  8  |  9  |  0  |     |
-// |     |     |     |     |     |     ||     |  4  |  5  |  6  |     |     |
+// |     |     |     |     |     |     ||     |  4  |  5  |  6  |  .  |     |
 // |     | GUI | ALT | CTL |SHFT |     ||  0  |  1  |  2  |  3  |  0  |     |
 //                   |     |     |     ||     |     |     |
             bindings = <
     &trans  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5  /**/    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
-    &trans  &trans      &trans      &trans      &trans      &trans  /**/    &trans  &kp N4  &kp N5  &kp N6  &trans  &trans
+    &trans  &trans      &trans      &trans      &trans      &trans  /**/    &trans  &kp N4  &kp N5  &kp N6  &kp DOT &trans
     &trans  &kp LGUI    &kp LALT    &kp LCTL    &kp LSHFT   &trans  /**/    &kp N0  &kp N1  &kp N2  &kp N3  &kp N0  &trans
 
     &trans  &trans  &trans  /**/    &trans  &trans  &trans
@@ -137,14 +137,14 @@
 // tap-only
 // Function keys
 // 
-// |bootl|     |     |     |outtg|     ||     | f7  | f8  | f9  | f10 |bootl|
-// |BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 ||     | f4  | f5  | f6  | f11 |     |
+// |     |btclr|     |     |outtg|bootl||bootl| f7  | f8  | f9  | f10 |     |
+// |     | BT0 | BT1 | BT2 | BT3 | BT4 ||     | f4  | f5  | f6  | f11 |     |
 // |     | GUI | ALT | CTL |SHFT |     ||     | f1  | f2  | f3  | f12 |     |
 //                   |     |     |     ||     |     |     |
             bindings = <
-    &bootloader &trans          &trans          &trans          &out OUT_TOG    &trans          /**/    &trans  &kp F7  &kp F8  &kp F9  &kp F10 &bootloader
-    &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    /**/    &trans  &kp F4  &kp F5  &kp F6  &kp F11 &trans
-    &trans      &kp LGUI        &kp LALT        &kp LCTL        &kp LSHFT       &trans          /**/    &trans  &kp F1  &kp F2  &kp F3  &kp F12 &trans
+    &trans  &bt BT_CLR      &trans          &trans          &out OUT_TOG    &bootloader     /**/    &bootloader &kp F7  &kp F8  &kp F9  &kp F10 &trans
+    &trans  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    /**/    &trans      &kp F4  &kp F5  &kp F6  &kp F11 &trans
+    &trans  &kp LGUI        &kp LALT        &kp LCTL        &kp LSHFT       &trans          /**/    &trans      &kp F1  &kp F2  &kp F3  &kp F12 &trans
 
     &trans  &trans  &trans  /**/    &trans  &trans  &trans
             >;
