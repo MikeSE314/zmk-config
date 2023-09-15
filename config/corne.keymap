@@ -69,11 +69,13 @@
         combo_bootloader_left {
             bindings = <&bootloader>;
             key-positions = <1 13 25 5 17 29>;
+            timeout-ms = <200>;
         };
 
         combo_bootloader_right {
             bindings = <&bootloader>;
             key-positions = <6 18 30 10 22 34>;
+            timeout-ms = <200>;
         };
 
         combo_toggle_mac_left {
@@ -96,18 +98,6 @@
         compatible = "zmk,keymap";
 
         base_colemak {
-            // -----------------------------------------------------------------------------------------
-            //                        GACS SCAG
-            // HOMEROW/BELOW MODS FOR zxcv m,./
-            // layer thumbs:
-            // number nav symbol    symbol nav media
-            //   └────────────function───────────┘
-            //
-            // |     |  q  |  w  |  f  |  p  |  g  ||  j  |  l  |  u  |  y  |  '  |     |
-            // |     |  a  |  r  |  s  |  t  |  d  ||  h  |  n  |  e  |  i  |  o  |     |
-            // |     |  z  |  x  |  c  |  v  |  b  ||  k  |  m  |  ,  |  .  |  /  |     |
-            //                   | del |space| tab ||enter|bspc | esc |
-
             bindings = <
 &trans  &lt 8 Q         &kp W           &kp F               &kp P             &kp G        &kp J      &kp L              &kp U                    &kp Y              &lt 8 SINGLE_QUOTE  &trans
 &trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O               &trans
@@ -137,12 +127,6 @@
         };
 
         nav_layer {
-            // -----------------------------------------------------------------------------------------
-            // |     |     |home | up  | end |pgup ||home |pgdn |pgup | end | esc |     |
-            // |     |     |left |down |right|pgdn ||left |pgup | up  |right|c+bsp|     |
-            // |     | gui | alt | ctl |shift|     ||prscr|shift| ctl | alt | gui |     |
-            //                   |     |     |     ||     |     |     |
-
             bindings = <
 &trans  &trans        &kp HOME      &kp UP                     &kp END                           &kp PG_UP    &kp HOME         &kp PG_DN        &kp PG_UP          &kp END        &kp ESC        &trans
 &trans  &trans        &kp LEFT      &kp DOWN                   &kp RIGHT                         &kp PG_DN    &kp LEFT         &kp DOWN         &kp UP             &kp RIGHT      &kp BSPC       &trans
@@ -152,14 +136,6 @@
         };
 
         media_layer {
-            // -----------------------------------------------------------------------------------------
-            // tap-only
-            //
-            // |     |     |     |     |     |     ||     | brd | bru |     |     |     |
-            // |     |     |     |     |     |     ||prev | vdn | vup |next |plyps|     |
-            // |     | GUI | ALT | CTL |SHFT |     ||     |SHFT | CTL | ALT | GUI |     |
-            //                   |     |     |     ||     |     |     |
-
             bindings = <
 &trans  &trans            &trans        &kp C_VOLUME_UP    &trans          &trans    &trans      &kp C_BRI_DN       &kp C_BRI_UP       &trans         &trans            &trans
 &trans  &kp C_PLAY_PAUSE  &kp C_PREV    &kp C_VOLUME_DOWN  &kp C_NEXT      &trans    &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp C_NEXT     &kp C_PLAY_PAUSE  &trans
@@ -169,14 +145,6 @@
         };
 
         symbol_layer {
-            // -----------------------------------------------------------------------------------------
-            // tap-only
-            //
-            // |     |  !  |  @  |  #  |  $  |  %  ||  ^  |  &  |  *  |  =  |     |     |
-            // |     |  `  |  \  |  [  |  ]  |     ||     |  (  |  )  |  -  |  ;  |     |
-            // |     | GUI | ALT | CTL |SHFT |     ||     |SHFT | CTL | ALT | GUI |     |
-            //                   |     |     |     ||     |     |     |
-
             bindings = <
 &trans  &kp EXCL      &kp AT_SIGN    &kp HASH          &kp DOLLAR      &kp PERCENT    &kp CARET  &kp AMPS         &kp ASTERISK       &kp EQUAL      &trans         &trans
 &trans  &kp GRAVE     &kp BACKSLASH  &kp LBKT          &kp RBKT        &kp COLON      &trans     &kp LPAR         &kp RPAR           &kp MINUS      &kp SEMICOLON  &trans
@@ -186,17 +154,6 @@
         };
 
         number_layer {
-            // -----------------------------------------------------------------------------------------
-            // tap-only
-            // Adding more numbers because sometimes I reach for the numbers with my left hand.
-            // Also adding 0s everywhere, because I _really_ don't want to add it under the thumb—
-            // if i never modify the thuBs, i can never get locked into a layer.
-            // 
-            // |     |  1  |  2  |  3  |  4  |  5  ||  6  |  7  |  8  |  9  |  0  |     |
-            // |     |     |     |     |     |     ||     |  4  |  5  |  6  |  .  |     |
-            // |     | GUI | ALT | CTL |SHFT |     ||  0  |  1  |  2  |  3  |  0  |     |
-            //                   |     |     |     ||     |     |     |
-
             bindings = <
 &trans  &kp N1        &kp N2        &kp N3            &kp N4          &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0   &trans
 &trans  &trans        &trans        &trans            &trans          &trans    &trans  &kp N4  &kp N5  &kp N6  &kp DOT  &trans
@@ -206,15 +163,6 @@
         };
 
         fn_layer {
-            // -----------------------------------------------------------------------------------------
-            // tap-only
-            // Function keys
-            // 
-            // |     |btclr|     |     |outtg|bootl||bootl| f7  | f8  | f9  | f10 |     |
-            // |     | BT0 | BT1 | BT2 | BT3 | BT4 ||capsw| f4  | f5  | f6  | f11 |     |
-            // |     | GUI | ALT | CTL |SHFT |     ||     | f1  | f2  | f3  | f12 |     |
-            //                   |     |     |     ||     |     |     |
-
             bindings = <
 &trans  &bt BT_CLR    &trans        &trans            &out OUT_TOG    &trans          &trans      &kp F7  &kp F8  &kp F9  &kp F10  &trans
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4    &caps_word  &kp F4  &kp F5  &kp F6  &kp F11  &trans
@@ -224,12 +172,6 @@
         };
 
         button_c_layer {
-            // -----------------------------------------------------------------------------------------
-            // |     | ^z  | ^x  | ^c  | ^v  |     ||     | ^v  | ^c  | ^x  | ^z  |     |
-            // |     |     |     |     |     |     ||     |     |     |     |     |     |
-            // |     | ^z  | ^x  | ^c  | ^v  |     ||     | ^v  | ^c  | ^x  | ^z  |     |
-            //                   |     |     |     ||     |     |     |
-
             bindings = <
 &trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans    &trans  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &trans
 &trans  &trans     &trans     &trans     &trans     &trans    &trans  &trans     &trans     &trans     &trans     &trans
@@ -239,12 +181,6 @@
         };
 
         button_g_layer {
-            // -----------------------------------------------------------------------------------------
-            // |     | ⌘z  | ⌘x  | ⌘c  | ⌘v  |     ||     | ⌘v  | ⌘c  | ⌘x  | ⌘z  |     |
-            // |     |     |     |     |     |     ||     |     |     |     |     |     |
-            // |     | ⌘z  | ⌘x  | ⌘c  | ⌘v  |     ||     | ⌘v  | ⌘c  | ⌘x  | ⌘z  |     |
-            //                   |     |     |     ||     |     |     |
-
             bindings = <
 &trans  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &trans  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &trans
 &trans  &trans     &trans     &trans     &trans     &trans    &trans  &trans     &trans     &trans     &trans     &trans
@@ -252,19 +188,5 @@
                               &trans     &trans     &trans    &trans  &trans     &trans
             >;
         };
-
-        //         empty_layer {
-        // // -----------------------------------------------------------------------------------------
-        // // |     |     |     |     |     |     ||     |     |     |     |     |     |
-        // // |     |     |     |     |     |     ||     |     |     |     |     |     |
-        // // |     |     |     |     |     |     ||     |     |     |     |     |     |
-        // //                   |     |     |     ||     |     |     |
-        //             bindings = <
-        //     &trans  &trans  &trans  &trans  &trans  &trans  /**/    &trans  &trans  &trans  &trans  &trans  &trans
-        //     &trans  &trans  &trans  &trans  &trans  &trans  /**/    &trans  &trans  &trans  &trans  &trans  &trans
-        //     &trans  &trans  &trans  &trans  &trans  &trans  /**/    &trans  &trans  &trans  &trans  &trans  &trans
-        //     &trans  &trans  &trans  /**/    &trans  &trans  &trans
-        //             >;
-        //         };
     };
 };
