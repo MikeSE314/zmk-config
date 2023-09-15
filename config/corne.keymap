@@ -52,13 +52,18 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        tri_layer {
+        fn_layer_from_number_and_media {
             if-layers = <6 4>;
             then-layer = <7>;
         };
 
-        mac_buttons {
-            if-layers = <2 8>;
+        condition_mac_thumbs {
+            if-layers = <10>;
+            then-layer = <2>;
+        };
+
+        condition_mac_buttons {
+            if-layers = <10 8>;
             then-layer = <9>;
         };
     };
@@ -66,25 +71,13 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_bootloader_left {
-            bindings = <&bootloader>;
-            key-positions = <1 13 25 5 17 29>;
-            timeout-ms = <200>;
-        };
-
-        combo_bootloader_right {
-            bindings = <&bootloader>;
-            key-positions = <6 18 30 10 22 34>;
-            timeout-ms = <200>;
-        };
-
         combo_toggle_mac_left {
-            bindings = <&tog 2>;
+            bindings = <&tog 10>;
             key-positions = <14 15 16 17>;
         };
 
         combo_toggle_mac_right {
-            bindings = <&tog 2>;
+            bindings = <&tog 10>;
             key-positions = <18 19 20 21>;
         };
 
@@ -102,7 +95,7 @@
 &trans  &lt 8 Q         &kp W           &kp F               &kp P             &kp G        &kp J      &kp L              &kp U                    &kp Y              &lt 8 SINGLE_QUOTE  &trans
 &trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O               &trans
 &trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp K      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH  &trans
-                                        &lt 6 DEL           &lt 3 SPACE       &lt 5 TAB    &lt 5 RET  &lt 3 LA(BSPC)     &lt 4 ESC
+                                        &lt 6 DEL           &lt 3 SPACE       &lt 5 TAB    &lt 5 RET  &lt 3 LC(BSPC)     &lt 4 ESC
             >;
         };
 
@@ -117,13 +110,11 @@
 
         base_mac {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &lt 3 LA(BACKSPACE)  &trans
             >;
-
-            label = "L_MAC";
         };
 
         nav_layer {
@@ -171,7 +162,7 @@
             >;
         };
 
-        button_c_layer {
+        button_layer {
             bindings = <
 &trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans    &trans  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &trans
 &trans  &trans     &trans     &trans     &trans     &trans    &trans  &trans     &trans     &trans     &trans     &trans
@@ -180,12 +171,21 @@
             >;
         };
 
-        button_g_layer {
+        button_layer_mac {
             bindings = <
 &trans  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &trans  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &trans
 &trans  &trans     &trans     &trans     &trans     &trans    &trans  &trans     &trans     &trans     &trans     &trans
 &trans  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &trans  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &trans
                               &trans     &trans     &trans    &trans  &trans     &trans
+            >;
+        };
+
+        mac_exists {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
