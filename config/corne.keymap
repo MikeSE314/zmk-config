@@ -87,16 +87,16 @@
 
         base_colemak {
             bindings = <
-&trans  &kp Q           &kp W           &kp F               &kp P             &kp G        &kp J      &kp L              &kp U                    &kp Y              &kp SINGLE_QUOTE    &trans
-&trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O               &trans
-&trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp K      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH  &trans
+&trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL F  &hm LEFT_SHIFT P  &kp G        &kp J      &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL U      &hm RIGHT_ALT Y    &hm RIGHT_GUI SINGLE_QUOTE  &trans
+&trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O                       &trans
+&trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp K      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH          &trans
                                         &lt 6 DEL           &lt 3 SPACE       &lt 5 TAB    &lt 5 RET  &lt 3 LC(BSPC)     &lt 4 ESC
             >;
         };
 
         qwerty {
             bindings = <
-&trans  &kp Q           &kp W           &kp E               &kp R             &kp T     &kp Y   &kp U              &kp I                    &kp O                 &kp P                &trans
+&trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL E  &hm LEFT_SHIFT R  &kp T     &kp Y   &hm RIGHT_SHIFT U  &hm RIGHT_CONTROL I      &hm RIGHT_ALT O       &hm RIGHT_GUI P      &trans
 &trans  &kp A           &kp S           &kp D               &kp F             &kp G     &kp H   &kp J              &kp K                    &kp L                 &kp SINGLE_QUOTE     &trans
 &trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B     &kp N   &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT PERIOD  &hm RIGHT_GUI SLASH  &trans
                                         &trans              &trans            &trans    &trans  &trans             &trans
