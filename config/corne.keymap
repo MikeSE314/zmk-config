@@ -58,13 +58,8 @@
         };
 
         condition_mac_thumbs {
-            if-layers = <10>;
+            if-layers = <8>;
             then-layer = <2>;
-        };
-
-        condition_mac_buttons {
-            if-layers = <10 8>;
-            then-layer = <9>;
         };
     };
 
@@ -72,12 +67,12 @@
         compatible = "zmk,combos";
 
         combo_toggle_mac_left {
-            bindings = <&tog 10>;
+            bindings = <&tog 8>;
             key-positions = <14 15 16 17>;
         };
 
         combo_toggle_mac_right {
-            bindings = <&tog 10>;
+            bindings = <&tog 8>;
             key-positions = <18 19 20 21>;
         };
 
@@ -92,7 +87,7 @@
 
         base_colemak {
             bindings = <
-&trans  &lt 8 Q         &kp W           &kp F               &kp P             &kp G        &kp J      &kp L              &kp U                    &kp Y              &lt 8 SINGLE_QUOTE  &trans
+&trans  &kp Q           &kp W           &kp F               &kp P             &kp G        &kp J      &kp L              &kp U                    &kp Y              &kp SINGLE_QUOTE    &trans
 &trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O               &trans
 &trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp K      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH  &trans
                                         &lt 6 DEL           &lt 3 SPACE       &lt 5 TAB    &lt 5 RET  &lt 3 LC(BSPC)     &lt 4 ESC
@@ -101,7 +96,7 @@
 
         qwerty {
             bindings = <
-&trans  &lt 8 Q         &kp W           &kp E               &kp R             &kp T     &kp Y   &kp U              &kp I                    &kp O                 &lt 8 P              &trans
+&trans  &kp Q           &kp W           &kp E               &kp R             &kp T     &kp Y   &kp U              &kp I                    &kp O                 &kp P                &trans
 &trans  &kp A           &kp S           &kp D               &kp F             &kp G     &kp H   &kp J              &kp K                    &kp L                 &kp SINGLE_QUOTE     &trans
 &trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B     &kp N   &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT PERIOD  &hm RIGHT_GUI SLASH  &trans
                                         &trans              &trans            &trans    &trans  &trans             &trans
@@ -159,24 +154,6 @@
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4    &caps_word  &kp F4  &kp F5  &kp F6  &kp F11  &trans
 &trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans          &trans      &kp F1  &kp F2  &kp F3  &kp F12  &trans
                                     &trans            &trans          &trans          &trans      &trans  &trans
-            >;
-        };
-
-        button_layer {
-            bindings = <
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans    &trans  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &trans
-&trans  &trans     &trans     &trans     &trans     &trans    &trans  &trans     &trans     &trans     &trans     &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans    &trans  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &trans
-                              &trans     &trans     &trans    &trans  &trans     &trans
-            >;
-        };
-
-        button_layer_mac {
-            bindings = <
-&trans  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &trans  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &trans
-&trans  &trans     &trans     &trans     &trans     &trans    &trans  &trans     &trans     &trans     &trans     &trans
-&trans  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &trans  &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &trans
-                              &trans     &trans     &trans    &trans  &trans     &trans
             >;
         };
 
