@@ -36,11 +36,6 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        fn_layer_from_number_and_media {
-            if-layers = <6 4>;
-            then-layer = <7>;
-        };
-
         condition_mac_thumbs {
             if-layers = <8>;
             then-layer = <2>;
@@ -68,6 +63,11 @@
         combo_media {
             bindings = <&mo 4>;
             key-positions = <40 41>;
+        };
+
+        combo_fn_layer {
+            bindings = <&mo 7>;
+            key-positions = <36 41>;
         };
     };
 
