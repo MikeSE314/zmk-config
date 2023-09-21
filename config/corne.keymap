@@ -64,6 +64,11 @@
             bindings = <&tog 1>;
             key-positions = <25 34>;
         };
+
+        combo_media {
+            bindings = <&mo 4>;
+            key-positions = <40 41>;
+        };
     };
 
     keymap {
@@ -74,7 +79,7 @@
 &trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL F  &hm LEFT_SHIFT P  &kp G        &kp J      &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL U      &hm RIGHT_ALT Y    &hm RIGHT_GUI SINGLE_QUOTE  &trans
 &trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O                       &trans
 &trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp K      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH          &trans
-                                        &lt 6 DEL           &lt 3 SPACE       &lt 5 TAB    &lt 5 RET  &lt 3 LC(BSPC)     &lt 4 ESC
+                                        &lt 6 DEL           &lt 3 SPACE       &lt 5 TAB    &lt 5 RET  &lt 3 LC(BSPC)     &lt 6 ESC
             >;
         };
 
