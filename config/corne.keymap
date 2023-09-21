@@ -31,22 +31,6 @@
                 <&kp>,
                 <&kp>;
         };
-        tap_dance_ctrl_or_ctrl_c: tap_dance_ctrl_or_ctrl_c {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_CTRL_OR_CTRL_C";
-            #binding-cells = <0>;
-            bindings =
-                <&kp LEFT_CONTROL>,
-                <&kp LC(C)>;
-        };
-        tap_dance_shift_or_ctrl_shift_v: tap_dance_shift_or_ctrl_shift_v {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_SHIFT_OR_CTRL_SHIFT_V";
-            #binding-cells = <0>;
-            bindings =
-                <&kp LEFT_SHIFT>,
-                <&kp LC(LS(V))>;
-        };
     };
 
     conditional_layers {
@@ -114,10 +98,10 @@
 
         nav_layer {
             bindings = <
-&trans  &trans        &kp HOME      &kp UP                     &kp END                           &kp PG_UP    &kp HOME         &kp PG_DN        &kp PG_UP          &kp END        &kp ESC        &trans
-&trans  &trans        &kp LEFT      &kp DOWN                   &kp RIGHT                         &kp PG_DN    &kp LEFT         &kp DOWN         &kp UP             &kp RIGHT      &kp BSPC       &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT  &tap_dance_ctrl_or_ctrl_c  &tap_dance_shift_or_ctrl_shift_v  &trans       &kp PRINTSCREEN  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
-                                    &trans                     &trans                            &trans       &trans           &trans           &trans
+&trans  &trans        &kp HOME      &kp UP            &kp END         &kp PG_UP    &kp HOME         &kp PG_DN        &kp PG_UP          &kp END        &kp ESC        &trans
+&trans  &trans        &kp LEFT      &kp DOWN          &kp RIGHT       &kp PG_DN    &kp LEFT         &kp DOWN         &kp UP             &kp RIGHT      &kp BSPC       &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans       &kp PRINTSCREEN  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
+                                    &trans            &trans          &trans       &trans           &trans           &trans
             >;
         };
 
