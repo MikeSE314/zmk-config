@@ -39,8 +39,8 @@
         compatible = "zmk,conditional-layers";
 
         condition_mac_thumbs {
-            if-layers = <8>;
-            then-layer = <2>;
+            if-layers = <9>;
+            then-layer = <3>;
         };
     };
 
@@ -48,12 +48,12 @@
         compatible = "zmk,combos";
 
         combo_toggle_mac_left {
-            bindings = <&tog 8>;
+            bindings = <&tog 9>;
             key-positions = <14 15 16 17>;
         };
 
         combo_toggle_mac_right {
-            bindings = <&tog 8>;
+            bindings = <&tog 9>;
             key-positions = <18 19 20 21>;
         };
 
@@ -63,13 +63,18 @@
         };
 
         combo_media {
-            bindings = <&mo 4>;
+            bindings = <&mo 5>;
             key-positions = <40 41>;
         };
 
         combo_fn_layer {
-            bindings = <&mo 7>;
+            bindings = <&mo 8>;
             key-positions = <36 41>;
+        };
+
+        combo_alternative_layout {
+            bindings = <&tog 2>;
+            key-positions = <6 18>;
         };
     };
 
@@ -81,7 +86,7 @@
 &trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL F  &hm LEFT_SHIFT P  &kp G        &kp J      &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL U      &hm RIGHT_ALT Y    &hm RIGHT_GUI SINGLE_QUOTE  &trans
 &trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O                       &trans
 &trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp K      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH          &trans
-                                        &lt 6 DEL           &lt 3 SPACE       &lt 5 TAB    &lt 5 RET  &lt 3 LC(BSPC)     &lt 6 ESC
+                                        &lt 7 DEL           &lt 4 SPACE       &lt 6 TAB    &lt 6 RET  &lt 4 LC(BSPC)     &lt 7 ESC
             >;
         };
 
@@ -94,12 +99,21 @@
             >;
         };
 
+        alternate_layout {
+            bindings = <
+&trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL F  &hm LEFT_SHIFT P  &kp SINGLE_QUOTE    &kp COMMA  &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL U  &hm RIGHT_ALT Y  &hm RIGHT_GUI B  &trans
+&trans  &kp A           &kp R           &kp S               &kp T             &kp J               &kp DOT    &kp N              &kp E                &kp I            &kp O            &trans
+&trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT D  &kp V               &kp FSLH   &hm RIGHT_SHIFT H  &hm RIGHT_CONTROL G  &hm RIGHT_ALT M  &hm RIGHT_GUI K  &trans
+                                        &trans              &trans            &trans              &trans     &trans             &trans
+            >;
+        };
+
         base_mac {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &lt 3 LA(BACKSPACE)  &trans
+                        &trans  &trans  &trans    &trans  &lt 4 LA(BACKSPACE)  &trans
             >;
         };
 
