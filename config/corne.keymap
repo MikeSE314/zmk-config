@@ -25,11 +25,13 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
-            quick-tap-ms = <0>;
+            quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings =
                 <&kp>,
                 <&kp>;
+
+            global-quick-tap;
         };
     };
 
@@ -121,9 +123,9 @@
 
         symbol_layer {
             bindings = <
-&trans  &kp EXCL      &kp AT_SIGN    &kp HASH          &kp DOLLAR      &kp PERCENT    &kp CARET  &kp AMPS         &kp ASTERISK       &kp EQUAL      &trans         &trans
-&trans  &kp GRAVE     &kp BACKSLASH  &kp LBKT          &kp RBKT        &kp COLON      &trans     &kp LPAR         &kp RPAR           &kp MINUS      &kp SEMICOLON  &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans         &trans     &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
+&trans  &kp EXCL      &kp AT_SIGN    &kp HASH          &kp DOLLAR      &kp PERCENT    &kp CARET  &kp AMPS         &kp ASTERISK             &kp EQUAL             &kp SINGLE_QUOTE     &trans
+&trans  &kp GRAVE     &kp BACKSLASH  &kp LBKT          &kp RBKT        &kp COLON      &trans     &kp LPAR         &kp RPAR                 &kp MINUS             &kp SEMICOLON        &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans         &trans     &kp RIGHT_SHIFT  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT PERIOD  &hm RIGHT_GUI SLASH  &trans
                                      &trans            &trans          &trans         &trans     &trans           &trans
             >;
         };
