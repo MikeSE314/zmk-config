@@ -101,9 +101,9 @@
 
         alternate_layout {
             bindings = <
-&trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL F  &hm LEFT_SHIFT P  &kp FSLH     &kp APOS  &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL U  &hm RIGHT_ALT Y  &hm RIGHT_GUI B  &trans
+&trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL F  &hm LEFT_SHIFT P  &kp FSLH     &kp APOS  &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL U  &hm RIGHT_ALT Y  &hm RIGHT_GUI J  &trans
 &trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H     &kp N              &kp E                &kp I            &kp O            &trans
-&trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp COMMA    &kp DOT   &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL K  &hm RIGHT_ALT J  &hm RIGHT_GUI G  &trans
+&trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp COMMA    &kp DOT   &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL G  &hm RIGHT_ALT B  &hm RIGHT_GUI K  &trans
                                         &trans              &trans            &trans       &trans    &trans             &trans
             >;
         };
