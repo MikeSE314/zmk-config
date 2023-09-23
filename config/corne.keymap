@@ -88,9 +88,9 @@
 
         base_colemak {
             bindings = <
-&trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL F  &hm LEFT_SHIFT P  &kp G        &kp J      &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL U      &hm RIGHT_ALT Y    &hm RIGHT_GUI SINGLE_QUOTE  &trans
+&trans &hm RIGHT_GUI SINGLE_QUOTE   &hm RIGHT_ALT Y     &hm RIGHT_CONTROL U       &hm RIGHT_SHIFT L   &kp J       &kp G         &hm LEFT_SHIFT P   &hm LEFT_CONTROL F   &hm LEFT_ALT W   &hm LEFT_GUI Q   &trans  
 &trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O                       &trans
-&trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp K      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH          &trans
+&trans &hm RIGHT_GUI FSLH           &hm RIGHT_ALT DOT   &hm RIGHT_CONTROL COMMA   &hm RIGHT_SHIFT M   &kp K       &kp B         &hm LEFT_SHIFT V   &hm LEFT_CONTROL C   &hm LEFT_ALT X   &hm LEFT_GUI Z   &trans  
                                         &lt 8 DEL           &lt 5 SPACE       &lt 7 TAB    &lt 7 RET  &lt 5 LC(BSPC)     &lt 8 ESC
             >;
         };
