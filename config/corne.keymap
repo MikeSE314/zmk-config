@@ -33,6 +33,66 @@
 
             global-quick-tap;
         };
+        engram_s_quote_l_paren: engram_s_quote_l_paren {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ENGRAM_S_QUOTE_L_PAREN";
+            bindings =
+                <&kp SINGLE_QUOTE>,
+                <&kp LEFT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        engram_d_quote_r_paren: engram_d_quote_r_paren {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ENGRAM_D_QUOTE_R_PAREN";
+            bindings =
+                <&kp DOUBLE_QUOTES>,
+                <&kp RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        engram_comma_semi: engram_comma_semi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ENGRAM_COMMA_SEMI";
+            bindings =
+                <&kp COMMA>,
+                <&kp SEMICOLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        engram_period_colon: engram_period_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ENGRAM_PERIOD_COLON";
+            bindings =
+                <&kp PERIOD>,
+                <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        engram_hyphen_underscore: engram_hyphen_underscore {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ENGRAM_HYPHEN_UNDERSCORE";
+            bindings =
+                <&kp MINUS>,
+                <&kp UNDERSCORE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        engram_question_exclamation: engram_question_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ENGRAM_QUESTION_EXCLAMATION";
+            bindings =
+                <&kp QUESTION>,
+                <&kp EXCLAMATION>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     conditional_layers {
@@ -81,6 +141,17 @@
             bindings = <&tog 11>;
             key-positions = <1 13 25>;
         };
+
+        combo_engram_q {
+            bindings = <&kp Q>;
+            key-positions = <22 21>;
+            layers = <3>;
+        };
+
+        combo_engram_z {
+            bindings = <&kp Z>;
+            key-positions = <10 9>;
+        };
     };
 
     keymap {
@@ -115,10 +186,10 @@
 
         alternate_layout {
             bindings = <
-&trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL F  &hm LEFT_SHIFT P  &kp FSLH     &kp APOS  &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL U  &hm RIGHT_ALT Y  &hm RIGHT_GUI J  &trans
-&trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H     &kp N              &kp E                &kp I            &kp O            &trans
-&trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp COMMA    &kp DOT   &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL G  &hm RIGHT_ALT B  &hm RIGHT_GUI K  &trans
-                                        &trans              &trans            &trans       &trans    &trans             &trans
+&trans  &hm LEFT_GUI B  &hm LEFT_ALT Y  &hm LEFT_CONTROL O  &hm LEFT_SHIFT U  &engram_s_quote_l_paren      &engram_d_quote_r_paren       &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL D  &hm RIGHT_ALT W  &hm RIGHT_GUI V  &trans
+&trans  &kp C           &kp I           &kp E               &kp A             &engram_comma_semi           &engram_period_colon          &kp H              &kp T                &kp S            &kp N            &trans
+&trans  &hm LEFT_GUI G  &hm LEFT_ALT X  &hm LEFT_CONTROL J  &hm LEFT_SHIFT K  &engram_hyphen_underscore    &engram_question_exclamation  &hm RIGHT_SHIFT R  &hm RIGHT_CONTROL M  &hm RIGHT_ALT F  &hm RIGHT_GUI P  &trans
+                                        &trans              &trans            &trans                       &trans                        &trans             &trans
             >;
         };
 
