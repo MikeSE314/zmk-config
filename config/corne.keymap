@@ -288,7 +288,7 @@
         };
 
         combo_fn_layer {
-            bindings = <&mo 10>;
+            bindings = <&mo 9>;
             key-positions = <36 41>;
         };
 
@@ -307,6 +307,11 @@
             bindings = <&kp Z>;
             key-positions = <10 9>;
             layers = <2>;
+        };
+
+        combo_fn_layer_lh {
+            bindings = <&mo 9>;
+            key-positions = <36 37>;
         };
     };
 
