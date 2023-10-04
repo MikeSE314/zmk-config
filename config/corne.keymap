@@ -33,234 +33,29 @@
 
             global-quick-tap;
         };
-        engram_s_quote_l_paren: engram_s_quote_l_paren {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_S_QUOTE_L_PAREN";
-            bindings =
-                <&kp SINGLE_QUOTE>,
-                <&kp LEFT_PARENTHESIS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_d_quote_r_paren: engram_d_quote_r_paren {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_D_QUOTE_R_PAREN";
-            bindings =
-                <&kp DOUBLE_QUOTES>,
-                <&kp RIGHT_PARENTHESIS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_comma_semi: engram_comma_semi {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_COMMA_SEMI";
-            bindings =
-                <&kp COMMA>,
-                <&kp SEMICOLON>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_period_colon: engram_period_colon {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_PERIOD_COLON";
-            bindings =
-                <&kp PERIOD>,
-                <&kp COLON>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_hyphen_underscore: engram_hyphen_underscore {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_HYPHEN_UNDERSCORE";
-            bindings =
-                <&kp MINUS>,
-                <&kp UNDERSCORE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_question_exclamation: engram_question_exclamation {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_QUESTION_EXCLAMATION";
-            bindings =
-                <&kp QUESTION>,
-                <&kp EXCLAMATION>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_n_1: engram_n_1 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_N_1";
-            bindings =
-                <&kp N1>,
-                <&kp PIPE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_n_2: engram_n_2 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_N_2";
-            bindings =
-                <&kp N2>,
-                <&kp EQUAL>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_n_3: engram_n_3 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_N_3";
-            bindings =
-                <&kp N3>,
-                <&kp TILDE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_n_4: engram_n_4 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_N_4";
-            bindings =
-                <&kp N4>,
-                <&kp PLUS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_n_5: engram_n_5 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_N_5";
-            bindings =
-                <&kp N5>,
-                <&kp LT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_n_6: engram_n_6 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_N_6";
-            bindings =
-                <&kp N6>,
-                <&kp GT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_n_7: engram_n_7 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_N_7";
-            bindings =
-                <&kp N7>,
-                <&kp CARET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_n_8: engram_n_8 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_N_8";
-            bindings =
-                <&kp N8>,
-                <&kp AMPERSAND>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_n_9: engram_n_9 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_N_9";
-            bindings =
-                <&kp N9>,
-                <&kp PERCENT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_n_0: engram_n_0 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_N_0";
-            bindings =
-                <&kp N0>,
-                <&kp ASTERISK>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_s_bracket_l: engram_s_bracket_l {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_S_BRACKET_L";
-            bindings =
-                <&kp LEFT_BRACKET>,
-                <&kp LEFT_BRACE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_s_bracket_r: engram_s_bracket_r {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_S_BRACKET_R";
-            bindings =
-                <&kp RIGHT_BRACKET>,
-                <&kp RIGHT_BRACE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_s_slashes: engram_s_slashes {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_S_SLASHES";
-            bindings =
-                <&kp SLASH>,
-                <&kp BACKSLASH>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_s_pound_dollar: engram_s_pound_dollar {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_S_POUND_DOLLAR";
-            bindings =
-                <&kp POUND>,
-                <&kp DOLLAR>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        engram_s_at_tick: engram_s_at_tick {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ENGRAM_S_AT_TICK";
-            bindings =
-                <&kp AT_SIGN>,
-                <&kp GRAVE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
         condition_mac_thumbs {
-            if-layers = <10>;
+            if-layers = <11>;
             then-layer = <3>;
         };
 
         condition_engram_sym {
-            if-layers = <2 6>;
-            then-layer = <8>;
+            if-layers = <2 7>;
+            then-layer = <9>;
         };
 
         condition_engram_num {
-            if-layers = <2 7>;
-            then-layer = <8>;
+            if-layers = <2 8>;
+            then-layer = <9>;
+        };
+
+        condition_engram_nav {
+            if-layers = <2 4>;
+            then-layer = <5>;
         };
     };
 
@@ -268,12 +63,12 @@
         compatible = "zmk,combos";
 
         combo_toggle_mac_left {
-            bindings = <&tog 10>;
+            bindings = <&tog 11>;
             key-positions = <14 15 16 17>;
         };
 
         combo_toggle_mac_right {
-            bindings = <&tog 10>;
+            bindings = <&tog 11>;
             key-positions = <18 19 20 21>;
         };
 
@@ -283,12 +78,12 @@
         };
 
         combo_media {
-            bindings = <&mo 5>;
+            bindings = <&mo 6>;
             key-positions = <40 41>;
         };
 
         combo_fn_layer {
-            bindings = <&mo 9>;
+            bindings = <&mo 10>;
             key-positions = <36 41>;
         };
 
@@ -297,20 +92,8 @@
             key-positions = <6 18>;
         };
 
-        combo_engram_q {
-            bindings = <&kp Q>;
-            key-positions = <22 21>;
-            layers = <2>;
-        };
-
-        combo_engram_z {
-            bindings = <&kp Z>;
-            key-positions = <10 9>;
-            layers = <2>;
-        };
-
         combo_fn_layer_lh {
-            bindings = <&mo 9>;
+            bindings = <&mo 10>;
             key-positions = <36 37>;
         };
     };
@@ -323,7 +106,7 @@
 &trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL F  &hm LEFT_SHIFT P  &kp G        &kp J      &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL U      &hm RIGHT_ALT Y    &hm RIGHT_GUI SINGLE_QUOTE  &trans
 &trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O                       &trans
 &trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp K      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH          &trans
-                                        &lt 7 DEL           &lt 4 SPACE       &lt 6 TAB    &lt 6 RET  &lt 4 LC(BSPC)     &lt 7 ESC
+                                        &lt 8 DEL           &lt 4 SPACE       &lt 7 TAB    &lt 7 RET  &lt 4 LC(BSPC)     &lt 8 ESC
             >;
         };
 
@@ -338,10 +121,10 @@
 
         engram {
             bindings = <
-&trans  &hm LEFT_GUI B  &hm LEFT_ALT Y  &hm LEFT_CONTROL O  &hm LEFT_SHIFT U  &engram_s_quote_l_paren      &engram_d_quote_r_paren       &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL D  &hm RIGHT_ALT W  &hm RIGHT_GUI V  &kp Z
-&trans  &kp C           &kp I           &kp E               &kp A             &engram_comma_semi           &engram_period_colon          &kp H              &kp T                &kp S            &kp N            &kp Q
-&trans  &hm LEFT_GUI G  &hm LEFT_ALT X  &hm LEFT_CONTROL J  &hm LEFT_SHIFT K  &engram_hyphen_underscore    &engram_question_exclamation  &hm RIGHT_SHIFT R  &hm RIGHT_CONTROL M  &hm RIGHT_ALT F  &hm RIGHT_GUI P  &trans
-                                        &trans              &trans            &trans                       &trans                        &trans             &trans
+&trans  &hm LEFT_GUI B  &hm LEFT_ALT Y  &hm LEFT_CONTROL O  &hm LEFT_SHIFT U  &none     &none   &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL D  &hm RIGHT_ALT W  &hm RIGHT_GUI V  &trans
+&trans  &kp C           &kp I           &kp E               &kp A             &none     &none   &kp H              &kp T                &kp S            &kp N            &trans
+&trans  &hm LEFT_GUI G  &hm LEFT_ALT X  &hm LEFT_CONTROL J  &hm LEFT_SHIFT K  &none     &none   &hm RIGHT_SHIFT R  &hm RIGHT_CONTROL M  &hm RIGHT_ALT F  &hm RIGHT_GUI P  &trans
+                                        &trans              &trans            &trans    &trans  &trans             &trans
             >;
         };
 
@@ -360,6 +143,15 @@
 &trans  &trans        &kp LEFT      &kp DOWN          &kp RIGHT       &kp PG_DN    &kp LEFT         &kp DOWN         &kp UP             &kp RIGHT      &kp BSPC       &trans
 &trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans       &kp PRINTSCREEN  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
                                     &trans            &trans          &trans       &trans           &trans           &trans
+            >;
+        };
+
+        engram_nav {
+            bindings = <
+&trans  &trans        &trans        &trans            &trans          &none     &none   &kp HOME       &kp PAGE_DOWN      &kp PAGE_UP    &kp END        &trans
+&trans  &trans        &trans        &trans            &trans          &none     &none   &kp LEFT       &kp DOWN           &kp UP         &kp RIGHT      &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none     &none   &kp BACKSPACE  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
+                                    &trans            &trans          &trans    &trans  &trans         &trans
             >;
         };
 
@@ -392,10 +184,10 @@
 
         engram_num_sym {
             bindings = <
-&trans  &engram_n_1        &engram_n_2   &engram_n_3       &engram_n_4     &engram_n_5            &engram_n_6          &engram_n_7      &engram_n_8        &engram_n_9             &engram_n_0        &trans
-&trans  &engram_s_at_tick  &trans        &trans            &trans          &engram_s_bracket_l    &engram_s_bracket_r  &trans           &trans             &engram_s_pound_dollar  &engram_s_slashes  &trans
-&trans  &kp LEFT_GUI       &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                 &trans               &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT           &kp RIGHT_GUI      &trans
-                                         &trans            &trans          &trans                 &trans               &trans           &trans
+&trans  &kp MINUS               &kp EQUAL         &kp COMMA                   &kp PERIOD            &none     &none   &kp N7              &kp N8                &kp N9            &kp N0           &trans
+&trans  &kp GRAVE               &kp SINGLE_QUOTE  &kp LEFT_BRACKET            &kp RIGHT_BRACKET     &none     &none   &kp N4              &kp N5                &kp N6            &kp Q            &trans
+&trans  &hm BACKSLASH LEFT_GUI  &kp LEFT_ALT      &hm SEMICOLON LEFT_CONTROL  &hm SLASH LEFT_SHIFT  &none     &none   &hm N1 RIGHT_SHIFT  &hm N2 RIGHT_CONTROL  &hm N3 RIGHT_ALT  &hm Z RIGHT_GUI  &trans
+                                                  &trans                      &trans                &trans    &trans  &trans              &trans
             >;
         };
 
