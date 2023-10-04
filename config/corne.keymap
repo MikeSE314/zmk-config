@@ -186,7 +186,7 @@
             bindings = <
 &trans  &kp MINUS               &kp EQUAL         &kp COMMA                   &kp PERIOD            &none     &none   &kp N7              &kp N8                &kp N9            &kp N0           &trans
 &trans  &kp GRAVE               &kp SINGLE_QUOTE  &kp LEFT_BRACKET            &kp RIGHT_BRACKET     &none     &none   &kp N4              &kp N5                &kp N6            &kp Q            &trans
-&trans  &hm BACKSLASH LEFT_GUI  &kp LEFT_ALT      &hm SEMICOLON LEFT_CONTROL  &hm SLASH LEFT_SHIFT  &none     &none   &hm N1 RIGHT_SHIFT  &hm N2 RIGHT_CONTROL  &hm N3 RIGHT_ALT  &hm Z RIGHT_GUI  &trans
+&trans  &hm LEFT_GUI BACKSLASH  &kp LEFT_ALT      &hm LEFT_CONTROL SEMICOLON  &hm LEFT_SHIFT SLASH  &none     &none   &hm RIGHT_SHIFT N1  &hm RIGHT_CONTROL N2  &hm RIGHT_ALT N3  &hm RIGHT_GUI Z  &trans
                                                   &trans                      &trans                &trans    &trans  &trans              &trans
             >;
         };
