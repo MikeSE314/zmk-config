@@ -37,56 +37,61 @@
         compatible = "zmk,conditional-layers";
 
         condition_mac_thumbs {
-            if-layers = <10>;
-            then-layer = <3>;
+            if-layers = <11>;
+            then-layer = <4>;
         };
 
         condition_engram_sym {
-            if-layers = <2 6>;
-            then-layer = <8>;
+            if-layers = <2 7>;
+            then-layer = <9>;
         };
 
         condition_engram_num {
-            if-layers = <2 7>;
-            then-layer = <8>;
+            if-layers = <2 8>;
+            then-layer = <9>;
         };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        combo_toggle_mac_left {
-            bindings = <&tog 10>;
-            key-positions = <14 15 16 17>;
-        };
-
-        combo_toggle_mac_right {
-            bindings = <&tog 10>;
-            key-positions = <18 19 20 21>;
-        };
-
         combo_toggle_qwerty {
             bindings = <&tog 1>;
-            key-positions = <25 34>;
-        };
-
-        combo_media {
-            bindings = <&mo 5>;
-            key-positions = <40 41>;
-        };
-
-        combo_fn_layer {
-            bindings = <&mo 9>;
-            key-positions = <36 41>;
+            key-positions = <24 35>;
         };
 
         combo_engram {
             bindings = <&tog 2>;
-            key-positions = <6 18>;
+            key-positions = <24 23>;
+        };
+
+        combo_the_1 {
+            bindings = <&tog 3>;
+            key-positions = <24 11>;
+        };
+
+        combo_toggle_mac_left {
+            bindings = <&tog 11>;
+            key-positions = <14 15 16 17>;
+        };
+
+        combo_toggle_mac_right {
+            bindings = <&tog 11>;
+            key-positions = <18 19 20 21>;
+        };
+
+        combo_media {
+            bindings = <&mo 6>;
+            key-positions = <40 41>;
+        };
+
+        combo_fn_layer {
+            bindings = <&mo 10>;
+            key-positions = <36 41>;
         };
 
         combo_fn_layer_lh {
-            bindings = <&mo 9>;
+            bindings = <&mo 10>;
             key-positions = <36 37>;
         };
     };
@@ -99,7 +104,7 @@
 &trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL F  &hm LEFT_SHIFT P  &kp G        &kp J      &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL U      &hm RIGHT_ALT Y    &hm RIGHT_GUI SINGLE_QUOTE  &trans
 &trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O                       &trans
 &trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp K      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH          &trans
-                                        &lt 7 DEL           &lt 4 SPACE       &lt 6 TAB    &lt 6 RET  &lt 4 LC(BSPC)     &lt 7 ESC
+                                        &lt 8 DEL           &lt 5 SPACE       &lt 7 TAB    &lt 7 RET  &lt 5 LC(BSPC)     &lt 8 ESC
             >;
         };
 
@@ -121,12 +126,21 @@
             >;
         };
 
+        the_1 {
+            bindings = <
+&trans  &kp K  &kp M  &kp L   &kp U   &kp FSLH     &kp V   &kp D   &kp R   &kp SQT  &kp Q  &trans
+&trans  &kp A  &kp T  &kp H   &kp E   &kp DOT      &kp C   &kp S   &kp N   &kp O    &kp I  &trans
+&trans  &kp Z  &kp P  &kp F   &kp J   &kp COMMA    &kp B   &kp G   &kp W   &kp X    &kp Y  &trans
+                      &trans  &trans  &trans       &trans  &trans  &trans
+            >;
+        };
+
         base_mac {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &lt 4 LA(BACKSPACE)  &trans
+                        &trans  &trans  &trans    &trans  &lt 5 LA(BACKSPACE)  &trans
             >;
         };
 
