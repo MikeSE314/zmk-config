@@ -35,16 +35,6 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-
-        condition_engram_sym {
-            if-layers = <2 7>;
-            then-layer = <9>;
-        };
-
-        condition_engram_num {
-            if-layers = <2 8>;
-            then-layer = <9>;
-        };
     };
 
     combos {
@@ -66,12 +56,12 @@
         };
 
         combo_toggle_mac_left {
-            bindings = <&tog 4>;
+            bindings = <&tog 8>;
             key-positions = <14 15 16 17>;
         };
 
         combo_toggle_mac_right {
-            bindings = <&tog 4>;
+            bindings = <&tog 8>;
             key-positions = <18 19 20 21>;
         };
 
@@ -81,12 +71,12 @@
         };
 
         combo_fn_layer {
-            bindings = <&mo 10>;
+            bindings = <&mo 7>;
             key-positions = <36 41>;
         };
 
         combo_fn_layer_lh {
-            bindings = <&mo 10>;
+            bindings = <&mo 7>;
             key-positions = <37 36>;
         };
     };
@@ -99,7 +89,7 @@
 &trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL F  &hm LEFT_SHIFT P  &kp G        &kp J      &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL U      &hm RIGHT_ALT Y    &hm RIGHT_GUI SINGLE_QUOTE  &trans
 &trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O                       &trans
 &trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp K      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH          &trans
-                                        &lt 8 DEL           &lt 5 SPACE       &lt 7 TAB    &lt 7 RET  &lt 5 LC(BSPC)     &lt 8 ESC
+                                        &lt 4 DEL           &lt 5 SPACE       &lt 4 TAB    &lt 4 RET  &lt 5 LC(BSPC)     &lt 4 ESC
             >;
         };
 
@@ -130,12 +120,12 @@
             >;
         };
 
-        mac_thumb {
+        num_sym {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &lt 5 LA(BACKSPACE)  &trans
+&trans  &kp N1        &kp N2         &kp N3            &kp N4          &kp N5              &kp N6             &kp N7              &kp N8                &kp N9            &kp N0         &trans
+&trans  &kp GRAVE     &kp SEMICOLON  &kp MINUS         &kp EQUAL       &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp N4              &kp N5                &kp N6            &kp PERIOD     &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp EQUAL           &kp SLASH          &hm RIGHT_SHIFT N1  &hm RIGHT_CONTROL N2  &hm RIGHT_ALT N3  &kp RIGHT_GUI  &trans
+                                     &trans            &trans          &trans              &trans             &trans              &trans
             >;
         };
 
@@ -157,39 +147,21 @@
             >;
         };
 
-        symbol_layer {
-            bindings = <
-&trans  &kp EXCL      &kp AT_SIGN    &kp HASH          &kp DOLLAR      &kp PERCENT    &kp CARET  &kp AMPS         &kp ASTERISK             &kp EQUAL             &kp SINGLE_QUOTE     &trans
-&trans  &kp GRAVE     &kp BACKSLASH  &kp LBKT          &kp RBKT        &kp COLON      &trans     &kp LPAR         &kp RPAR                 &kp MINUS             &kp SEMICOLON        &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans         &trans     &kp RIGHT_SHIFT  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT PERIOD  &hm RIGHT_GUI SLASH  &trans
-                                     &trans            &trans          &trans         &trans     &trans           &trans
-            >;
-        };
-
-        number_layer {
-            bindings = <
-&trans  &kp N1        &kp N2        &kp N3            &kp N4          &kp N5    &kp N6  &kp N7              &kp N8                &kp N9            &kp N0            &trans
-&trans  &trans        &trans        &trans            &trans          &trans    &trans  &kp N4              &kp N5                &kp N6            &kp DOT           &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans    &kp N0  &hm RIGHT_SHIFT N1  &hm RIGHT_CONTROL N2  &hm RIGHT_ALT N3  &hm RIGHT_GUI N0  &trans
-                                    &trans            &trans          &trans    &trans  &trans              &trans
-            >;
-        };
-
-        engram_num_sym {
-            bindings = <
-&trans  &kp N1        &kp N2        &kp N3            &kp N4          &kp N5              &kp N6             &kp N7              &kp N8                &kp N9            &kp N0         &trans
-&trans  &kp GRAVE     &none         &none             &none           &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp N4              &kp N5                &kp N6            &kp PERIOD     &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp EQUAL           &kp SLASH          &hm RIGHT_SHIFT N1  &hm RIGHT_CONTROL N2  &hm RIGHT_ALT N3  &kp RIGHT_GUI  &trans
-                                    &trans            &trans          &trans              &trans             &trans              &trans
-            >;
-        };
-
         fn_layer {
             bindings = <
 &trans  &bt BT_CLR    &trans        &trans            &out OUT_TOG    &trans          &trans      &kp F7  &kp F8  &kp F9  &kp F10  &trans
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4    &caps_word  &kp F4  &kp F5  &kp F6  &kp F11  &trans
 &trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans          &trans      &kp F1  &kp F2  &kp F3  &kp F12  &trans
                                     &trans            &trans          &trans          &trans      &trans  &trans
+            >;
+        };
+
+        mac_thumb {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &lt 5 LA(BACKSPACE)  &trans
             >;
         };
     };
