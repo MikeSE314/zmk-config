@@ -92,7 +92,7 @@
 
         combo_fn_layer_lh {
             bindings = <&mo 10>;
-            key-positions = <36 37>;
+            key-positions = <37 36>;
         };
     };
 
@@ -128,10 +128,10 @@
 
         the_1 {
             bindings = <
-&trans  &kp K  &kp M  &kp L   &kp U   &kp FSLH     &kp V   &kp D   &kp R   &kp SQT  &kp Q  &trans
-&trans  &kp A  &kp T  &kp H   &kp E   &kp DOT      &kp C   &kp S   &kp N   &kp O    &kp I  &trans
-&trans  &kp Z  &kp P  &kp F   &kp J   &kp COMMA    &kp B   &kp G   &kp W   &kp X    &kp Y  &trans
-                      &trans  &trans  &trans       &trans  &trans  &trans
+&trans  &kp K           &kp M           &kp L               &kp U             &kp FSLH     &kp V   &kp D              &kp R                &kp SQT          &kp Q            &trans
+&trans  &kp A           &kp T           &kp H               &kp E             &kp DOT      &kp C   &kp S              &kp N                &kp O            &kp I            &trans
+&trans  &hm LEFT_GUI Z  &hm LEFT_ALT P  &hm LEFT_CONTROL F  &hm LEFT_SHIFT J  &kp COMMA    &kp B   &hm RIGHT_SHIFT G  &hm RIGHT_CONTROL W  &hm RIGHT_ALT X  &hm RIGHT_GUI Y  &trans
+                                        &trans              &trans            &trans       &trans  &trans             &trans
             >;
         };
 
