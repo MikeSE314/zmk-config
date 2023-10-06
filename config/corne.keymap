@@ -36,11 +36,6 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        condition_mac_thumbs {
-            if-layers = <11>;
-            then-layer = <4>;
-        };
-
         condition_engram_sym {
             if-layers = <2 7>;
             then-layer = <9>;
@@ -71,12 +66,12 @@
         };
 
         combo_toggle_mac_left {
-            bindings = <&tog 11>;
+            bindings = <&tog 4>;
             key-positions = <14 15 16 17>;
         };
 
         combo_toggle_mac_right {
-            bindings = <&tog 11>;
+            bindings = <&tog 4>;
             key-positions = <18 19 20 21>;
         };
 
@@ -135,7 +130,7 @@
             >;
         };
 
-        base_mac {
+        mac_thumb {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
@@ -195,15 +190,6 @@
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4    &caps_word  &kp F4  &kp F5  &kp F6  &kp F11  &trans
 &trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans          &trans      &kp F1  &kp F2  &kp F3  &kp F12  &trans
                                     &trans            &trans          &trans          &trans      &trans  &trans
-            >;
-        };
-
-        mac_exists {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
