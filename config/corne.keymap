@@ -16,6 +16,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
+&lt {
+    flavor = "hold-preferred";
+};
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -40,43 +44,18 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_toggle_qwerty {
-            bindings = <&tog 1>;
-            key-positions = <24 35>;
-        };
-
-        combo_engram {
-            bindings = <&tog 2>;
-            key-positions = <24 23>;
-        };
-
-        combo_the_1 {
-            bindings = <&tog 3>;
-            key-positions = <24 11>;
-        };
-
-        combo_toggle_mac_left {
-            bindings = <&tog 8>;
-            key-positions = <14 15 16 17>;
-        };
-
-        combo_toggle_mac_right {
-            bindings = <&tog 8>;
-            key-positions = <18 19 20 21>;
-        };
-
         combo_media {
-            bindings = <&mo 6>;
+            bindings = <&mo 7>;
             key-positions = <40 41>;
         };
 
-        combo_fn_layer {
-            bindings = <&mo 7>;
+        combo_f {
+            bindings = <&mo 8>;
             key-positions = <36 41>;
         };
 
-        combo_fn_layer_lh {
-            bindings = <&mo 7>;
+        combo_settings {
+            bindings = <&mo 10>;
             key-positions = <37 36>;
         };
     };
@@ -84,75 +63,39 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base_colemak {
+        colemak {
             bindings = <
-&trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL F  &hm LEFT_SHIFT P  &kp G        &kp J      &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL U      &hm RIGHT_ALT Y    &hm RIGHT_GUI SINGLE_QUOTE  &trans
-&trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O                       &trans
-&trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp K      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH          &trans
-                                        &lt 4 DEL           &lt 5 SPACE       &lt 4 TAB    &lt 4 RET  &lt 5 LC(BSPC)     &lt 4 ESC
+&trans  &kp Q           &kp W           &kp F               &kp P             &kp G        &kp J      &kp L              &kp U                    &kp Y              &kp SINGLE_QUOTE    &trans
+&trans  &kp A           &kp R           &kp S               &kp T             &kp D        &kp H      &kp N              &kp E                    &kp I              &kp O               &trans
+&trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp K      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH  &trans
+                                        &lt 5 DEL           &lt 6 SPACE       &lt 5 TAB    &lt 5 RET  &lt 6 LC(BSPC)     &lt 5 ESC
             >;
         };
 
         qwerty {
             bindings = <
-&trans  &hm LEFT_GUI Q  &hm LEFT_ALT W  &hm LEFT_CONTROL E  &hm LEFT_SHIFT R  &kp T     &kp Y   &hm RIGHT_SHIFT U  &hm RIGHT_CONTROL I      &hm RIGHT_ALT O       &hm RIGHT_GUI P      &trans
-&trans  &kp A           &kp S           &kp D               &kp F             &kp G     &kp H   &kp J              &kp K                    &kp L                 &kp SINGLE_QUOTE     &trans
-&trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B     &kp N   &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT PERIOD  &hm RIGHT_GUI SLASH  &trans
-                                        &trans              &trans            &trans    &trans  &trans             &trans
+&trans  &kp Q           &kp W           &kp E               &kp R             &kp T        &kp Y      &kp U              &kp I                    &kp O                 &kp P                &trans
+&trans  &kp A           &kp S           &kp D               &kp F             &kp G        &kp H      &kp J              &kp K                    &kp L                 &kp SINGLE_QUOTE     &trans
+&trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B        &kp N      &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT PERIOD  &hm RIGHT_GUI SLASH  &trans
+                                        &lt 5 DEL           &lt 6 SPACE       &lt 5 TAB    &lt 5 RET  &lt 6 LC(BSPC)     &lt 5 ESC
             >;
         };
 
-        engram {
+        engrammer {
             bindings = <
-&trans  &hm LEFT_GUI B  &hm LEFT_ALT Y  &hm LEFT_CONTROL O  &hm LEFT_SHIFT U  &kp SQT      &kp SEMICOLON  &hm RIGHT_SHIFT L  &hm RIGHT_CONTROL D  &hm RIGHT_ALT W  &hm RIGHT_GUI V  &kp Z
+&trans  &kp B           &kp Y           &kp O               &kp U             &kp SQT      &kp SEMICOLON  &kp L              &kp D                &kp W            &kp V            &kp Z
 &trans  &kp C           &kp I           &kp E               &kp A             &kp COMMA    &kp PERIOD     &kp H              &kp T                &kp S            &kp N            &kp Q
 &trans  &hm LEFT_GUI G  &hm LEFT_ALT X  &hm LEFT_CONTROL J  &hm LEFT_SHIFT K  &kp MINUS    &kp SLASH      &hm RIGHT_SHIFT R  &hm RIGHT_CONTROL M  &hm RIGHT_ALT F  &hm RIGHT_GUI P  &trans
-                                        &trans              &trans            &trans       &trans         &trans             &trans
+                                        &lt 5 DEL           &lt 6 SPACE       &lt 5 TAB    &lt 5 RET      &lt 6 LC(BSPC)     &lt 5 ESC
             >;
         };
 
         the_1 {
             bindings = <
-&trans  &kp K           &kp M           &kp L               &kp U             &kp FSLH     &kp V   &kp D              &kp R                &kp SQT          &kp Q            &trans
-&trans  &kp A           &kp T           &kp H               &kp E             &kp DOT      &kp C   &kp S              &kp N                &kp O            &kp I            &trans
-&trans  &hm LEFT_GUI Z  &hm LEFT_ALT P  &hm LEFT_CONTROL F  &hm LEFT_SHIFT J  &kp COMMA    &kp B   &hm RIGHT_SHIFT G  &hm RIGHT_CONTROL W  &hm RIGHT_ALT X  &hm RIGHT_GUI Y  &trans
-                                        &trans              &trans            &trans       &trans  &trans             &trans
-            >;
-        };
-
-        num_sym {
-            bindings = <
-&trans  &kp N1        &kp N2         &kp N3            &kp N4          &kp N5              &kp N6             &kp N7              &kp N8                &kp N9            &kp N0         &trans
-&trans  &kp GRAVE     &kp SEMICOLON  &kp MINUS         &kp EQUAL       &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp N4              &kp N5                &kp N6            &kp PERIOD     &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp EQUAL           &kp SLASH          &hm RIGHT_SHIFT N1  &hm RIGHT_CONTROL N2  &hm RIGHT_ALT N3  &kp RIGHT_GUI  &trans
-                                     &trans            &trans          &trans              &trans             &trans              &trans
-            >;
-        };
-
-        nav_layer {
-            bindings = <
-&trans  &trans        &kp HOME      &kp UP            &kp END         &kp PG_UP    &kp HOME         &kp PG_DN        &kp PG_UP          &kp END        &kp ESC        &trans
-&trans  &trans        &kp LEFT      &kp DOWN          &kp RIGHT       &kp PG_DN    &kp LEFT         &kp DOWN         &kp UP             &kp RIGHT      &kp BSPC       &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans       &kp PRINTSCREEN  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
-                                    &trans            &trans          &trans       &trans           &trans           &trans
-            >;
-        };
-
-        media_layer {
-            bindings = <
-&trans  &trans            &trans        &kp C_VOLUME_UP    &trans          &trans    &trans      &kp C_BRI_DN       &kp C_BRI_UP       &trans         &trans            &trans
-&trans  &kp C_PLAY_PAUSE  &kp C_PREV    &kp C_VOLUME_DOWN  &kp C_NEXT      &trans    &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp C_NEXT     &kp C_PLAY_PAUSE  &trans
-&trans  &kp LEFT_GUI      &kp LEFT_ALT  &kp LEFT_CONTROL   &kp LEFT_SHIFT  &trans    &trans      &kp RIGHT_SHIFT    &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI     &trans
-                                        &trans             &trans          &trans    &trans      &trans             &trans
-            >;
-        };
-
-        fn_layer {
-            bindings = <
-&trans  &bt BT_CLR    &trans        &trans            &out OUT_TOG    &trans          &trans      &kp F7  &kp F8  &kp F9  &kp F10  &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4    &caps_word  &kp F4  &kp F5  &kp F6  &kp F11  &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans          &trans      &kp F1  &kp F2  &kp F3  &kp F12  &trans
-                                    &trans            &trans          &trans          &trans      &trans  &trans
+&trans  &kp K           &kp M           &kp L               &kp U             &kp FSLH     &kp V      &kp D              &kp R                &kp SQT          &kp Q            &trans
+&trans  &kp A           &kp T           &kp H               &kp E             &kp DOT      &kp C      &kp S              &kp N                &kp O            &kp I            &trans
+&trans  &hm LEFT_GUI Z  &hm LEFT_ALT P  &hm LEFT_CONTROL F  &hm LEFT_SHIFT J  &kp COMMA    &kp B      &hm RIGHT_SHIFT G  &hm RIGHT_CONTROL W  &hm RIGHT_ALT X  &hm RIGHT_GUI Y  &trans
+                                        &lt 5 DEL           &lt 6 SPACE       &lt 5 TAB    &lt 5 RET  &lt 6 LC(BSPC)     &lt 5 ESC
             >;
         };
 
@@ -161,7 +104,61 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &lt 5 LA(BACKSPACE)  &trans
+                        &trans  &trans  &trans    &trans  &lt 6 LA(BACKSPACE)  &trans
+            >;
+        };
+
+        num_sym {
+            bindings = <
+&trans  &kp N1        &kp N2         &kp N3            &kp N4          &kp N5              &kp N6             &kp N7              &kp N8                &kp N9            &kp N0            &trans
+&trans  &kp GRAVE     &kp SEMICOLON  &kp MINUS         &kp EQUAL       &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp N4              &kp N5                &kp N6            &kp PERIOD        &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp EQUAL           &kp SLASH          &hm RIGHT_SHIFT N1  &hm RIGHT_CONTROL N2  &hm RIGHT_ALT N3  &hm RIGHT_GUI N0  &trans
+                                     &trans            &trans          &trans              &trans             &trans              &trans
+            >;
+        };
+
+        nav {
+            bindings = <
+&trans  &trans        &kp HOME      &kp UP            &kp END         &kp PG_UP    &kp HOME         &kp PG_DN        &kp PG_UP          &kp END        &kp ESC        &trans
+&trans  &trans        &kp LEFT      &kp DOWN          &kp RIGHT       &kp PG_DN    &kp LEFT         &kp DOWN         &kp UP             &kp RIGHT      &kp BSPC       &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans       &kp PRINTSCREEN  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
+                                    &trans            &trans          &trans       &trans           &trans           &trans
+            >;
+        };
+
+        media {
+            bindings = <
+&trans  &trans            &trans      &kp C_VOLUME_UP    &trans      &trans    &trans      &kp C_BRI_DN       &kp C_BRI_UP     &trans      &trans            &trans
+&trans  &kp C_PLAY_PAUSE  &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_NEXT  &trans    &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &kp C_PLAY_PAUSE  &trans
+&trans  &trans            &trans      &trans             &trans      &trans    &trans      &trans             &trans           &trans      &trans            &trans
+                                      &trans             &trans      &trans    &trans      &trans             &trans
+            >;
+        };
+
+        function {
+            bindings = <
+&trans  &trans        &trans        &trans            &trans          &trans    &trans      &kp F7  &kp F8  &kp F9  &kp F10  &trans
+&trans  &trans        &trans        &trans            &trans          &trans    &caps_word  &kp F4  &kp F5  &kp F6  &kp F11  &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans    &trans      &kp F1  &kp F2  &kp F3  &kp F12  &trans
+                                    &trans            &trans          &trans    &trans      &trans  &trans
+            >;
+        };
+
+        button {
+            bindings = <
+&trans  &trans        &trans        &trans            &trans          &trans    &trans  &trans           &trans             &trans         &trans         &trans
+&trans  &kp Z         &kp X         &kp C             &kp V           &kp A     &kp A   &kp V            &kp C              &kp X          &kp Z          &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans    &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
+                                    &trans            &trans          &trans    &trans  &trans           &trans
+            >;
+        };
+
+        settings {
+            bindings = <
+&trans  &bt BT_CLR    &trans        &trans        &out OUT_TOG  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &to 0   &to 1   &to 2   &to 3   &trans
+&trans  &trans        &trans        &trans        &trans        &trans          &trans  &tog 4  &trans  &trans  &trans  &trans
+                                    &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
     };
