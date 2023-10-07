@@ -58,10 +58,10 @@
 
         thumb {
             bindings = <
-&trans  &trans  &trans  &trans     &trans       &trans       &trans     &trans          &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans       &trans       &trans     &trans          &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans       &trans       &trans     &trans          &trans     &trans  &trans  &trans
-                        &lt 8 DEL  &lt 7 SPACE  &lt 6 TAB    &lt 6 RET  &lt 7 LC(BSPC)  &lt 8 ESC
+&trans  &kp X         &kp X         &kp X             &kp X           &trans       &trans     &kp X            &kp X              &kp X          &kp X          &trans
+&trans  &kp X         &kp X         &kp X             &kp X           &trans       &trans     &kp X            &kp X              &kp X          &kp X          &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans       &trans     &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
+                                    &lt 8 DEL         &lt 7 SPACE     &lt 6 TAB    &lt 6 RET  &lt 7 LC(BSPC)   &lt 8 ESC
             >;
         };
 
