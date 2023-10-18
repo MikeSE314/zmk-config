@@ -135,7 +135,7 @@
             bindings = <
 &trans  &trans        &trans        &trans            &trans          &trans    &trans  &trans           &trans             &trans         &trans         &trans
 &trans  &kp Z         &kp X         &kp C             &kp V           &kp A     &kp A   &kp V            &kp C              &kp X          &kp Z          &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans    &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
+&trans  &sk LEFT_GUI  &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &trans    &trans  &sk RIGHT_SHIFT  &sk RIGHT_CONTROL  &sk RIGHT_ALT  &sk RIGHT_GUI  &trans
                                     &trans            &trans          &trans    &trans  &trans           &trans
             >;
         };
