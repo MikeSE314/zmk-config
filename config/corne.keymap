@@ -45,22 +45,22 @@
         compatible = "zmk,combos";
 
         combo_function {
-            bindings = <&mo 11>;
+            bindings = <&mo 9>;
             key-positions = <36 41>;
         };
 
         combo_settings {
-            bindings = <&mo 9>;
+            bindings = <&mo 7>;
             key-positions = <38 39>;
         };
 
         combo_media {
-            bindings = <&mo 10>;
+            bindings = <&mo 8>;
             key-positions = <37 40>;
         };
 
         combo_settings_2 {
-            bindings = <&mo 9>;
+            bindings = <&mo 7>;
             key-positions = <36 37>;
         };
     };
@@ -73,16 +73,7 @@
 &trans  &kp X         &kp X         &kp X             &kp X           &trans       &trans     &kp X            &kp X              &kp X          &kp X          &trans
 &trans  &kp X         &kp X         &kp X             &kp X           &trans       &trans     &kp X            &kp X              &kp X          &kp X          &trans
 &trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans       &trans     &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
-                                    &lt 8 DEL         &lt 7 SPACE     &lt 6 TAB    &lt 6 RET  &lt 7 LC(BSPC)   &lt 8 ESC
-            >;
-        };
-
-        mac_thumb {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans               &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &lt 7 LA(BACKSPACE)  &trans
+                                    &lt 6 DEL         &lt 5 SPACE     &lt 4 TAB    &lt 4 RET  &lt 5 BSPC       &lt 6 ESC
             >;
         };
 
@@ -91,6 +82,15 @@
 &trans  &kp Q           &kp W           &kp F               &kp P             &kp G     &kp J   &kp L              &kp U                    &kp Y              &kp SINGLE_QUOTE    &trans
 &trans  &kp A           &kp R           &kp S               &kp T             &kp D     &kp H   &kp N              &kp E                    &kp I              &kp O               &trans
 &trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT V  &kp B     &kp K   &hm RIGHT_SHIFT M  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH  &trans
+                                        &trans              &trans            &trans    &trans  &trans             &trans
+            >;
+        };
+
+        colemakdh {
+            bindings = <
+&trans  &kp Q           &kp W           &kp F               &kp P             &kp B     &kp J   &kp L              &kp U                    &kp Y              &kp SINGLE_QUOTE    &trans
+&trans  &kp A           &kp R           &kp S               &kp T             &kp G     &kp M   &kp N t            &kp E                    &kp I              &kp O               &trans
+&trans  &hm LEFT_GUI Z  &hm LEFT_ALT X  &hm LEFT_CONTROL C  &hm LEFT_SHIFT D  &kp V     &kp K   &hm RIGHT_SHIFT H  &hm RIGHT_CONTROL COMMA  &hm RIGHT_ALT DOT  &hm RIGHT_GUI FSLH  &trans
                                         &trans              &trans            &trans    &trans  &trans             &trans
             >;
         };
@@ -104,29 +104,11 @@
             >;
         };
 
-        engrammer {
-            bindings = <
-&trans  &kp B           &kp Y           &kp O               &kp U             &kp SQT      &kp SEMICOLON  &kp L              &kp D                &kp W            &kp V            &kp Z
-&trans  &kp C           &kp I           &kp E               &kp A             &kp COMMA    &kp PERIOD     &kp H              &kp T                &kp S            &kp N            &kp Q
-&trans  &hm LEFT_GUI G  &hm LEFT_ALT X  &hm LEFT_CONTROL J  &hm LEFT_SHIFT K  &kp MINUS    &kp SLASH      &hm RIGHT_SHIFT R  &hm RIGHT_CONTROL M  &hm RIGHT_ALT F  &hm RIGHT_GUI P  &trans
-                                        &trans              &trans            &trans       &trans         &trans             &trans
-            >;
-        };
-
-        the_1 {
-            bindings = <
-&trans  &kp K           &kp M           &kp L               &kp U             &kp FSLH     &kp V   &kp D              &kp R                &kp SQT          &kp Q            &trans
-&trans  &kp A           &kp T           &kp H               &kp E             &kp DOT      &kp C   &kp S              &kp N                &kp O            &kp I            &trans
-&trans  &hm LEFT_GUI Z  &hm LEFT_ALT P  &hm LEFT_CONTROL F  &hm LEFT_SHIFT J  &kp COMMA    &kp B   &hm RIGHT_SHIFT G  &hm RIGHT_CONTROL W  &hm RIGHT_ALT X  &hm RIGHT_GUI Y  &trans
-                                        &trans              &trans            &trans       &trans  &trans             &trans
-            >;
-        };
-
         num_sym {
             bindings = <
 &trans  &kp N1        &kp N2         &kp N3            &kp N4          &kp N5              &kp N6             &kp N7              &kp N8                &kp N9            &kp N0            &trans
 &trans  &kp GRAVE     &kp SEMICOLON  &kp MINUS         &kp EQUAL       &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp N4              &kp N5                &kp N6            &kp PERIOD        &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp EQUAL           &kp SLASH          &hm RIGHT_SHIFT N1  &hm RIGHT_CONTROL N2  &hm RIGHT_ALT N3  &hm RIGHT_GUI N0  &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp BACKSLASH       &kp SLASH          &hm RIGHT_SHIFT N1  &hm RIGHT_CONTROL N2  &hm RIGHT_ALT N3  &hm RIGHT_GUI N0  &trans
                                      &trans            &trans          &trans              &trans             &trans              &trans
             >;
         };
@@ -144,7 +126,7 @@
             bindings = <
 &trans  &trans        &trans        &trans            &trans          &trans    &trans  &trans           &trans             &trans         &trans         &trans
 &trans  &kp Z         &kp X         &kp C             &kp V           &kp A     &kp A   &kp V            &kp C              &kp X          &kp Z          &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans    &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
+&trans  &sk LEFT_GUI  &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &trans    &trans  &sk RIGHT_SHIFT  &sk RIGHT_CONTROL  &sk RIGHT_ALT  &sk RIGHT_GUI  &trans
                                     &trans            &trans          &trans    &trans  &trans           &trans
             >;
         };
@@ -152,8 +134,8 @@
         settings {
             bindings = <
 &trans  &bt BT_CLR    &trans        &trans        &out OUT_TOG  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &to 2   &to 3   &to 4   &to 5   &trans
-&trans  &trans        &trans        &trans        &trans        &trans          &trans  &tog 1  &trans  &trans  &trans  &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &to 1   &to 2   &to 3   &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
                                     &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
