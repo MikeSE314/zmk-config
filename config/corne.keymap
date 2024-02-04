@@ -60,13 +60,31 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LAYERS_1";
             #binding-cells = <0>;
-            bindings = <&mo 4>, <&mo 8>;
+            bindings = <&mo 4>, <&mo 3>, <&mo 8>;
         };
 
         lt_1: lt_1 {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_1";
             bindings = <&mo>, <&callum_mod>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        special_q: special_q {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPECIAL_Q";
+            bindings = <&kp>, <&qu>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        linger: linger {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LINGER";
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -99,7 +117,7 @@
         };
 
         combo_hd_q {
-            bindings = <&kp Q>;
+            bindings = <&special_q Q Q>;
             key-positions = <31 33>;
             layers = <0>;
         };
@@ -133,6 +151,13 @@
             bindings = <&kp BACKSPACE &kp L &kp V>;
             label = "ADAPT_P_V";
         };
+
+        qu: qu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Q &kp U>;
+            label = "QU";
+        };
     };
 
     keymap {
@@ -140,9 +165,9 @@
 
         hd_gold {
             bindings = <
-&kp ESCAPE  &kp J  &adaptive_key G 10  &adaptive_key M 12  &adaptive_key P 9  &kp V            &kp SEMI      &kp DOT             &kp FSLH       &kp LS(DQT)  &kp SQT  &trans
-&kp TAB     &kp R  &kp S               &kp N               &kp D              &kp W            &kp COMMA     &adaptive_key A 11  &kp E          &kp I        &kp H    &kp RETURN
-&kp DELETE  &kp X  &kp F               &kp L               &kp C              &kp B            &kp MINUS     &kp U               &kp O          &kp Y        &kp K    &trans
+&kp ESCAPE  &kp J  &adaptive_key G 10  &adaptive_key M 12  &adaptive_key P 9  &kp V            &kp SEMI      &kp DOT             &kp FSLH       &kp BACKSLASH  &kp SQT  &kp GRAVE
+&kp TAB     &kp R  &kp S               &kp N               &kp D              &kp W            &kp COMMA     &adaptive_key A 11  &kp E          &kp I          &kp H    &kp RETURN
+&kp DELETE  &kp X  &kp F               &kp L               &lhm LEFT_SHIFT C  &kp B            &kp MINUS     &rhm RIGHT_SHIFT U  &kp O          &kp Y          &kp K    &trans
                                        &mo 5               &kp SPACE          &lt_1 3 LSHFT    &td_layers_1  &kp T               &kp BACKSPACE
             >;
         };
@@ -167,10 +192,10 @@
 
         num_sym {
             bindings = <
-&trans  &kp N1        &kp N2         &kp N3            &kp N4          &kp N5              &kp N6             &kp N7               &kp N8                 &kp N9             &kp N0             &trans
-&trans  &kp GRAVE     &kp SEMICOLON  &kp MINUS         &kp EQUAL       &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp N4               &kp N5                 &kp N6             &kp PERIOD         &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp BACKSLASH       &kp SLASH          &rhm RIGHT_SHIFT N1  &rhm RIGHT_CONTROL N2  &rhm RIGHT_ALT N3  &rhm RIGHT_GUI N0  &trans
-                                     &trans            &trans          &trans              &trans             &trans               &trans
+&trans  &kp N1        &kp N2         &kp N3            &kp N4          &kp N5                                &kp N6                                      &kp N7        &kp N8        &kp N9        &kp N0      &trans
+&trans  &kp GRAVE     &kp SEMICOLON  &kp MINUS         &kp EQUAL       &linger RIGHT_BRACKET LEFT_BRACKET    &linger RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp N4        &kp N5        &kp N6        &kp PERIOD  &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp BACKSLASH                         &kp SLASH                                   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0      &trans
+                                     &trans            &trans          &trans                                &trans                                      &trans        &trans
             >;
         };
 
