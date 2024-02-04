@@ -45,6 +45,32 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
             hold-trigger-on-release;
         };
+
+        callum_mod: callum_mod {
+            compatible = "zmk,behavior-sticky-key";
+            label = "CALLUM_MOD";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <20000>;
+            quick-release;
+            ignore-modifiers;
+        };
+
+        td_layers_1: td_layers_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LAYERS_1";
+            #binding-cells = <0>;
+            bindings = <&mo 4>, <&mo 8>;
+        };
+
+        lt_1: lt_1 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_1";
+            bindings = <&mo>, <&callum_mod>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
@@ -71,6 +97,18 @@
             bindings = <&mo 6>;
             key-positions = <36 37>;
         };
+
+        combo_hd_q {
+            bindings = <&kp Q>;
+            key-positions = <31 33>;
+            layers = <0>;
+        };
+
+        combo_hd_z {
+            bindings = <&kp Z>;
+            key-positions = <1 2>;
+            layers = <0>;
+        };
     };
 
     macros {
@@ -93,12 +131,12 @@
     keymap {
         compatible = "zmk,keymap";
 
-        thumb {
+        hd_gold {
             bindings = <
-&trans  &kp X         &kp X         &kp X             &kp X           &trans       &trans     &kp X            &kp X              &kp X          &kp X          &trans
-&trans  &kp X         &kp X         &kp X             &kp X           &trans       &trans     &kp X            &kp X              &kp X          &kp X          &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans       &trans     &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &trans
-                                    &lt 5 DEL         &lt 4 SPACE     &lt 3 TAB    &lt 3 RET  &lt 4 BSPC       &lt 5 ESC
+&kp ESCAPE  &kp J  &kp G  &kp M  &kp P      &kp V            &kp SEMI      &kp DOT  &kp FSLH       &kp LS(DQT)  &kp SQT  &trans
+&kp TAB     &kp R  &kp S  &kp N  &kp D      &kp W            &kp COMMA     &kp A    &kp E          &kp I        &kp H    &kp RETURN
+&kp DELETE  &kp X  &kp F  &kp L  &kp C      &kp B            &kp MINUS     &kp U    &kp O          &kp Y        &kp K    &trans
+                          &mo 5  &kp SPACE  &lt_1 3 LSHFT    &td_layers_1  &kp T    &kp BACKSPACE
             >;
         };
 
@@ -140,17 +178,17 @@
 
         button {
             bindings = <
-&trans  &trans        &trans        &trans            &trans          &trans    &trans  &trans           &trans             &trans         &trans         &trans
-&trans  &kp Z         &kp X         &kp C             &kp V           &kp A     &kp A   &kp V            &kp C              &kp X          &kp Z          &trans
-&trans  &sk LEFT_GUI  &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &trans    &trans  &sk RIGHT_SHIFT  &sk RIGHT_CONTROL  &sk RIGHT_ALT  &sk RIGHT_GUI  &trans
-                                    &trans            &trans          &trans    &trans  &trans           &trans
+&trans  &trans                &trans                &trans                    &trans                  &trans    &trans  &trans                   &trans                     &trans                 &trans                 &trans
+&trans  &kp Z                 &kp X                 &kp C                     &kp V                   &kp A     &kp A   &kp V                    &kp C                      &kp X                  &kp Z                  &trans
+&trans  &callum_mod LEFT_GUI  &callum_mod LEFT_ALT  &callum_mod LEFT_CONTROL  &callum_mod LEFT_SHIFT  &trans    &trans  &callum_mod RIGHT_SHIFT  &callum_mod RIGHT_CONTROL  &callum_mod RIGHT_ALT  &callum_mod RIGHT_GUI  &trans
+                                                    &trans                    &trans                  &trans    &trans  &trans                   &trans
             >;
         };
 
         settings {
             bindings = <
 &trans  &bt BT_CLR    &trans        &trans        &out OUT_TOG  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &to 1   &to 2   &trans  &trans  &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &to 1   &to 2   &to 0   &trans  &trans
 &trans  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
                                     &trans        &trans        &trans          &trans  &trans  &trans
             >;
@@ -171,6 +209,15 @@
 &trans  &trans        &trans        &trans            &trans          &trans    &caps_word  &kp F4  &kp F5  &kp F6  &kp F11  &trans
 &trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans    &trans      &kp F1  &kp F2  &kp F3  &kp F12  &trans
                                     &trans            &trans          &trans    &trans      &trans  &trans
+            >;
+        };
+
+        layer_10 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
