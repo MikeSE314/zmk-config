@@ -61,15 +61,17 @@
             label = "TD_LAYERS_1";
             #binding-cells = <0>;
             bindings = <&mo 4>, <&mo 3>, <&mo 8>;
+
+            tapping-term-ms = <500>;
         };
 
-        lt_1: lt_1 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_1";
-            bindings = <&mo>, <&callum_mod>;
+        td_layers_2: td_layers_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LAYERS_2";
+            #binding-cells = <0>;
+            bindings = <&mo 3>, <&mo 4>, <&mo 7>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <500>;
         };
 
         special_q: special_q {
@@ -165,10 +167,10 @@
 
         hd_gold {
             bindings = <
-&kp ESCAPE  &kp J  &adaptive_key G 10  &adaptive_key M 12  &adaptive_key P 9  &kp V            &kp SEMI      &kp DOT             &kp FSLH       &kp BACKSLASH  &kp SQT  &kp GRAVE
-&kp TAB     &kp R  &kp S               &kp N               &kp D              &kp W            &kp COMMA     &adaptive_key A 11  &kp E          &kp I          &kp H    &kp RETURN
-&kp DELETE  &kp X  &kp F               &kp L               &lhm LEFT_SHIFT C  &kp B            &kp MINUS     &rhm RIGHT_SHIFT U  &kp O          &kp Y          &kp K    &trans
-                                       &mo 5               &kp SPACE          &lt_1 3 LSHFT    &td_layers_1  &kp T               &kp BACKSPACE
+&kp ESCAPE  &kp J  &adaptive_key G 10  &adaptive_key M 12  &adaptive_key P 9  &kp V           &kp SEMI      &kp DOT             &kp FSLH       &kp BACKSLASH  &kp SQT  &kp GRAVE
+&kp TAB     &kp R  &kp S               &kp N               &kp D              &kp W           &kp COMMA     &adaptive_key A 11  &kp E          &kp I          &kp H    &kp RETURN
+&kp DELETE  &kp X  &kp F               &kp L               &lhm LEFT_SHIFT C  &kp B           &kp MINUS     &rhm RIGHT_SHIFT U  &kp O          &kp Y          &kp K    &trans
+                                       &mo 5               &kp SPACE          &td_layers_2    &td_layers_1  &kp T               &kp BACKSPACE
             >;
         };
 
