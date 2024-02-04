@@ -126,6 +126,13 @@
 
             label = "ADAPTIVE_KEY";
         };
+
+        adapt_p_v: adapt_p_v {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE &kp L &kp V>;
+            label = "ADAPT_P_V";
+        };
     };
 
     keymap {
@@ -133,10 +140,10 @@
 
         hd_gold {
             bindings = <
-&kp ESCAPE  &kp J  &kp G  &kp M  &kp P      &kp V            &kp SEMI      &kp DOT  &kp FSLH       &kp LS(DQT)  &kp SQT  &trans
-&kp TAB     &kp R  &kp S  &kp N  &kp D      &kp W            &kp COMMA     &kp A    &kp E          &kp I        &kp H    &kp RETURN
-&kp DELETE  &kp X  &kp F  &kp L  &kp C      &kp B            &kp MINUS     &kp U    &kp O          &kp Y        &kp K    &trans
-                          &mo 5  &kp SPACE  &lt_1 3 LSHFT    &td_layers_1  &kp T    &kp BACKSPACE
+&kp ESCAPE  &kp J  &adaptive_key G 10  &adaptive_key M 12  &adaptive_key P 9  &kp V            &kp SEMI      &kp DOT             &kp FSLH       &kp LS(DQT)  &kp SQT  &trans
+&kp TAB     &kp R  &kp S               &kp N               &kp D              &kp W            &kp COMMA     &adaptive_key A 11  &kp E          &kp I        &kp H    &kp RETURN
+&kp DELETE  &kp X  &kp F               &kp L               &kp C              &kp B            &kp MINUS     &kp U               &kp O          &kp Y        &kp K    &trans
+                                       &mo 5               &kp SPACE          &lt_1 3 LSHFT    &td_layers_1  &kp T               &kp BACKSPACE
             >;
         };
 
@@ -212,9 +219,36 @@
             >;
         };
 
-        layer_10 {
+        hd_g_adapt_p {
+            bindings = <
+&trans  &trans  &trans  &kp L   &trans  &adapt_p_v    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans        &trans  &trans  &trans
+            >;
+        };
+
+        hd_g_adapt_g {
+            bindings = <
+&trans  &trans  &trans  &kp L   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        hd_g_adapt_a {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp U   &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        hd_g_adapt_m {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &kp B     &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
