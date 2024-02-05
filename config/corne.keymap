@@ -62,7 +62,7 @@
             #binding-cells = <0>;
             bindings = <&mo 4>, <&mo 3>, <&mo 8>;
 
-            tapping-term-ms = <500>;
+            tapping-term-ms = <1000>;
         };
 
         td_layers_2: td_layers_2 {
@@ -71,7 +71,7 @@
             #binding-cells = <0>;
             bindings = <&mo 3>, <&mo 4>, <&mo 7>;
 
-            tapping-term-ms = <500>;
+            tapping-term-ms = <1000>;
         };
 
         special_q: special_q {
@@ -160,6 +160,13 @@
             bindings = <&kp Q &kp U>;
             label = "QU";
         };
+
+        com: com {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp O &kp M>;
+            label = "COM";
+        };
     };
 
     keymap {
@@ -167,10 +174,10 @@
 
         hd_gold {
             bindings = <
-&kp ESCAPE  &kp J  &adaptive_key G 10  &adaptive_key M 12  &adaptive_key P 9  &kp V           &kp SEMI      &kp DOT             &kp FSLH       &kp BACKSLASH  &kp SQT  &kp GRAVE
-&kp TAB     &kp R  &kp S               &kp N               &kp D              &kp W           &kp COMMA     &adaptive_key A 11  &kp E          &kp I          &kp H    &kp RETURN
-&kp DELETE  &kp X  &kp F               &kp L               &lhm LEFT_SHIFT C  &kp B           &kp MINUS     &rhm RIGHT_SHIFT U  &kp O          &kp Y          &kp K    &trans
-                                       &mo 5               &kp SPACE          &td_layers_2    &td_layers_1  &kp T               &kp BACKSPACE
+&kp ESCAPE  &kp J            &adaptive_key G 10  &adaptive_key M 12   &adaptive_key P 9  &kp V           &kp SEMI      &adaptive_key PERIOD 13  &kp FSLH              &kp BACKSLASH     &kp SQT           &kp GRAVE
+&kp TAB     &kp R            &kp S               &kp N                &kp D              &kp W           &kp COMMA     &adaptive_key A 11       &kp E                 &kp I             &kp H             &kp RETURN
+&kp DELETE  &lhm LEFT_GUI X  &lhm LEFT_ALT F     &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT C  &kp B           &kp MINUS     &rhm RIGHT_SHIFT U       &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI K  &trans
+                                                 &mo 5                &kp SPACE          &td_layers_2    &td_layers_1  &kp T                    &kp BACKSPACE
             >;
         };
 
@@ -276,6 +283,15 @@
         hd_g_adapt_m {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &kp B     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        hd_g_adapt_period {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &com    &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
