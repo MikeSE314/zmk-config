@@ -60,7 +60,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LAYERS_1";
             #binding-cells = <0>;
-            bindings = <&mo 4>, <&mo 3>, <&mo 8>;
+            bindings = <&mo 3>, <&mo 4>, <&mo 7>, <&mo 6>;
 
             tapping-term-ms = <1000>;
         };
@@ -69,7 +69,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LAYERS_2";
             #binding-cells = <0>;
-            bindings = <&mo 3>, <&mo 4>, <&mo 7>;
+            bindings = <&mo 4>, <&mo 3>, <&mo 8>, <&mo 6>;
 
             tapping-term-ms = <1000>;
         };
@@ -174,10 +174,10 @@
 
         hd_gold {
             bindings = <
-&kp ESCAPE  &kp J            &adaptive_key G 10  &adaptive_key M 12   &adaptive_key P 9  &kp V           &kp SEMI      &adaptive_key PERIOD 13  &kp FSLH              &kp BACKSLASH     &kp SQT           &kp GRAVE
-&kp TAB     &kp R            &kp S               &kp N                &kp D              &kp W           &kp COMMA     &adaptive_key A 11       &kp E                 &kp I             &kp H             &kp RETURN
-&kp DELETE  &lhm LEFT_GUI X  &lhm LEFT_ALT F     &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT C  &kp B           &kp MINUS     &rhm RIGHT_SHIFT U       &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI K  &trans
-                                                 &mo 5                &kp SPACE          &td_layers_2    &td_layers_1  &kp T                    &kp BACKSPACE
+&kp ESCAPE  &kp J            &adaptive_key G 10  &adaptive_key M 12   &adaptive_key P 9  &kp V                 &kp SEMI      &adaptive_key PERIOD 13  &kp FSLH              &kp BACKSLASH     &kp SQT           &kp GRAVE
+&kp TAB     &kp R            &kp S               &kp N                &kp D              &kp W                 &kp COMMA     &adaptive_key A 11       &kp E                 &kp I             &kp H             &kp RETURN
+&kp DELETE  &lhm LEFT_GUI X  &lhm LEFT_ALT F     &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT C  &adaptive_key B 14    &kp MINUS     &rhm RIGHT_SHIFT U       &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI K  &trans
+                                                 &mo 5                &kp SPACE          &td_layers_2          &td_layers_1  &kp T                    &kp BACKSPACE
             >;
         };
 
@@ -201,10 +201,10 @@
 
         num_sym {
             bindings = <
-&trans  &kp N1        &kp N2         &kp N3            &kp N4          &kp N5                                &kp N6                                      &kp N7        &kp N8        &kp N9        &kp N0      &trans
-&trans  &kp GRAVE     &kp SEMICOLON  &kp MINUS         &kp EQUAL       &linger RIGHT_BRACKET LEFT_BRACKET    &linger RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp N4        &kp N5        &kp N6        &kp PERIOD  &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp BACKSLASH                         &kp SLASH                                   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0      &trans
-                                     &trans            &trans          &trans                                &trans                                      &trans        &trans
+&trans  &kp N1        &kp N2         &kp N3            &kp N4          &kp N5                                &kp N6                                      &kp N7                     &kp N8                       &kp N9                   &kp N0                   &trans
+&trans  &kp GRAVE     &kp SEMICOLON  &kp MINUS         &kp EQUAL       &linger RIGHT_BRACKET LEFT_BRACKET    &linger RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp N4                     &kp N5                       &kp N6                   &kp PERIOD               &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp BACKSLASH                         &kp SLASH                                   &rhm RIGHT_SHIFT NUMBER_1  &rhm RIGHT_CONTROL NUMBER_2  &rhm RIGHT_ALT NUMBER_3  &rhm RIGHT_GUI NUMBER_0  &trans
+                                     &trans            &trans          &trans                                &trans                                      &trans                     &trans
             >;
         };
 
@@ -294,6 +294,15 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &com    &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        hd_g_adapt_b {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &kp L   &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
