@@ -228,10 +228,10 @@
 
         settings {
             bindings = <
-&trans  &bt BT_CLR    &trans        &trans        &out OUT_TOG  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &to 1   &to 2   &to 0   &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                    &trans        &trans        &trans          &trans  &trans  &trans
+&trans  &bt BT_CLR    &trans        &trans        &out OUT_TOG  &bootloader     &bootloader  &trans  &trans  &trans  &trans  &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans       &to 1   &to 2   &to 0   &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans          &trans       &trans  &trans  &trans  &trans  &trans
+                                    &trans        &trans        &trans          &trans       &trans  &trans
             >;
         };
 
