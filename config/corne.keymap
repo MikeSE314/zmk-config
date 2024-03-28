@@ -86,14 +86,14 @@
         combo_hd_q {
             bindings = <&special_q Q Q>;
             key-positions = <2 3>;
-            layers = <0>;
+            layers = <0 7 8 9 10 11>;
             timeout-ms = <100>;
         };
 
         combo_hd_z {
             bindings = <&kp Z>;
             key-positions = <1 2>;
-            layers = <0>;
+            layers = <0 7 8 9 10 11>;
             timeout-ms = <100>;
         };
 
@@ -101,21 +101,23 @@
             bindings = <&kp ESC>;
             key-positions = <1 13>;
             timeout-ms = <100>;
-            layers = <0>;
         };
 
-        combo_enter {
-            bindings = <&kp ENTER>;
+        combo_return {
+            bindings = <&kp RETURN>;
             key-positions = <16 3>;
             timeout-ms = <100>;
-            layers = <0>;
         };
 
         combo_delete {
             bindings = <&kp DELETE>;
             key-positions = <17 4>;
             timeout-ms = <150>;
-            layers = <0>;
+        };
+
+        combo_return_right {
+            bindings = <&kp RETURN>;
+            key-positions = <19 8>;
         };
     };
 
@@ -162,10 +164,10 @@
 
         hd_gold {
             bindings = <
-&none       &kp J            &adaptive_key G 8  &adaptive_key M 10   &adaptive_key P 8  &kp V           &kp SEMI      &adaptive_key PERIOD 11  &kp FSLH              &kp BACKSLASH     &linger GRAVE SQT  &none
-&none       &kp R            &kp S              &kp N                &kp D              &kp W           &kp COMMA     &adaptive_key A 9        &kp E                 &kp I             &kp H              &kp RETURN
-&kp DELETE  &lhm LEFT_GUI X  &lhm LEFT_ALT F    &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT C  &kp B           &kp MINUS     &rhm RIGHT_SHIFT U       &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI K   &none
-                                                &lt 1 TAB            &lt 2 SPACE        &td_layers_2    &td_layers_1  &lt 2 T                  &kp BACKSPACE
+&none  &kp J            &adaptive_key G 8  &adaptive_key M 10   &adaptive_key P 8  &kp V           &kp SEMI      &adaptive_key PERIOD 11  &kp FSLH              &kp BACKSLASH     &linger GRAVE SQT  &none
+&none  &kp R            &kp S              &kp N                &kp D              &kp W           &kp COMMA     &adaptive_key A 9        &kp E                 &kp I             &kp H              &none
+&none  &lhm LEFT_GUI X  &lhm LEFT_ALT F    &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT C  &kp B           &kp MINUS     &rhm RIGHT_SHIFT U       &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI K   &none
+                                           &lt 1 TAB            &lt 2 SPACE        &td_layers_2    &td_layers_1  &lt 2 T                  &kp BACKSPACE
             >;
         };
 
@@ -173,7 +175,7 @@
             bindings = <
 &none  &none                 &none                 &none                     &none                   &none     &none   &none                    &none                      &none                  &none                  &none
 &none  &kp Z                 &kp X                 &kp C                     &kp V                   &kp A     &kp A   &kp V                    &kp C                      &kp X                  &kp Z                  &none
-&none  &callum_mod LEFT_GUI  &callum_mod LEFT_ALT  &callum_mod LEFT_CONTROL  &callum_mod LEFT_SHIFT  &tog 1    &none   &callum_mod RIGHT_SHIFT  &callum_mod RIGHT_CONTROL  &callum_mod RIGHT_ALT  &callum_mod RIGHT_GUI  &none
+&none  &callum_mod LEFT_GUI  &callum_mod LEFT_ALT  &callum_mod LEFT_CONTROL  &callum_mod LEFT_SHIFT  &none     &none   &callum_mod RIGHT_SHIFT  &callum_mod RIGHT_CONTROL  &callum_mod RIGHT_ALT  &callum_mod RIGHT_GUI  &none
                                                    &trans                    &trans                  &trans    &trans  &trans                   &trans
             >;
         };
@@ -182,7 +184,7 @@
             bindings = <
 &none  &kp N1        &kp N2         &kp N3            &kp N4          &kp N5                                &kp N6                                      &kp N7                     &kp N8                       &kp N9                   &kp N0                   &none
 &none  &kp GRAVE     &kp SEMICOLON  &kp MINUS         &kp EQUAL       &linger RIGHT_BRACKET LEFT_BRACKET    &linger RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp N4                     &kp N5                       &kp N6                   &kp PERIOD               &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &tog 2                                &kp SLASH                                   &rhm RIGHT_SHIFT NUMBER_1  &rhm RIGHT_CONTROL NUMBER_2  &rhm RIGHT_ALT NUMBER_3  &rhm RIGHT_GUI NUMBER_0  &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none                                 &kp SLASH                                   &rhm RIGHT_SHIFT NUMBER_1  &rhm RIGHT_CONTROL NUMBER_2  &rhm RIGHT_ALT NUMBER_3  &rhm RIGHT_GUI NUMBER_0  &none
                                     &trans            &trans          &trans                                &trans                                      &trans                     &trans
             >;
         };
@@ -191,7 +193,7 @@
             bindings = <
 &none  &none         &kp HOME      &kp UP            &kp END         &kp PG_UP    &kp HOME  &kp PG_DN        &kp PG_UP          &kp END        &kp ESC        &none
 &none  &none         &kp LEFT      &kp DOWN          &kp RIGHT       &kp PG_DN    &kp LEFT  &kp DOWN         &kp UP             &kp RIGHT      &kp BSPC       &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &tog 3       &none     &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none        &none     &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &none
                                    &trans            &trans          &trans       &trans    &trans           &trans
             >;
         };
@@ -200,7 +202,7 @@
             bindings = <
 &none  &none             &none       &kp C_VOLUME_UP    &none       &none     &none       &kp C_BRI_DN       &kp C_BRI_UP     &none       &none             &none
 &none  &kp C_PLAY_PAUSE  &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_NEXT  &none     &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &kp C_PLAY_PAUSE  &none
-&none  &none             &none       &none              &none       &tog 4    &none       &none              &none            &none       &none             &none
+&none  &none             &none       &none              &none       &none     &none       &none              &none            &none       &none             &none
                                      &trans             &trans      &trans    &trans      &trans             &trans
             >;
         };
@@ -209,7 +211,7 @@
             bindings = <
 &none  &none         &none         &none             &none           &none     &none            &kp F7  &kp F8  &kp F9  &kp F10  &none
 &none  &none         &none         &none             &none           &none     &caps_word       &kp F4  &kp F5  &kp F6  &kp F11  &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &tog 5    &kp PRINTSCREEN  &kp F1  &kp F2  &kp F3  &kp F12  &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none     &kp PRINTSCREEN  &kp F1  &kp F2  &kp F3  &kp F12  &none
                                    &trans            &trans          &trans    &trans           &trans  &trans
             >;
         };
@@ -218,7 +220,7 @@
             bindings = <
 &none  &bt BT_CLR    &none         &none         &out OUT_TOG  &bootloader     &bootloader  &none   &none   &none  &none  &none
 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none        &none   &none   &none  &none  &none
-&none  &kp X         &kp X         &kp X         &kp X         &tog 6          &none        &none   &none   &none  &none  &none
+&none  &kp X         &kp X         &kp X         &kp X         &none           &none        &none   &none   &none  &none  &none
                                    &trans        &trans        &trans          &trans       &trans  &trans
             >;
         };
