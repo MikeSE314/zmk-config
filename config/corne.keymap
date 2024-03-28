@@ -76,6 +76,19 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        rhm_adapt: rhm_adapt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RHM_ADAPT";
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&adaptive_key>;
+
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 11 23 35>;
+            hold-trigger-on-release;
+        };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
@@ -118,6 +131,7 @@
         combo_return_right {
             bindings = <&kp RETURN>;
             key-positions = <19 8>;
+            timeout-ms = <100>;
         };
     };
 
@@ -164,37 +178,37 @@
 
         hd_gold {
             bindings = <
-&none  &kp J            &adaptive_key G 8  &adaptive_key M 10   &adaptive_key P 8  &kp V           &kp SEMI      &adaptive_key PERIOD 11  &kp FSLH              &kp BACKSLASH     &linger GRAVE SQT  &none
-&none  &kp R            &kp S              &kp N                &kp D              &kp W           &kp COMMA     &adaptive_key A 9        &kp E                 &kp I             &kp H              &none
-&none  &lhm LEFT_GUI X  &lhm LEFT_ALT F    &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT C  &kp B           &kp MINUS     &rhm RIGHT_SHIFT U       &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI K   &none
-                                           &lt 1 TAB            &lt 2 SPACE        &td_layers_2    &td_layers_1  &lt 2 T                  &kp BACKSPACE
+&none  &kp J            &adaptive_key G 8  &adaptive_key M 10   &adaptive_key P 8  &kp V           &kp SEMI      &adaptive_key PERIOD 11   &kp FSLH              &kp BACKSLASH     &linger GRAVE SQT  &none
+&none  &lhm LEFT_GUI R  &lhm LEFT_ALT S    &lhm LEFT_CONTROL N  &lhm LEFT_SHIFT D  &kp W           &kp COMMA     &rhm_adapt RIGHT_SHIFT A  &rhm RIGHT_CONTROL E  &rhm RIGHT_ALT I  &rhm RIGHT_GUI H   &none
+&none  &kp X            &kp F              &kp L                &kp C              &kp B           &kp MINUS     &kp U                     &kp O                 &kp Y             &kp K              &none
+                                           &lt 1 TAB            &lt 2 SPACE        &td_layers_2    &td_layers_1  &lt 2 T                   &kp BACKSPACE
             >;
         };
 
         button {
             bindings = <
-&none  &none                 &none                 &none                     &none                   &none     &none   &none                    &none                      &none                  &none                  &none
 &none  &kp Z                 &kp X                 &kp C                     &kp V                   &kp A     &kp A   &kp V                    &kp C                      &kp X                  &kp Z                  &none
 &none  &callum_mod LEFT_GUI  &callum_mod LEFT_ALT  &callum_mod LEFT_CONTROL  &callum_mod LEFT_SHIFT  &none     &none   &callum_mod RIGHT_SHIFT  &callum_mod RIGHT_CONTROL  &callum_mod RIGHT_ALT  &callum_mod RIGHT_GUI  &none
+&none  &kp Z                 &kp X                 &kp C                     &kp V                   &kp A     &kp A   &kp V                    &kp C                      &kp X                  &kp Z                  &none
                                                    &trans                    &trans                  &trans    &trans  &trans                   &trans
             >;
         };
 
         num_sym {
             bindings = <
-&none  &kp N1        &kp N2         &kp N3            &kp N4          &kp N5                                &kp N6                                      &kp N7                     &kp N8                       &kp N9                   &kp N0                   &none
-&none  &kp GRAVE     &kp SEMICOLON  &kp MINUS         &kp EQUAL       &linger RIGHT_BRACKET LEFT_BRACKET    &linger RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp N4                     &kp N5                       &kp N6                   &kp PERIOD               &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none                                 &kp SLASH                                   &rhm RIGHT_SHIFT NUMBER_1  &rhm RIGHT_CONTROL NUMBER_2  &rhm RIGHT_ALT NUMBER_3  &rhm RIGHT_GUI NUMBER_0  &none
-                                    &trans            &trans          &trans                                &trans                                      &trans                     &trans
+&none  &kp N1        &kp N2         &kp N3            &kp N4          &kp N5                                &kp N6                                      &kp N7               &kp N8                 &kp N9             &kp N0                 &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &linger RIGHT_BRACKET LEFT_BRACKET    &linger RIGHT_PARENTHESIS LEFT_PARENTHESIS  &rhm RIGHT_SHIFT N4  &rhm RIGHT_CONTROL N5  &rhm RIGHT_ALT N6  &rhm RIGHT_GUI PERIOD  &none
+&none  &kp GRAVE     &kp SEMICOLON  &kp MINUS         &kp EQUAL       &none                                 &kp SLASH                                   &kp N1               &kp N2                 &kp N3             &kp N0                 &none
+                                    &trans            &trans          &trans                                &trans                                      &trans               &trans
             >;
         };
 
         nav {
             bindings = <
-&none  &none         &kp HOME      &kp UP            &kp END         &kp PG_UP    &kp HOME  &kp PG_DN        &kp PG_UP          &kp END        &kp ESC        &none
-&none  &none         &kp LEFT      &kp DOWN          &kp RIGHT       &kp PG_DN    &kp LEFT  &kp DOWN         &kp UP             &kp RIGHT      &kp BSPC       &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none        &none     &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &none
-                                   &trans            &trans          &trans       &trans    &trans           &trans
+&none  &none         &kp HOME            &kp UP                  &kp END                &kp PG_UP    &kp HOME  &kp PG_DN              &kp PG_UP              &kp END               &kp ESC        &none
+&none  &kp LEFT_GUI  &lhm LEFT_ALT LEFT  &lhm LEFT_CONTROL DOWN  &lhm LEFT_SHIFT RIGHT  &kp PG_DN    &kp LEFT  &rhm RIGHT_SHIFT DOWN  &rhm RIGHT_CONTROL UP  &rhm RIGHT_ALT RIGHT  &kp RIGHT_GUI  &none
+&none  &none         &none               &none                   &none                  &none        &none     &none                  &none                  &none                 &none          &none
+                                         &trans                  &trans                 &trans       &trans    &trans                 &trans
             >;
         };
 
@@ -210,8 +224,8 @@
         function {
             bindings = <
 &none  &none         &none         &none             &none           &none     &none            &kp F7  &kp F8  &kp F9  &kp F10  &none
-&none  &none         &none         &none             &none           &none     &caps_word       &kp F4  &kp F5  &kp F6  &kp F11  &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none     &kp PRINTSCREEN  &kp F1  &kp F2  &kp F3  &kp F12  &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none     &caps_word       &kp F4  &kp F5  &kp F6  &kp F11  &none
+&none  &none         &none         &none             &none           &none     &kp PRINTSCREEN  &kp F1  &kp F2  &kp F3  &kp F12  &none
                                    &trans            &trans          &trans    &trans           &trans  &trans
             >;
         };
