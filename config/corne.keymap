@@ -75,6 +75,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -103,16 +104,16 @@
             timeout-ms = <100>;
         };
 
-        combo_esc_right {
-            bindings = <&kp ESC>;
-            key-positions = <10 22>;
-            timeout-ms = <100>;
-        };
-
         combo_return {
             bindings = <&kp RETURN>;
             key-positions = <16 3>;
             timeout-ms = <100>;
+        };
+
+        combo_delete {
+            bindings = <&kp DELETE>;
+            key-positions = <17 4>;
+            timeout-ms = <150>;
         };
 
         combo_return_right {
@@ -121,10 +122,10 @@
             timeout-ms = <100>;
         };
 
-        combo_delete {
-            bindings = <&kp DELETE>;
-            key-positions = <17 4>;
-            timeout-ms = <150>;
+        combo_esc_right {
+            bindings = <&kp ESC>;
+            key-positions = <10 22>;
+            timeout-ms = <100>;
         };
     };
 
