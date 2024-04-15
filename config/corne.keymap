@@ -86,27 +86,27 @@
 
         combo_hd_q {
             bindings = <&special_q Q Q>;
-            key-positions = <2 3>;
-            layers = <0 7 8 9 10 11>;
+            key-positions = <2 14>;
+            layers = <0 8 7 9>;
             timeout-ms = <100>;
         };
 
         combo_hd_z {
             bindings = <&kp Z>;
-            key-positions = <1 2>;
-            layers = <0 7 8 9 10 11>;
+            key-positions = <1 13>;
+            layers = <0 8 7 9>;
             timeout-ms = <100>;
         };
 
         combo_esc {
             bindings = <&kp ESC>;
-            key-positions = <1 13>;
+            key-positions = <4 16>;
             timeout-ms = <100>;
         };
 
         combo_return {
             bindings = <&kp RETURN>;
-            key-positions = <16 3>;
+            key-positions = <3 15>;
             timeout-ms = <100>;
         };
 
@@ -118,13 +118,14 @@
 
         combo_return_right {
             bindings = <&kp RETURN>;
-            key-positions = <19 8>;
-            timeout-ms = <100>;
+            key-positions = <8 20>;
+            timeout-ms = <80>;
+            require-prior-idle-ms = <150>;
         };
 
         combo_esc_right {
             bindings = <&kp ESC>;
-            key-positions = <10 22>;
+            key-positions = <7 19>;
             timeout-ms = <100>;
         };
     };
@@ -170,21 +171,21 @@
     keymap {
         compatible = "zmk,keymap";
 
-        hd_gold {
+        hd_vb {
             bindings = <
-&none  &kp J            &adaptive_key G 8  &adaptive_key M 10   &adaptive_key P 8  &kp V           &kp SEMI      &adaptive_key PERIOD 11  &kp FSLH              &kp BACKSLASH     &linger GRAVE SQT  &none
-&none  &kp R            &kp S              &kp N                &kp D              &kp W           &kp COMMA     &adaptive_key A 9        &kp E                 &kp I             &kp H              &none
-&none  &lhm LEFT_GUI X  &lhm LEFT_ALT F    &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT C  &kp B           &kp MINUS     &rhm RIGHT_SHIFT U       &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI K   &none
-                                           &lt 1 TAB            &lt 2 SPACE        &td_layers_2    &td_layers_1  &lt 2 T                  &kp BACKSPACE
+&none  &kp X            &kp W            &adaptive_key M 7    &kp G              &kp J           &kp SEMI      &adaptive_key PERIOD 9  &kp FSLH              &kp BACKSLASH     &linger GRAVE SQT  &none
+&none  &kp S            &kp C            &kp N                &kp T              &kp K           &kp COMMA     &adaptive_key A 8       &kp E                 &kp I             &kp H              &none
+&none  &lhm LEFT_GUI B  &lhm LEFT_ALT P  &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT D  &kp V           &kp MINUS     &rhm RIGHT_SHIFT U      &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI F   &none
+                                         &lt 2 TAB            &lt 2 SPACE        &td_layers_2    &td_layers_1  &lt 2 R                 &kp BACKSPACE
             >;
         };
 
         button {
             bindings = <
-&none  &none                 &none                 &none                     &none                   &none     &none   &none                    &none                      &none                  &none                  &none
-&none  &kp Z                 &kp X                 &kp C                     &kp V                   &kp A     &kp A   &kp V                    &kp C                      &kp X                  &kp Z                  &none
-&none  &callum_mod LEFT_GUI  &callum_mod LEFT_ALT  &callum_mod LEFT_CONTROL  &callum_mod LEFT_SHIFT  &none     &none   &callum_mod RIGHT_SHIFT  &callum_mod RIGHT_CONTROL  &callum_mod RIGHT_ALT  &callum_mod RIGHT_GUI  &none
-                                                   &trans                    &trans                  &trans    &trans  &trans                   &trans
+&none  &none                 &none                 &none                     &none                   &none        &none      &none                    &none                      &none                  &none                  &none
+&none  &kp LC(Z)             &kp LC(X)             &kp LC(C)                 &kp LC(V)               &kp LC(A)    &kp LC(A)  &kp LC(V)                &kp LC(C)                  &kp LC(X)              &kp LC(Z)              &none
+&none  &callum_mod LEFT_GUI  &callum_mod LEFT_ALT  &callum_mod LEFT_CONTROL  &callum_mod LEFT_SHIFT  &none        &none      &callum_mod RIGHT_SHIFT  &callum_mod RIGHT_CONTROL  &callum_mod RIGHT_ALT  &callum_mod RIGHT_GUI  &none
+                                                   &trans                    &trans                  &trans       &trans     &trans                   &trans
             >;
         };
 
@@ -233,25 +234,16 @@
             >;
         };
 
-        hd_g_adapt_p {
+        hd_vb_adapt_m {
             bindings = <
-&trans  &trans  &trans  &kp L   &trans  &adapt_p_v    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans        &trans  &trans  &trans
-            >;
-        };
-
-        hd_g_adapt_g {
-            bindings = <
-&trans  &trans  &trans  &kp L   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp B   &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
-        hd_g_adapt_a {
+        hd_vb_adapt_a {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp U   &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
@@ -260,16 +252,7 @@
             >;
         };
 
-        hd_g_adapt_m {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &kp B     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        hd_g_adapt_period {
+        hd_vb_adapt_period {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &com    &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
