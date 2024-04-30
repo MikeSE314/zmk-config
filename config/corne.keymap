@@ -5,6 +5,7 @@
 
 / {
     behaviors {
+
         ad_fslh: adaptive_fslash {
             compatible = "zmk,behavior-antecedent-morph";
             label = "ADAPTIVE_FSLASH";
@@ -14,6 +15,7 @@
             antecedents = <A U>;
             max-delay-ms = <250>;
         };
+
         ad_backslash: adaptive_backslash {
             compatible = "zmk,behavior-antecedent-morph";
             label = "ADAPTIVE_BACKSLASH";
@@ -23,6 +25,37 @@
             antecedents = <O E>;
             max-delay-ms = <250>;
         };
+
+        ad_m: adaptive_m {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_M";
+            #binding-cells = <0>;
+            defaults = <&kp M>;
+            bindings = <&kp L>, <&kp L>;
+            antecedents = <G P>;
+            max-delay-ms = <250>;
+        };
+
+        ad_x: adaptive_x {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_X";
+            #binding-cells = <0>;
+            defaults = <&kp X>;
+            bindings = <&kp B>;
+            antecedents = <M>;
+            max-delay-ms = <250>;
+        };
+
+        ad_w: adaptive_w {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_W";
+            #binding-cells = <0>;
+            defaults = <&kp W>;
+            bindings = <&kp P>;
+            antecedents = <M>;
+            max-delay-ms = <250>;
+        };
+
         lhm: left_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_HOMEROW_MODS";
@@ -149,28 +182,6 @@
     };
 
     macros {
-        adaptive_key: adaptive_key {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
-            bindings =
-                <&macro_param_1to1>,
-                <&macro_press &kp MACRO_PLACEHOLDER>,
-                <&macro_param_2to1>,
-                <&macro_tap &sl MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_param_1to1>,
-                <&macro_release &kp MACRO_PLACEHOLDER>;
-
-            label = "ADAPTIVE_KEY";
-        };
-
-        adapt_p_v: adapt_p_v {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE &kp L &kp V>;
-            label = "ADAPT_P_V";
-        };
-
         qu: qu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -191,7 +202,7 @@
 
         hd_vb {
             bindings = <
-&none  &kp X            &kp W            &adaptive_key M 7    &kp G              &kp J           &kp SEMI      &kp PERIOD              &ad_fslh              &ad_backslash     &linger GRAVE SQT  &none
+&none  &ad_x            &ad_w            &ad_m                &kp G              &kp J           &kp SEMI      &kp PERIOD              &ad_fslh              &ad_backslash     &linger GRAVE SQT  &none
 &none  &kp S            &kp C            &kp N                &kp T              &kp K           &kp COMMA     &kp A                   &kp E                 &kp I             &kp H              &none
 &none  &lhm LEFT_GUI B  &lhm LEFT_ALT P  &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT D  &kp V           &kp MINUS     &rhm RIGHT_SHIFT U      &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI F   &none
                                          &lt 1 TAB            &lt 2 SPACE        &td_layers_2    &td_layers_1  &lt 2 R                 &kp BACKSPACE
@@ -249,33 +260,6 @@
 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none        &none   &none   &none  &none  &none
 &none  &kp A         &kp W         &kp M         &kp X         &kp X           &none        &none   &none   &none  &none  &none
                                    &trans        &trans        &trans          &trans       &trans  &trans
-            >;
-        };
-
-        hd_vb_adapt_m {
-            bindings = <
-&trans  &kp B   &kp P   &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        hd_vb_adapt_a {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp U   &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        hd_vb_adapt_period {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &com    &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
