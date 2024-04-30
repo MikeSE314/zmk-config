@@ -56,6 +56,16 @@
             max-delay-ms = <250>;
         };
 
+        ad_semi: adaptive_semi {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_SEMI";
+            #binding-cells = <0>;
+            defaults = <&kp SEMI>;
+            bindings = <&com>;
+            antecedents = <PERIOD>;
+            max-delay-ms = <250>;
+        };
+
         lhm: left_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_HOMEROW_MODS";
@@ -202,7 +212,7 @@
 
         hd_vb {
             bindings = <
-&none  &ad_x            &ad_w            &ad_m                &kp G              &kp J           &kp SEMI      &kp PERIOD              &ad_fslh              &ad_backslash     &linger GRAVE SQT  &none
+&none  &ad_x            &ad_w            &ad_m                &kp G              &kp J           &ad_semi      &kp PERIOD              &ad_fslh              &ad_backslash     &linger GRAVE SQT  &none
 &none  &kp S            &kp C            &kp N                &kp T              &kp K           &kp COMMA     &kp A                   &kp E                 &kp I             &kp H              &none
 &none  &lhm LEFT_GUI B  &lhm LEFT_ALT P  &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT D  &kp V           &kp MINUS     &rhm RIGHT_SHIFT U      &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI F   &none
                                          &lt 1 TAB            &lt 2 SPACE        &td_layers_2    &td_layers_1  &lt 2 R                 &kp BACKSPACE
