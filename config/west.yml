@@ -2,10 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: klausweiss
+      url-base: https://github.com/klausweiss
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: klausweiss
+      revision: fix/adaptive-keys
       import: app/west.yml
   self:
     path: config
