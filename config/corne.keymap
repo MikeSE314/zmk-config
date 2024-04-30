@@ -5,6 +5,24 @@
 
 / {
     behaviors {
+        ad_fslh: adaptive_fslash {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_FSLASH";
+            #binding-cells = <0>;
+            defaults = <&kp FSLH>;
+            bindings = <&kp U>, <&kp A>;
+            antecedents = <A U>;
+            max-delay-ms = <250>;
+        };
+        ad_backslash: adaptive_backslash {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_BACKSLASH";
+            #binding-cells = <0>;
+            defaults = <&kp BACKSLASH>;
+            bindings = <&kp E>, <&kp O>;
+            antecedents = <O E>;
+            max-delay-ms = <250>;
+        };
         lhm: left_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_HOMEROW_MODS";
@@ -173,8 +191,8 @@
 
         hd_vb {
             bindings = <
-&none  &kp X            &kp W            &adaptive_key M 7    &kp G              &kp J           &kp SEMI      &adaptive_key PERIOD 9  &kp FSLH              &kp BACKSLASH     &linger GRAVE SQT  &none
-&none  &kp S            &kp C            &kp N                &kp T              &kp K           &kp COMMA     &adaptive_key A 8       &kp E                 &kp I             &kp H              &none
+&none  &kp X            &kp W            &adaptive_key M 7    &kp G              &kp J           &kp SEMI      &kp PERIOD              &ad_fslh              &ad_backslash     &linger GRAVE SQT  &none
+&none  &kp S            &kp C            &kp N                &kp T              &kp K           &kp COMMA     &kp A                   &kp E                 &kp I             &kp H              &none
 &none  &lhm LEFT_GUI B  &lhm LEFT_ALT P  &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT D  &kp V           &kp MINUS     &rhm RIGHT_SHIFT U      &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI F   &none
                                          &lt 1 TAB            &lt 2 SPACE        &td_layers_2    &td_layers_1  &lt 2 R                 &kp BACKSPACE
             >;
