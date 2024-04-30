@@ -13,7 +13,7 @@
             defaults = <&kp FSLH>;
             bindings = <&kp U>, <&kp A>;
             antecedents = <A U>;
-            max-delay-ms = <250>;
+            max-delay-ms = <1000>;
         };
 
         ad_backslash: adaptive_backslash {
@@ -23,7 +23,7 @@
             defaults = <&kp BACKSLASH>;
             bindings = <&kp E>, <&kp O>;
             antecedents = <O E>;
-            max-delay-ms = <250>;
+            max-delay-ms = <1000>;
         };
 
         ad_m: adaptive_m {
@@ -33,7 +33,7 @@
             defaults = <&kp M>;
             bindings = <&kp L>, <&kp L>;
             antecedents = <G P>;
-            max-delay-ms = <250>;
+            max-delay-ms = <1000>;
         };
 
         ad_x: adaptive_x {
@@ -43,7 +43,7 @@
             defaults = <&kp X>;
             bindings = <&kp B>;
             antecedents = <M>;
-            max-delay-ms = <250>;
+            max-delay-ms = <1000>;
         };
 
         ad_w: adaptive_w {
@@ -53,7 +53,7 @@
             defaults = <&kp W>;
             bindings = <&kp P>;
             antecedents = <M>;
-            max-delay-ms = <250>;
+            max-delay-ms = <1000>;
         };
 
         ad_semi: adaptive_semi {
@@ -63,7 +63,7 @@
             defaults = <&kp SEMI>;
             bindings = <&com>;
             antecedents = <PERIOD>;
-            max-delay-ms = <250>;
+            max-delay-ms = <1000>;
         };
 
         lhm: left_homerow_mods {
