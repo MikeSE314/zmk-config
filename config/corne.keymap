@@ -5,6 +5,67 @@
 
 / {
     behaviors {
+
+        ad_fslh: adaptive_fslash {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_FSLASH";
+            #binding-cells = <0>;
+            defaults = <&kp FSLH>;
+            bindings = <&kp U>, <&kp A>;
+            antecedents = <A U>;
+            max-delay-ms = <1000>;
+        };
+
+        ad_backslash: adaptive_backslash {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_BACKSLASH";
+            #binding-cells = <0>;
+            defaults = <&kp BACKSLASH>;
+            bindings = <&kp E>, <&kp O>;
+            antecedents = <O E>;
+            max-delay-ms = <1000>;
+        };
+
+        ad_m: adaptive_m {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_M";
+            #binding-cells = <0>;
+            defaults = <&kp M>;
+            bindings = <&kp L>, <&kp L>;
+            antecedents = <G P>;
+            max-delay-ms = <1000>;
+        };
+
+        ad_x: adaptive_x {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_X";
+            #binding-cells = <0>;
+            defaults = <&kp X>;
+            bindings = <&kp B>;
+            antecedents = <M>;
+            max-delay-ms = <1000>;
+        };
+
+        ad_w: adaptive_w {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_W";
+            #binding-cells = <0>;
+            defaults = <&kp W>;
+            bindings = <&kp P>;
+            antecedents = <M>;
+            max-delay-ms = <1000>;
+        };
+
+        ad_semi: adaptive_semi {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_SEMI";
+            #binding-cells = <0>;
+            defaults = <&kp SEMI>;
+            bindings = <&com>;
+            antecedents = <PERIOD>;
+            max-delay-ms = <1000>;
+        };
+
         lhm: left_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_HOMEROW_MODS";
@@ -86,27 +147,27 @@
 
         combo_hd_q {
             bindings = <&special_q Q Q>;
-            key-positions = <2 3>;
-            layers = <0 7 8 9 10 11>;
+            key-positions = <2 14>;
+            layers = <0 8 7 9>;
             timeout-ms = <100>;
         };
 
         combo_hd_z {
             bindings = <&kp Z>;
-            key-positions = <1 2>;
-            layers = <0 7 8 9 10 11>;
+            key-positions = <1 13>;
+            layers = <0 8 7 9>;
             timeout-ms = <100>;
         };
 
         combo_esc {
             bindings = <&kp ESC>;
-            key-positions = <1 13>;
+            key-positions = <4 16>;
             timeout-ms = <100>;
         };
 
         combo_return {
             bindings = <&kp RETURN>;
-            key-positions = <16 3>;
+            key-positions = <3 15>;
             timeout-ms = <100>;
         };
 
@@ -118,40 +179,19 @@
 
         combo_return_right {
             bindings = <&kp RETURN>;
-            key-positions = <19 8>;
-            timeout-ms = <100>;
+            key-positions = <8 20>;
+            timeout-ms = <80>;
+            require-prior-idle-ms = <150>;
         };
 
         combo_esc_right {
             bindings = <&kp ESC>;
-            key-positions = <10 22>;
+            key-positions = <7 19>;
             timeout-ms = <100>;
         };
     };
 
     macros {
-        adaptive_key: adaptive_key {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
-            bindings =
-                <&macro_press>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&macro_param_2to1 &sl MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-
-            label = "ADAPTIVE_KEY";
-        };
-
-        adapt_p_v: adapt_p_v {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE &kp L &kp V>;
-            label = "ADAPT_P_V";
-        };
-
         qu: qu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -170,21 +210,21 @@
     keymap {
         compatible = "zmk,keymap";
 
-        hd_gold {
+        hd_vb {
             bindings = <
-&none  &kp J            &adaptive_key G 8  &adaptive_key M 10   &adaptive_key P 8  &kp V           &kp SEMI      &adaptive_key PERIOD 11  &kp FSLH              &kp BACKSLASH     &linger GRAVE SQT  &none
-&none  &kp R            &kp S              &kp N                &kp D              &kp W           &kp COMMA     &adaptive_key A 9        &kp E                 &kp I             &kp H              &none
-&none  &lhm LEFT_GUI X  &lhm LEFT_ALT F    &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT C  &kp B           &kp MINUS     &rhm RIGHT_SHIFT U       &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI K   &none
-                                           &lt 1 TAB            &lt 2 SPACE        &td_layers_2    &td_layers_1  &lt 2 T                  &kp BACKSPACE
+&none  &ad_x            &ad_w            &ad_m                &kp G              &kp J           &ad_semi      &kp PERIOD              &ad_fslh              &ad_backslash     &linger GRAVE SQT  &none
+&none  &kp S            &kp C            &kp N                &kp T              &kp K           &kp COMMA     &kp A                   &kp E                 &kp I             &kp H              &none
+&none  &lhm LEFT_GUI B  &lhm LEFT_ALT P  &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT D  &kp V           &kp MINUS     &rhm RIGHT_SHIFT U      &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI F   &none
+                                         &lt 1 TAB            &lt 2 SPACE        &td_layers_2    &td_layers_1  &lt 2 R                 &kp BACKSPACE
             >;
         };
 
         button {
             bindings = <
-&none  &none                 &none                 &none                     &none                   &none     &none   &none                    &none                      &none                  &none                  &none
-&none  &kp Z                 &kp X                 &kp C                     &kp V                   &kp A     &kp A   &kp V                    &kp C                      &kp X                  &kp Z                  &none
-&none  &callum_mod LEFT_GUI  &callum_mod LEFT_ALT  &callum_mod LEFT_CONTROL  &callum_mod LEFT_SHIFT  &none     &none   &callum_mod RIGHT_SHIFT  &callum_mod RIGHT_CONTROL  &callum_mod RIGHT_ALT  &callum_mod RIGHT_GUI  &none
-                                                   &trans                    &trans                  &trans    &trans  &trans                   &trans
+&none  &none                 &none                 &none                     &none                   &none        &none      &none                    &none                      &none                  &none                  &none
+&none  &kp LC(Z)             &kp LC(X)             &kp LC(C)                 &kp LC(V)               &kp LC(A)    &kp LC(A)  &kp LC(V)                &kp LC(C)                  &kp LC(X)              &kp LC(Z)              &none
+&none  &callum_mod LEFT_GUI  &callum_mod LEFT_ALT  &callum_mod LEFT_CONTROL  &callum_mod LEFT_SHIFT  &none        &none      &callum_mod RIGHT_SHIFT  &callum_mod RIGHT_CONTROL  &callum_mod RIGHT_ALT  &callum_mod RIGHT_GUI  &none
+                                                   &trans                    &trans                  &trans       &trans     &trans                   &trans
             >;
         };
 
@@ -228,53 +268,8 @@
             bindings = <
 &none  &bt BT_CLR    &none         &none         &out OUT_TOG  &bootloader     &bootloader  &none   &none   &none  &none  &none
 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none        &none   &none   &none  &none  &none
-&none  &kp X         &kp X         &kp X         &kp X         &none           &none        &none   &none   &none  &none  &none
+&none  &kp A         &kp W         &kp M         &kp X         &kp X           &none        &none   &none   &none  &none  &none
                                    &trans        &trans        &trans          &trans       &trans  &trans
-            >;
-        };
-
-        hd_g_adapt_p {
-            bindings = <
-&trans  &trans  &trans  &kp L   &trans  &adapt_p_v    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans        &trans  &trans  &trans
-            >;
-        };
-
-        hd_g_adapt_g {
-            bindings = <
-&trans  &trans  &trans  &kp L   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        hd_g_adapt_a {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp U   &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        hd_g_adapt_m {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &kp B     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        hd_g_adapt_period {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &com    &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
