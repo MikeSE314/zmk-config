@@ -5,13 +5,13 @@
 
 / {
     behaviors {
-
         ad_fslh: adaptive_fslash {
             compatible = "zmk,behavior-antecedent-morph";
             label = "ADAPTIVE_FSLASH";
             #binding-cells = <0>;
             defaults = <&kp FSLH>;
             bindings = <&kp U>, <&kp A>;
+
             antecedents = <A U>;
             max-delay-ms = <1000>;
         };
@@ -22,6 +22,7 @@
             #binding-cells = <0>;
             defaults = <&kp BACKSLASH>;
             bindings = <&kp E>, <&kp O>;
+
             antecedents = <O E>;
             max-delay-ms = <1000>;
         };
@@ -32,6 +33,7 @@
             #binding-cells = <0>;
             defaults = <&kp M>;
             bindings = <&kp L>, <&kp L>;
+
             antecedents = <G P>;
             max-delay-ms = <1000>;
         };
@@ -71,12 +73,12 @@
             label = "LEFT_HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <180>;
-            quick-tap-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
 
             hold-trigger-key-positions = <6 18 30 9 10 20 21 22 32 33 34 6 7 8 9 18 19 20 21 30 31 32 33 36 37 38 39 40 41 35 11 23 35 0 12 24>;
             hold-trigger-on-release;
+            require-prior-idle-ms = <500>;
         };
 
         rhm: right_homerow_mods {
@@ -84,8 +86,34 @@
             label = "RIGHT_HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <180>;
-            quick-tap-ms = <200>;
             flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 11 23 35>;
+            hold-trigger-on-release;
+            require-prior-idle-ms = <500>;
+        };
+
+        lhm_s: lhm_s {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LHM_S";
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <6 18 30 9 10 20 21 22 32 33 34 6 7 8 9 18 19 20 21 30 31 32 33 36 37 38 39 40 41 35 11 23 35 0 12 24>;
+            hold-trigger-on-release;
+        };
+
+        rhm_s: rhm_s {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RHM_S";
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 11 23 35>;
@@ -212,10 +240,10 @@
 
         hd_vb {
             bindings = <
-&none  &ad_x            &ad_w            &ad_m                &kp G              &kp J           &ad_semi      &kp PERIOD              &ad_fslh              &ad_backslash     &linger GRAVE SQT  &none
-&none  &kp S            &kp C            &kp N                &kp T              &kp K           &kp COMMA     &kp A                   &kp E                 &kp I             &kp H              &none
-&none  &lhm LEFT_GUI B  &lhm LEFT_ALT P  &lhm LEFT_CONTROL L  &lhm LEFT_SHIFT D  &kp V           &kp MINUS     &rhm RIGHT_SHIFT U      &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI F   &none
-                                         &lt 1 TAB            &lt 2 SPACE        &td_layers_2    &td_layers_1  &lt 2 R                 &kp BACKSPACE
+&none  &ad_x            &ad_w            &ad_m                &kp G                &kp J           &ad_semi      &kp PERIOD            &ad_fslh              &ad_backslash     &linger GRAVE SQT  &none
+&none  &kp S            &kp C            &kp N                &kp T                &kp K           &kp COMMA     &kp A                 &kp E                 &kp I             &kp H              &none
+&none  &lhm LEFT_GUI B  &lhm LEFT_ALT P  &lhm LEFT_CONTROL L  &lhm_s LEFT_SHIFT D  &kp V           &kp MINUS     &rhm_s RIGHT_SHIFT U  &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI F   &none
+                                         &lt 1 TAB            &lt 2 SPACE          &td_layers_2    &td_layers_1  &lt 2 R               &kp BACKSPACE
             >;
         };
 
