@@ -135,7 +135,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LAYERS_1";
             #binding-cells = <0>;
-            bindings = <&mo 3>, <&mo 4>, <&mo 6>;
+            bindings = <&mo 3>, <&mo 4>, <&mo 7>;
 
             tapping-term-ms = <300>;
         };
@@ -144,7 +144,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LAYERS_2";
             #binding-cells = <0>;
-            bindings = <&mo 3>, <&mo 5>, <&mo 6>;
+            bindings = <&mo 3>, <&mo 5>, <&mo 7>;
 
             tapping-term-ms = <300>;
         };
@@ -311,7 +311,7 @@
 
         aux {
             bindings = <
-&none  &none  &none  &none   &none   &none     &none   &none   &none   &none  &none  &none
+&none  &none  &none  &none   &to 6   &none     &none   &to 6   &none   &none  &none  &none
 &none  &to 5  &to 3  &to 2   &to 0   &to 8     &to 8   &to 0   &to 2   &to 3  &to 5  &none
 &none  &none  &none  &none   &none   &none     &none   &none   &none   &none  &none  &none
                      &trans  &trans  &trans    &trans  &trans  &trans
