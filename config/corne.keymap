@@ -394,7 +394,7 @@
             bindings = <
 &none  &kp X            &kp W            &kp G                &kp M                &kp J           &mm_sym_8     &mm_sym_9             &ad_fslh              &ad_backslash     &linger GRAVE SQT  &none
 &none  &kp S            &kp N            &kp T                &kp H                &kp K           &mm_sym_7     &kp A                 &kp E                 &kp I             &kp C              &none
-&none  &lhm LEFT_GUI F  &lhm LEFT_ALT P  &lhm LEFT_CONTROL D  &lhm_s LEFT_SHIFT L  &kp V           &kp MINUS     &rhm_s RIGHT_SHIFT U  &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI B   &none
+&none  &lhm LEFT_GUI B  &lhm LEFT_ALT P  &lhm LEFT_CONTROL D  &lhm_s LEFT_SHIFT L  &kp V           &kp MINUS     &rhm_s RIGHT_SHIFT U  &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI F   &none
                                          &lt 1 TAB            &lt 2 SPACE          &td_layers_2    &td_layers_1  &lt 2 R               &kp BACKSPACE
             >;
         };
