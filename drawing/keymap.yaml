@@ -1,0 +1,15 @@
+layout:
+  qmk_keyboard: corne_rotated
+  layout_name: LAYOUT_split_3x6_3
+layers:
+  DEF:
+    - [null, x, w, g, m, j, {t: ^, s: "*"}, {t: ., s: ":"}, {t: /, s: "?", h: "@"}, {t: \, s: "|"}, {t: "'", s: '"'}, null]
+    - [ctrl, s, n, t, h, k, {t: ",", s: ;}, a, e, i, c, ctrl]
+    - [shift, b, p, d, l, v, {t: "-", s: _}, u, o, y, f, shift]
+    - {h: Button,   t: Tab}
+    - {h: Num,  t: Space}
+    - {t: Nav}
+    - {t: Nav}
+    - {h: Num, t: r}
+    - {t: Delete}
+ 
