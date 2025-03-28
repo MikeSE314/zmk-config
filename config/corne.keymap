@@ -16,17 +16,6 @@
             max-delay-ms = <1000>;
         };
 
-        ad_backslash: adaptive_backslash {
-            compatible = "zmk,behavior-antecedent-morph";
-            label = "ADAPTIVE_BACKSLASH";
-            #binding-cells = <0>;
-            defaults = <&kp BACKSLASH>;
-            bindings = <&kp E>, <&kp O>;
-
-            antecedents = <O E>;
-            max-delay-ms = <1000>;
-        };
-
         ad_m: adaptive_m {
             compatible = "zmk,behavior-antecedent-morph";
             label = "ADAPTIVE_M";
@@ -198,101 +187,101 @@
             flavor = "tap-preferred";
         };
 
-        mm_sym_1: mm_sym_1 {
+        mm_pound_dollar: mm_pound_dollar {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_SYM_1";
+            label = "MM_POUND_DOLLAR";
             bindings = <&kp HASH>, <&kp DOLLAR>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mm_sym_2: mm_sym_2 {
+        mm_perc_amp: mm_perc_amp {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_SYM_2";
+            label = "MM_PERC_AMP";
             bindings = <&kp PERCENT>, <&kp AMPERSAND>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mm_sym_3: mm_sym_3 {
+        mm_left_pb: mm_left_pb {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_SYM_3";
+            label = "MM_LEFT_PB";
             bindings = <&kp LEFT_PARENTHESIS>, <&kp LEFT_BRACKET>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mm_sym_4: mm_sym_4 {
+        mm_left_a_brc: mm_left_a_brc {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_SYM_4";
+            label = "MM_LEFT_A_BRC";
             bindings = <&kp LESS_THAN>, <&kp LEFT_BRACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mm_sym_5: mm_sym_5 {
+        mm_right_pb: mm_right_pb {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_SYM_5";
+            label = "MM_RIGHT_PB";
             bindings = <&kp RIGHT_PARENTHESIS>, <&kp RIGHT_BRACKET>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mm_sym_6: mm_sym_6 {
+        mm_right_a_brc: mm_right_a_brc {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_SYM_6";
+            label = "MM_RIGHT_A_BRC";
             bindings = <&kp GREATER_THAN>, <&kp RIGHT_BRACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        ht_mm_sym_1: ht_mm_sym_1 {
+        ht_lefts_br: ht_lefts_br {
             compatible = "zmk,behavior-hold-tap";
-            label = "HT_MM_SYM_1";
-            bindings = <&mm_sym_4>, <&mm_sym_3>;
+            label = "HT_LEFTS_BR";
+            bindings = <&mm_left_a_brc>, <&mm_left_pb>;
 
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             flavor = "tap-preferred";
         };
 
-        ht_mm_sym_2: ht_mm_sym_2 {
+        ht_rights_br: ht_rights_br {
             compatible = "zmk,behavior-hold-tap";
-            label = "HT_MM_SYM_2";
-            bindings = <&mm_sym_6>, <&mm_sym_5>;
+            label = "HT_RIGHTS_BR";
+            bindings = <&mm_right_a_brc>, <&mm_right_pb>;
 
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             flavor = "tap-preferred";
         };
 
-        mm_sym_7: mm_sym_7 {
+        mm_comma_semi: mm_comma_semi {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_SYM_7";
+            label = "MM_COMMA_SEMI";
             bindings = <&kp COMMA>, <&kp SEMICOLON>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        m_caret_star: m_caret_star {
+        mm_caret_star: mm_caret_star {
             compatible = "zmk,behavior-mod-morph";
-            label = "M_CARET_STAR";
+            label = "MM_CARET_STAR";
             bindings = <&kp CARET>, <&kp STAR>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mm_sym_9: mm_sym_9 {
+        mm_period_colon: mm_period_colon {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_SYM_9";
+            label = "MM_PERIOD_COLON";
             bindings = <&kp PERIOD>, <&kp COLON>;
 
             #binding-cells = <0>;
@@ -348,14 +337,13 @@
         combo_return_l {
             bindings = <&kp RETURN>;
             key-positions = <15 14 16>;
-            timeout-ms = <100>;
+            timeout-ms = <150>;
         };
 
         combo_return_r {
             bindings = <&kp RETURN>;
             key-positions = <20 19 21>;
-            timeout-ms = <100>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <150>;
         };
 
         combo_delete_l {
@@ -367,6 +355,18 @@
         combo_delete_r {
             bindings = <&kp DELETE>;
             key-positions = <18 7>;
+            timeout-ms = <150>;
+        };
+
+        combo_backspace_l {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <4 5>;
+            timeout-ms = <150>;
+        };
+
+        combo_backspace_r {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <6 7>;
             timeout-ms = <150>;
         };
     };
@@ -392,8 +392,8 @@
 
         hd_vb {
             bindings = <
-&none             &kp X            &kp W            &kp G                &kp M                &kp J           &ad_caret_star  &mm_sym_9             &ad_fslh              &ad_backslash     &linger GRAVE SQT  &none
-&kp LEFT_CONTROL  &kp S            &kp N            &kp T                &kp H                &kp K           &mm_sym_7       &kp A                 &kp E                 &kp I             &kp C              &kp RIGHT_CONTROL
+&none             &kp X            &kp W            &kp G                &kp M                &kp J           &mm_caret_star  &mm_period_colon      &ad_fslh              &kp BACKSLASH     &linger GRAVE SQT  &none
+&kp LEFT_CONTROL  &kp S            &kp N            &kp T                &kp H                &kp K           &mm_comma_semi  &kp A                 &kp E                 &kp I             &kp C              &kp RIGHT_CONTROL
 &kp LEFT_SHIFT    &lhm LEFT_GUI B  &lhm LEFT_ALT P  &lhm LEFT_CONTROL D  &lhm_s LEFT_SHIFT L  &kp V           &kp MINUS       &rhm_s RIGHT_SHIFT U  &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI F   &kp RIGHT_SHIFT
                                                     &lt 1 TAB            &lt 2 SPACE          &td_layers_2    &td_layers_1    &lt 2 R               &kp BACKSPACE
             >;
@@ -410,10 +410,10 @@
 
         num_sym {
             bindings = <
-&none  &kp N1        &kp N2        &kp N3            &kp N4          &kp N5              &kp N6            &kp N7               &kp N8                 &kp N9             &kp N0             &none
-&none  &kp GRAVE     &mm_sym_1     &mm_sym_2         &kp EQUAL       &ht_mm_sym_1 0 0    &ht_mm_sym_2 0 0  &kp N4               &kp N5                 &kp N6             &kp PERIOD         &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none               &kp SLASH         &rhm RIGHT_SHIFT N1  &rhm RIGHT_CONTROL N2  &rhm RIGHT_ALT N3  &rhm RIGHT_GUI N0  &none
-                                   &trans            &trans          &trans              &trans            &trans               &trans
+&none  &kp N1        &kp N2                &kp N3                 &kp N4          &kp N5    &kp N6          &kp N7               &kp N8                 &kp N9             &kp N0             &none
+&none  &kp GRAVE     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &lt 7 EQUAL     &none     &mm_comma_semi  &kp N4               &kp N5                 &kp N6             &kp PERIOD         &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT          &kp LEFT_CONTROL       &kp LEFT_SHIFT  &none     &kp SLASH       &rhm RIGHT_SHIFT N1  &rhm RIGHT_CONTROL N2  &rhm RIGHT_ALT N3  &rhm RIGHT_GUI N0  &none
+                                           &trans                 &trans          &trans    &trans          &trans               &trans
             >;
         };
 
@@ -450,6 +450,15 @@
 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none        &none   &none   &none  &none  &none
 &none  &kp A         &kp W         &kp M         &kp I         &kp X           &none        &none   &none   &none  &none  &none
                                    &trans        &trans        &trans          &trans       &trans  &trans
+            >;
+        };
+
+        extra_symbols {
+            bindings = <
+&trans  &trans  &kp LESS_THAN     &kp GREATER_THAN   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans            &trans             &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans             &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
