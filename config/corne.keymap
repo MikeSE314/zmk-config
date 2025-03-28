@@ -52,7 +52,7 @@
             compatible = "zmk,behavior-antecedent-morph";
             label = "ADAPTIVE_SEMI";
             #binding-cells = <0>;
-            defaults = <&m_caret_star>;
+            defaults = <&mm_caret_star>;
             bindings = <&com>;
             antecedents = <PERIOD>;
             max-delay-ms = <1000>;
