@@ -16,48 +16,6 @@
             max-delay-ms = <1000>;
         };
 
-        ad_m: adaptive_m {
-            compatible = "zmk,behavior-antecedent-morph";
-            label = "ADAPTIVE_M";
-            #binding-cells = <0>;
-            defaults = <&kp M>;
-            bindings = <&kp L>, <&kp L>;
-
-            antecedents = <G P>;
-            max-delay-ms = <1000>;
-        };
-
-        ad_x: adaptive_x {
-            compatible = "zmk,behavior-antecedent-morph";
-            label = "ADAPTIVE_X";
-            #binding-cells = <0>;
-            defaults = <&kp X>;
-            bindings = <&kp B>;
-            antecedents = <M>;
-            max-delay-ms = <1000>;
-        };
-
-        ad_w: adaptive_w {
-            compatible = "zmk,behavior-antecedent-morph";
-            label = "ADAPTIVE_W";
-            #binding-cells = <0>;
-            defaults = <&kp W>;
-            bindings = <&kp P>, <&kp P>;
-
-            antecedents = <M X>;
-            max-delay-ms = <1000>;
-        };
-
-        ad_caret_star: adaptive_semi {
-            compatible = "zmk,behavior-antecedent-morph";
-            label = "ADAPTIVE_SEMI";
-            #binding-cells = <0>;
-            defaults = <&m_caret_star>;
-            bindings = <&com>;
-            antecedents = <PERIOD>;
-            max-delay-ms = <1000>;
-        };
-
         lhm: left_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_HOMEROW_MODS";
@@ -138,15 +96,6 @@
             tapping-term-ms = <300>;
         };
 
-        special_q: special_q {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SPECIAL_Q";
-            bindings = <&qu>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
         linger: linger {
             compatible = "zmk,behavior-hold-tap";
             label = "LINGER";
@@ -154,110 +103,6 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
-
-        ht_at_excl: ht_at_excl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_AT_EXCL";
-            bindings = <&mm_at_excl>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            flavor = "balanced";
-        };
-
-        mm_at_excl: mm_at_excl {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_AT_EXCL";
-            bindings = <&kp AT>, <&kp EXCL>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RALT)>;
-        };
-
-        ht: ht {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            flavor = "tap-preferred";
-        };
-
-        mm_pound_dollar: mm_pound_dollar {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_POUND_DOLLAR";
-            bindings = <&kp HASH>, <&kp DOLLAR>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mm_perc_amp: mm_perc_amp {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_PERC_AMP";
-            bindings = <&kp PERCENT>, <&kp AMPERSAND>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mm_left_pb: mm_left_pb {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_LEFT_PB";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LEFT_BRACKET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mm_left_a_brc: mm_left_a_brc {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_LEFT_A_BRC";
-            bindings = <&kp LESS_THAN>, <&kp LEFT_BRACE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mm_right_pb: mm_right_pb {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_RIGHT_PB";
-            bindings = <&kp RIGHT_PARENTHESIS>, <&kp RIGHT_BRACKET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mm_right_a_brc: mm_right_a_brc {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_RIGHT_A_BRC";
-            bindings = <&kp GREATER_THAN>, <&kp RIGHT_BRACE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ht_lefts_br: ht_lefts_br {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_LEFTS_BR";
-            bindings = <&mm_left_a_brc>, <&mm_left_pb>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            flavor = "tap-preferred";
-        };
-
-        ht_rights_br: ht_rights_br {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_RIGHTS_BR";
-            bindings = <&mm_right_a_brc>, <&mm_right_pb>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
             flavor = "tap-preferred";
         };
 
@@ -297,7 +142,7 @@
         combo_hd_q_l {
             bindings = <&kp Q>;
             key-positions = <2 3>;
-            layers = <0 8 7 9>;
+            layers = <0>;
             timeout-ms = <100>;
         };
 
@@ -305,13 +150,13 @@
             bindings = <&kp Q>;
             key-positions = <9 8>;
             timeout-ms = <100>;
-            layers = <0 8 7 9>;
+            layers = <0>;
         };
 
         combo_z_l {
             bindings = <&kp Z>;
             key-positions = <13 2>;
-            layers = <0 8 7 9>;
+            layers = <0>;
             timeout-ms = <100>;
         };
 
@@ -319,7 +164,7 @@
             bindings = <&kp Z>;
             key-positions = <22 9>;
             timeout-ms = <100>;
-            layers = <0 8 7 9>;
+            layers = <0>;
         };
 
         combo_esc_l {
@@ -372,13 +217,6 @@
     };
 
     macros {
-        qu: qu {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp Q &kp U>;
-            label = "QU";
-        };
-
         com: com {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
