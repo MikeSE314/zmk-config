@@ -150,7 +150,7 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_hd_q_l {
+        combo_q_l {
             bindings = <&kp Q>;
             key-positions = <2 3>;
             layers = <0>;
@@ -247,8 +247,6 @@
             layers = <0>;
             timeout-ms = <150>;
         };
-
-        #include "taipo.dtsi"
     };
 
     macros {
@@ -263,7 +261,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        hd_vb {
+        hd {
             bindings = <
 &kp LC(UP)      &kp X            &kp W            &kp G                &kp M                &kp J           &com            &mm_period_colon      &ad_fslh              &kp BACKSLASH     &linger GRAVE SQT  &kp RC(UP)
 &kp LGUI        &kp S            &kp N            &kp T                &kp H                &kp K           &mm_comma_semi  &kp A                 &kp E                 &kp I             &kp C              &kp RGUI
