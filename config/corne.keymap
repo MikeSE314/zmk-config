@@ -258,11 +258,10 @@
             layers = <2>;
         };
 
-        combo_ampersand_l {
+        combo_amp_l {
             bindings = <&kp AMPERSAND>;
-            key-positions = <13 4>;
+            key-positions = <4 13>;
             layers = <2>;
-            timeout-ms = <200>;
         };
 
         combo_lbrace_l {
