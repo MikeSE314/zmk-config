@@ -82,7 +82,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LAYERS_1";
             #binding-cells = <0>;
-            bindings = <&mo 3>, <&mo 4>, <&mo 6>;
+            bindings = <&mo 4>, <&mo 5>, <&mo 7>;
 
             tapping-term-ms = <300>;
         };
@@ -91,7 +91,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LAYERS_2";
             #binding-cells = <0>;
-            bindings = <&mo 3>, <&mo 5>, <&mo 6>;
+            bindings = <&mo 4>, <&mo 6>, <&mo 7>;
 
             tapping-term-ms = <300>;
         };
@@ -153,7 +153,7 @@
         combo_hd_q_l {
             bindings = <&kp Q>;
             key-positions = <2 3>;
-            layers = <0 8 7 9>;
+            layers = <0>;
             timeout-ms = <100>;
         };
 
@@ -161,70 +161,94 @@
             bindings = <&kp Q>;
             key-positions = <9 8>;
             timeout-ms = <100>;
-            layers = <0 8 7 9>;
+            layers = <0>;
         };
 
         combo_z_l {
             bindings = <&kp Z>;
             key-positions = <13 2>;
-            layers = <0 8 7 9>;
+            layers = <0>;
             timeout-ms = <100>;
         };
 
         combo_z_r {
             bindings = <&kp Z>;
             key-positions = <22 9>;
+            layers = <0>;
             timeout-ms = <100>;
-            layers = <0 8 7 9>;
         };
 
         combo_esc_l {
             bindings = <&kp ESC>;
             key-positions = <4 16>;
+            layers = <0>;
             timeout-ms = <100>;
         };
 
         combo_esc_r {
             bindings = <&kp ESC>;
             key-positions = <19 7>;
+            layers = <0>;
             timeout-ms = <100>;
         };
 
         combo_return_l {
             bindings = <&kp RETURN>;
             key-positions = <15 14 16>;
+            layers = <0>;
             timeout-ms = <150>;
         };
 
         combo_return_r {
             bindings = <&kp RETURN>;
             key-positions = <20 19 21>;
+            layers = <0>;
             timeout-ms = <150>;
         };
 
         combo_delete_l {
             bindings = <&kp DELETE>;
             key-positions = <17 4>;
+            layers = <0>;
             timeout-ms = <150>;
         };
 
         combo_delete_r {
             bindings = <&kp DELETE>;
             key-positions = <18 7>;
+            layers = <0>;
             timeout-ms = <150>;
         };
 
         combo_backspace_l {
             bindings = <&kp BACKSPACE>;
             key-positions = <4 5>;
+            layers = <0>;
             timeout-ms = <150>;
         };
 
         combo_backspace_r {
             bindings = <&kp BACKSPACE>;
             key-positions = <6 7>;
+            layers = <0>;
             timeout-ms = <150>;
         };
+
+        combo_excl_r {
+            bindings = <&kp EXCL>;
+            key-positions = <7 20>;
+            layers = <0>;
+            timeout-ms = <150>;
+        };
+
+        combo_excl_l {
+            bindings = <&kp EXCL>;
+            key-positions = <15 4>;
+            layers = <0>;
+            timeout-ms = <150>;
+        };
+
+        #include "taipo.dtsi"
     };
 
     macros {
@@ -244,7 +268,16 @@
 &kp LC(UP)      &kp X            &kp W            &kp G                &kp M                &kp J           &com            &mm_period_colon      &ad_fslh              &kp BACKSLASH     &linger GRAVE SQT  &kp RC(UP)
 &kp LGUI        &kp S            &kp N            &kp T                &kp H                &kp K           &mm_comma_semi  &kp A                 &kp E                 &kp I             &kp C              &kp RGUI
 &kp LEFT_SHIFT  &lhm LEFT_GUI B  &lhm LEFT_ALT P  &lhm LEFT_CONTROL D  &lhm_s LEFT_SHIFT L  &kp V           &kp MINUS       &rhm_s RIGHT_SHIFT U  &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI F   &kp RIGHT_SHIFT
-                                                  &lt 1 TAB            &lt 2 SPACE          &td_layers_2    &td_layers_1    &lt 2 R               &kp BACKSPACE
+                                                  &lt 2 TAB            &lt 3 SPACE          &td_layers_2    &td_layers_1    &lt 3 R               &kp BACKSPACE
+            >;
+        };
+
+        taipo {
+            bindings = <
+&none  &none  &none  &none  &none  &none     &none   &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none     &none   &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none     &none   &none  &none  &none  &none  &none
+                     &none  &none  &trans    &trans  &none  &none
             >;
         };
 
@@ -259,10 +292,10 @@
 
         num_sym {
             bindings = <
-&none  &kp N1        &kp N2                &kp N3                 &kp N4          &kp N5    &kp N6          &kp N7               &kp N8                 &kp N9             &kp N0             &none
-&none  &kp GRAVE     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &lt 7 EQUAL     &none     &mm_comma_semi  &kp N4               &kp N5                 &kp N6             &kp PERIOD         &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT          &kp LEFT_CONTROL       &kp LEFT_SHIFT  &none     &kp SLASH       &rhm RIGHT_SHIFT N1  &rhm RIGHT_CONTROL N2  &rhm RIGHT_ALT N3  &rhm RIGHT_GUI N0  &none
-                                           &trans                 &trans          &trans    &trans          &trans               &trans
+&none  &kp N1        &kp N2                &kp N3                 &kp N4          &kp N5    &kp N6          &kp N7  &kp N8  &kp N9  &kp N0      &none
+&none  &kp GRAVE     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &lt 8 EQUAL     &none     &mm_comma_semi  &kp N4  &kp N5  &kp N6  &kp PERIOD  &none
+&none  &kp LEFT_GUI  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp LEFT_SHIFT  &none     &kp SLASH       &kp N1  &kp N2  &kp N3  &kp N0      &none
+                                           &trans                 &trans          &trans    &trans          &trans  &trans
             >;
         };
 
@@ -287,7 +320,7 @@
         function {
             bindings = <
 &none  &none         &none         &none             &none           &none     &none            &kp F7  &kp F8  &kp F9  &kp F10  &none
-&none  &none         &none         &none             &none           &none     &caps_word       &kp F4  &kp F5  &kp F6  &kp F11  &none
+&none  &tog 1        &none         &none             &none           &none     &caps_word       &kp F4  &kp F5  &kp F6  &kp F11  &none
 &none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none     &kp PRINTSCREEN  &kp F1  &kp F2  &kp F3  &kp F12  &none
                                    &trans            &trans          &trans    &trans           &trans  &trans
             >;
