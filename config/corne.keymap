@@ -24,7 +24,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
 
-            hold-trigger-key-positions = <6 18 30 9 10 20 21 22 32 33 34 6 7 8 9 18 19 20 21 30 31 32 33 36 37 38 39 40 41 35 11 23 35 0 12 24>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 36 37 38 39 40 41 0 12 24>;
             hold-trigger-on-release;
             require-prior-idle-ms = <100>;
         };
@@ -253,11 +253,14 @@
         combo_dollar_l {
             bindings = <&kp DOLLAR>;
             key-positions = <1 16>;
+            layers = <2 7>;
         };
 
         combo_ampersand_l {
             bindings = <&kp AMPERSAND>;
             key-positions = <13 4>;
+            layers = <2 7>;
+            timeout-ms = <200>;
         };
     };
 
