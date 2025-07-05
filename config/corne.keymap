@@ -153,7 +153,7 @@
         combo_q_l {
             bindings = <&kp Q>;
             key-positions = <2 3>;
-            layers = <0 8 7>;
+            layers = <0 7>;
             timeout-ms = <100>;
         };
 
@@ -161,13 +161,13 @@
             bindings = <&kp Q>;
             key-positions = <9 8>;
             timeout-ms = <100>;
-            layers = <0 8 7>;
+            layers = <0 7>;
         };
 
         combo_z_l {
             bindings = <&kp Z>;
             key-positions = <13 2>;
-            layers = <0 8 7>;
+            layers = <0 7>;
             timeout-ms = <100>;
         };
 
@@ -175,7 +175,7 @@
             bindings = <&kp Z>;
             key-positions = <22 9>;
             timeout-ms = <100>;
-            layers = <0 8 7>;
+            layers = <0 7>;
         };
 
         combo_esc_l {
@@ -229,38 +229,74 @@
         combo_excl_l {
             bindings = <&kp EXCL>;
             key-positions = <4 15>;
-            layers = <0 2 7>;
+            layers = <0 2>;
         };
 
         combo_excl_r {
             bindings = <&kp EXCL>;
             key-positions = <20 7>;
-            layers = <0 2 7>;
+            layers = <0 2>;
         };
 
         combo_percent_l {
             bindings = <&kp PERCENT>;
             key-positions = <14 3>;
-            layers = <2 7>;
+            layers = <2>;
         };
 
         combo_hash_l {
             bindings = <&kp HASH>;
             key-positions = <1 4>;
-            layers = <2 7>;
+            layers = <2>;
         };
 
         combo_dollar_l {
             bindings = <&kp DOLLAR>;
             key-positions = <1 16>;
-            layers = <2 7>;
+            layers = <2>;
         };
 
         combo_ampersand_l {
             bindings = <&kp AMPERSAND>;
             key-positions = <13 4>;
-            layers = <2 7>;
+            layers = <2>;
             timeout-ms = <200>;
+        };
+
+        combo_lbrace_l {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <2 3>;
+            layers = <2>;
+        };
+
+        combo_rbrace_l {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <3 4>;
+            layers = <2>;
+        };
+
+        combo_lt_l {
+            bindings = <&kp LESS_THAN>;
+            key-positions = <14 15>;
+            layers = <2>;
+        };
+
+        combo_gt_l {
+            bindings = <&kp GREATER_THAN>;
+            key-positions = <15 16>;
+            layers = <2>;
+        };
+
+        combo_tilde_l {
+            bindings = <&kp TILDE>;
+            key-positions = <3 16>;
+            layers = <2>;
+        };
+
+        combo_asterisk_l {
+            bindings = <&kp ASTERISK>;
+            key-positions = <2 16>;
+            layers = <2>;
         };
     };
 
@@ -296,8 +332,8 @@
 
         num_sym {
             bindings = <
-&none  &kp CARET     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &lt 7 PLUS      &none     &kp N6          &kp N7               &kp N8                 &kp N9             &kp N0             &none
-&none  &kp GRAVE     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &lt 7 EQUAL     &none     &mm_comma_semi  &kp N4               &kp N5                 &kp N6             &kp PERIOD         &none
+&none  &kp CARET     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PLUS        &none     &kp N6          &kp N7               &kp N8                 &kp N9             &kp N0             &none
+&none  &kp GRAVE     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL       &none     &mm_comma_semi  &kp N4               &kp N5                 &kp N6             &kp PERIOD         &none
 &none  &kp LEFT_GUI  &kp LEFT_ALT          &kp LEFT_CONTROL       &kp LEFT_SHIFT  &none     &kp SLASH       &rhm RIGHT_SHIFT N1  &rhm RIGHT_CONTROL N2  &rhm RIGHT_ALT N3  &rhm RIGHT_GUI N0  &none
                                            &trans                 &trans          &trans    &trans          &trans               &trans
             >;
@@ -336,15 +372,6 @@
 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none        &none   &none   &none  &none  &none
 &none  &kp A         &kp W         &kp M         &kp I         &kp X           &none        &none   &none   &none  &none  &none
                                    &trans        &trans        &trans          &trans       &trans  &trans
-            >;
-        };
-
-        extra_symbols {
-            bindings = <
-&trans  &kp STAR   &kp LEFT_BRACE  &kp RBRC          &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp TILDE  &kp LESS_THAN   &kp GREATER_THAN  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans          &trans            &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                   &trans            &trans  &trans    &trans  &trans  &trans
             >;
         };
 
