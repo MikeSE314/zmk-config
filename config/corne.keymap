@@ -6,14 +6,13 @@
 / {
     behaviors {
         ad_fslh: adaptive_fslash {
-            compatible = "zmk,behavior-antecedent-morph";
-            label = "ADAPTIVE_FSLASH";
+            compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
             defaults = <&ht_at_excl 0 SLASH>;
             bindings = <&kp U>, <&kp A>;
 
-            antecedents = <A U>;
-            max-delay-ms = <1000>;
+            akt_aslash { trigger-keys = <A>; max-prior-idle-ms = <1000>; bindings = <&kp U>; };
+            akt_uslash { trigger-keys = <U>; max-prior-idle-ms = <1000>; bindings = <&kp A>; };
         };
 
         lhm: left_homerow_mods {
