@@ -1,0 +1,75 @@
+layout:
+  qmk_keyboard: corne_rotated
+  layout_name: LAYOUT_split_3x6_3
+layers:
+  DEF:
+    - [null, x, w, g, m, j, {t: ^, s: "*"}, {t: ., s: ":"}, {t: /, s: "?", h: "@!"}, {t: \, s: "|"}, {t: "'", s: '"', h: "`~"}, null]
+    - [ctrl, s, n, t, h, k, {t: ",", s: ;}, a, e, i, c, ctrl]
+    - [shift, {t: b, h: gui}, {t: p, h: alt}, {t: d, h: ctrl}, {t: l, h: shift}, v, {t: "-", s: _}, {t: u, h: shift}, {t: o, h: ctrl}, {t: y, h: alt}, {t: f, h: gui}, shift]
+    - {h: Button,   t: Tab}
+    - {h: Num,  t: Space}
+    - {t: Nav}
+    - {t: Nav}
+    - {h: Num, t: r}
+    - {t: Delete}
+  BUTTON:
+    - [null, null, null, null, null, null, null, null, null, null, null, null]
+    - [null, C-z, C-x, C-c, C-v, C-a, C-a, C-v, C-c, C-x, C-z, null]
+    - [null, gui, alt, ctrl, shift, null, null, shift, ctrl, alt, gui, null]
+    - {h: Button, type: "held"}
+    - {h: Num,  t: Space, type: "trans"}
+    - {t: Nav, type: "trans"}
+    - {t: Nav, type: "trans"}
+    - {h: Num, t: r, type: "trans"}
+    - {t: Delete, type: "trans"}
+  NUM:
+    - [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, null]
+    - [null, {t: "`", s: "~"}, {t: "#", s: "$"}, {t: "%", s: "&"}, {t: "=", s: +}, {t: "(", s: "[", h: "<{"}, {t: ")", s: "]", h: ">}"}, 4, 5, 6, ., null]
+    - [null, gui, alt, ctrl, shift, null, /, {t: 1, h: shift}, {t: 2, h: ctrl}, {t: 3, h: alt}, {t: 0, h: gui}, null]
+    - {h: Button, type: "trans"}
+    - {h: Num,  t: Space, type: "held"}
+    - {t: Nav, type: "trans"}
+    - {t: Nav, type: "trans"}
+    - {h: Num, t: r, type: "held"}
+    - {t: Delete, type: "trans"}
+  NAV:
+    - [null, null, home, ↑, end, pg up, null, home, pg dn, pg up, end, null]
+    - [null, null, ←, ↓, →, pg dn, null, ←, ↓, ↑, →, null]
+    - [null, gui, alt, ctrl, shift, null, null, shift, ctrl, alt, gui, null]
+    - {h: Button, type: "trans"}
+    - {h: Num,  t: Space, type: "trans"}
+    - {t: tap 1, type: "held"}
+    - {t: tap 1, type: "held"}
+    - {h: Num, t: r, type: "trans"}
+    - {t: Delete, type: "trans"}
+  MEDIA:
+    - [null, null, null, 🔊↑, null, null, null, null, ☀↓, ☼↑, null, null]
+    - [null, null, ⏮, 🔈↓, ⏭, null, null, ⏮, 🔈↓, 🔊↑, ⏭, null]
+    - [null, null, null, null, ⏯, null, null, ⏯, null, null, null, null]
+    - {h: Button, type: "trans"}
+    - {h: Num,  t: Space, type: "trans"}
+    - {t: Nav, type: "trans"}
+    - {t: tap 2, type: "held"}
+    - {h: Num, t: r, type: "trans"}
+    - {t: Delete, type: "trans"}
+  FUNCTION:
+    - [null, null, null, null, null, null, null, f7, f8, f9, f10, null]
+    - [null, null, null, null, null, null, caps, f4, f5, f6, f11, null]
+    - [null, gui, alt, ctrl, shift, null, pscr, f1, f2, f3, f12, null]
+    - {h: Button, type: "trans"}
+    - {h: Num,  t: Space, type: "trans"}
+    - {t: tap 2, type: "held"}
+    - {t: Nav, type: "trans"}
+    - {h: Num, t: r, type: "trans"}
+    - {t: Delete, type: "trans"}
+  SETTINGS:
+    - [null, bt clear, null, null, out tog, flash, flash, null, null, null, null, null]
+    - [null, bt 0, bt 1, bt 2, bt 3, bt 4, null, null, null, null, null, null]
+    - [null, a, w, m, i, x, null, null, null, null, null, null]
+    - {h: Button, type: "trans"}
+    - {h: Num,  t: Space, type: "trans"}
+    - {t: tap 3, type: "held"}
+    - {t: tap 3, type: "held"}
+    - {h: Num, t: r, type: "trans"}
+    - {t: Delete, type: "trans"}
+ 
