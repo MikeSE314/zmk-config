@@ -8,8 +8,7 @@
         ad_fslh: adaptive_fslash {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
-            defaults = <&ht_at_excl 0 SLASH>;
-            bindings = <&kp U>, <&kp A>;
+            bindings = <&ht_at_excl 0 SLASH>;
 
             akt_aslash { trigger-keys = <A>; max-prior-idle-ms = <1000>; bindings = <&kp U>; };
             akt_uslash { trigger-keys = <U>; max-prior-idle-ms = <1000>; bindings = <&kp A>; };
