@@ -8,7 +8,7 @@
         ad_fslh: ad_fslh {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
-            bindings = <&ht_at_excl 0 SLASH>;
+            bindings = <&ht_at_amp 0 SLASH>;
 
             from_a {
                 trigger-keys = <A>;
