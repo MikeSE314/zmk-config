@@ -10,8 +10,17 @@
             #binding-cells = <0>;
             bindings = <&ht_at_excl 0 SLASH>;
 
-            akt_aslash { trigger-keys = <A>; max-prior-idle-ms = <1000>; bindings = <&kp U>; };
-            akt_uslash { trigger-keys = <U>; max-prior-idle-ms = <1000>; bindings = <&kp A>; };
+            akt_aslash {
+                trigger-keys = <A>;
+                max-prior-idle-ms = <1000>;
+                bindings = <&kp U>;
+            };
+
+            akt_uslash {
+                trigger-keys = <U>;
+                max-prior-idle-ms = <1000>;
+                bindings = <&kp A>;
+            };
         };
 
         lhm: left_homerow_mods {
@@ -80,7 +89,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LAYERS_1";
             #binding-cells = <0>;
-            bindings = <&mo 3>, <&mo 4>, <&mo 6>;
+            bindings = <&mo 2>, <&mo 3>, <&mo 5>;
 
             tapping-term-ms = <300>;
         };
@@ -89,7 +98,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LAYERS_2";
             #binding-cells = <0>;
-            bindings = <&mo 3>, <&mo 5>, <&mo 6>;
+            bindings = <&mo 2>, <&mo 4>, <&mo 5>;
 
             tapping-term-ms = <300>;
         };
@@ -148,32 +157,48 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_q_l {
+        combo_undo {
+            bindings = <&kp LG(Z)>;
+            key-positions = <25 13>;
+            layers = <0>;
+        };
+
+        combo_cut {
+            bindings = <&kp LG(X)>;
+            key-positions = <14 26>;
+            layers = <0>;
+        };
+
+        combo_copy {
+            bindings = <&kp LG(C)>;
+            key-positions = <15 27>;
+            layers = <0>;
+        };
+
+        combo_paste {
+            bindings = <&kp LG(V)>;
+            key-positions = <16 28>;
+            layers = <0>;
+        };
+
+        combo_select_all {
+            bindings = <&kp LG(A)>;
+            key-positions = <17 29>;
+            layers = <0>;
+        };
+
+        combo_q {
             bindings = <&kp Q>;
             key-positions = <2 3>;
             layers = <0>;
             timeout-ms = <100>;
         };
 
-        combo_q_r {
-            bindings = <&kp Q>;
-            key-positions = <9 8>;
-            timeout-ms = <100>;
-            layers = <0>;
-        };
-
-        combo_z_l {
+        combo_z {
             bindings = <&kp Z>;
             key-positions = <13 2>;
             layers = <0>;
             timeout-ms = <100>;
-        };
-
-        combo_z_r {
-            bindings = <&kp Z>;
-            key-positions = <22 9>;
-            timeout-ms = <100>;
-            layers = <0>;
         };
 
         combo_esc_l {
@@ -229,73 +254,73 @@
         combo_excl_l {
             bindings = <&kp EXCL>;
             key-positions = <4 15>;
-            layers = <0 2>;
+            layers = <0 1>;
         };
 
         combo_excl_r {
             bindings = <&kp EXCL>;
             key-positions = <20 7>;
-            layers = <0 2>;
+            layers = <0 1>;
         };
 
         combo_percent_l {
             bindings = <&kp PERCENT>;
             key-positions = <14 3>;
-            layers = <2>;
+            layers = <1>;
         };
 
         combo_hash_l {
             bindings = <&kp HASH>;
             key-positions = <1 4>;
-            layers = <2>;
+            layers = <1>;
         };
 
         combo_dollar_l {
             bindings = <&kp DOLLAR>;
             key-positions = <1 16>;
-            layers = <2>;
+            layers = <1>;
         };
 
         combo_amp_l {
             bindings = <&kp AMPERSAND>;
             key-positions = <4 13>;
-            layers = <2>;
+            layers = <1>;
         };
 
         combo_lbrace_l {
             bindings = <&kp LEFT_BRACE>;
             key-positions = <2 3>;
-            layers = <2>;
+            layers = <1>;
         };
 
         combo_rbrace_l {
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <3 4>;
-            layers = <2>;
+            layers = <1>;
         };
 
         combo_lt_l {
             bindings = <&kp LESS_THAN>;
             key-positions = <14 15>;
-            layers = <2>;
+            layers = <1>;
         };
 
         combo_gt_l {
             bindings = <&kp GREATER_THAN>;
             key-positions = <15 16>;
-            layers = <2>;
+            layers = <1>;
         };
 
         combo_tilde_l {
             bindings = <&kp TILDE>;
             key-positions = <3 16>;
-            layers = <2>;
+            layers = <1>;
         };
 
         combo_asterisk_l {
             bindings = <&kp ASTERISK>;
             key-positions = <2 16>;
-            layers = <2>;
+            layers = <1>;
         };
     };
 
@@ -316,16 +341,7 @@
 &kp LC(UP)      &kp X            &kp W            &kp G                &kp M                &kp J           &com            &mm_period_colon      &ad_fslh              &kp BACKSLASH     &linger GRAVE SQT  &kp RC(UP)
 &kp LGUI        &kp S            &kp N            &kp T                &kp H                &kp K           &mm_comma_semi  &kp A                 &kp E                 &kp I             &kp C              &kp RGUI
 &kp LEFT_SHIFT  &lhm LEFT_GUI B  &lhm LEFT_ALT P  &lhm LEFT_CONTROL D  &lhm_s LEFT_SHIFT L  &kp V           &kp MINUS       &rhm_s RIGHT_SHIFT U  &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI F   &kp RIGHT_SHIFT
-                                                  &lt 1 TAB            &lt 2 SPACE          &td_layers_2    &td_layers_1    &lt 2 R               &kp BACKSPACE
-            >;
-        };
-
-        button {
-            bindings = <
-&none  &none                 &none                 &none                     &none                   &none        &none      &none                    &none                      &none                  &none                  &none
-&none  &kp LG(Z)             &kp LG(X)             &kp LG(C)                 &kp LG(V)               &kp LG(A)    &kp RG(A)  &kp RG(V)                &kp RG(C)                  &kp RG(X)              &kp RG(Z)              &none
-&none  &callum_mod LEFT_GUI  &callum_mod LEFT_ALT  &callum_mod LEFT_CONTROL  &callum_mod LEFT_SHIFT  &none        &none      &callum_mod RIGHT_SHIFT  &callum_mod RIGHT_CONTROL  &callum_mod RIGHT_ALT  &callum_mod RIGHT_GUI  &none
-                                                   &trans                    &trans                  &trans       &trans     &trans                   &trans
+                                                  &kp TAB              &lt 1 SPACE          &td_layers_2    &td_layers_1    &lt 1 R               &kp BACKSPACE
             >;
         };
 
