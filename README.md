@@ -2,7 +2,10 @@
 
 ZMK config for my keyboard
 
-
 [Keymap Editor](https://nickcoutsos.github.io/keymap-editor/)
 
 [Keymap Drawer](https://keymap-drawer.streamlit.app/)
+
+[Adaptives](https://github.com/urob/zmk-adaptive-key)
+
+![Layout](./drawing/keymap_base.svg)
