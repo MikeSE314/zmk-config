@@ -3,28 +3,18 @@ layout:
   layout_name: LAYOUT_split_3x6_3
 layers:
   DEF:
-    - [null, x, w, g, m, j, {t: ^, s: "*"}, {t: ., s: ":"}, {t: /, s: "?", h: "@!"}, {t: \, s: "|"}, {t: "'", s: '"', h: "`~"}, null]
+    - ["C-↑", x, w, g, m, j, "!", {t: ., s: ":"}, {t: /, s: "?", h: "@&"}, {t: \, s: "|"}, {t: "'", s: '"', h: "`~"}, "C-↑"]
     - [ctrl, s, n, t, h, k, {t: ",", s: ;}, a, e, i, c, ctrl]
     - [shift, {t: b, h: gui}, {t: p, h: alt}, {t: d, h: ctrl}, {t: l, h: shift}, v, {t: "-", s: _}, {t: u, h: shift}, {t: o, h: ctrl}, {t: y, h: alt}, {t: f, h: gui}, shift]
-    - {h: Button,   t: Tab}
+    - Tab
     - {h: Num,  t: Space}
     - {t: Nav}
     - {t: Nav}
     - {h: Num, t: r}
     - {t: Delete}
-  BUTTON:
-    - [null, null, null, null, null, null, null, null, null, null, null, null]
-    - [null, C-z, C-x, C-c, C-v, C-a, C-a, C-v, C-c, C-x, C-z, null]
-    - [null, gui, alt, ctrl, shift, null, null, shift, ctrl, alt, gui, null]
-    - {h: Button, type: "held"}
-    - {h: Num,  t: Space, type: "trans"}
-    - {t: Nav, type: "trans"}
-    - {t: Nav, type: "trans"}
-    - {h: Num, t: r, type: "trans"}
-    - {t: Delete, type: "trans"}
   NUM:
-    - [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, null]
-    - [null, {t: "`", s: "~"}, {t: "#", s: "$"}, {t: "%", s: "&"}, {t: "=", s: +}, {t: "(", s: "[", h: "<{"}, {t: ")", s: "]", h: ">}"}, 4, 5, 6, ., null]
+    - [null, ^, "[", "]", +, null, 6, 7, 8, 9, 0, null]
+    - [null, "`", (, ), "=", null, null, 4, 5, 6, ., null]
     - [null, gui, alt, ctrl, shift, null, /, {t: 1, h: shift}, {t: 2, h: ctrl}, {t: 3, h: alt}, {t: 0, h: gui}, null]
     - {h: Button, type: "trans"}
     - {h: Num,  t: Space, type: "held"}
@@ -72,4 +62,19 @@ layers:
     - {t: tap 3, type: "held"}
     - {h: Num, t: r, type: "trans"}
     - {t: Delete, type: "trans"}
+combos:
+  - {p: [13, 25], k: "C-z", l: ["DEF"]}
+  - {p: [14, 26], k: "C-x", l: ["DEF"]}
+  - {p: [15, 27], k: "C-c", l: ["DEF"]}
+  - {p: [16, 28], k: "C-v", l: ["DEF"]}
+  - {p: [17, 29], k: "C-a", l: ["DEF"]}
+  - {p: [2, 3], k: "{", l: ["NUM"]}
+  - {p: [3, 4], k: "}", l: ["NUM"]}
+  - {p: [14, 15], k: "<", l: ["NUM"]}
+  - {p: [15, 16], k: ">", l: ["NUM"]}
+  - {p: [1, 4], k: "#", draw_separate: true}
+  - {p: [1, 16], k: "$", draw_separate: true}
+  - {p: [2, 16], k: "*", draw_separate: true}
+  - {p: [3, 14], k: "%", draw_separate: true}
+  - {p: [3, 16], k: "~", draw_separate: true}
  
