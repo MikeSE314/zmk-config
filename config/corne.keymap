@@ -37,7 +37,6 @@
 
         lhm: left_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "LEFT_HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             flavor = "tap-preferred";
@@ -50,7 +49,6 @@
 
         rhm: right_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "RIGHT_HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             flavor = "tap-preferred";
@@ -63,7 +61,6 @@
 
         lhm_s: lhm_s {
             compatible = "zmk,behavior-hold-tap";
-            label = "LHM_S";
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             quick-tap-ms = <200>;
@@ -76,7 +73,6 @@
 
         rhm_s: rhm_s {
             compatible = "zmk,behavior-hold-tap";
-            label = "RHM_S";
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             quick-tap-ms = <200>;
@@ -89,7 +85,6 @@
 
         td_layers_1: td_layers_1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_LAYERS_1";
             #binding-cells = <0>;
             bindings = <&mo 2>, <&mo 3>, <&mo 5>;
 
@@ -98,7 +93,6 @@
 
         td_layers_2: td_layers_2 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_LAYERS_2";
             #binding-cells = <0>;
             bindings = <&mo 2>, <&mo 4>, <&mo 5>;
 
@@ -107,7 +101,6 @@
 
         linger: linger {
             compatible = "zmk,behavior-hold-tap";
-            label = "LINGER";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -117,7 +110,6 @@
 
         ht_at_amp: ht_at_amp {
             compatible = "zmk,behavior-hold-tap";
-            label = "HT_AT_AMP";
             bindings = <&mm_at_amp>, <&kp>;
 
             #binding-cells = <2>;
@@ -127,7 +119,6 @@
 
         mm_at_amp: mm_at_amp {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_AT_AMP";
             bindings = <&kp AT>, <&kp AMPERSAND>;
 
             #binding-cells = <0>;
@@ -136,7 +127,6 @@
 
         mm_comma_semi: mm_comma_semi {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_COMMA_SEMI";
             bindings = <&kp COMMA>, <&kp SEMICOLON>;
 
             #binding-cells = <0>;
@@ -145,7 +135,6 @@
 
         mm_period_colon: mm_period_colon {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_PERIOD_COLON";
             bindings = <&kp PERIOD>, <&kp COLON>;
 
             #binding-cells = <0>;
@@ -154,7 +143,6 @@
 
         mm_excl_else: mm_excl_else {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_EXCL_ELSE";
             bindings = <&kp EXCL>, <&kp AMPERSAND>;
 
             #binding-cells = <0>;
