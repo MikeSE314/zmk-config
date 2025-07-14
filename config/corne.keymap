@@ -5,21 +5,33 @@
 
 / {
     behaviors {
-        ad_fslh: adaptive_fslash {
+        ad_fslh: ad_fslh {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
             bindings = <&ht_at_excl 0 SLASH>;
 
-            akt_aslash {
+            from_a {
                 trigger-keys = <A>;
                 max-prior-idle-ms = <1000>;
                 bindings = <&kp U>;
             };
 
-            akt_uslash {
+            from_u {
                 trigger-keys = <U>;
                 max-prior-idle-ms = <1000>;
                 bindings = <&kp A>;
+            };
+        };
+
+        ad_excl: ad_excl {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&mm_excl_else>;
+
+            from_period {
+                trigger-keys = <PERIOD>;
+                max-prior-idle-ms = <1000>;
+                bindings = <&kp C &kp O &kp M>;
             };
         };
 
@@ -75,16 +87,6 @@
             hold-trigger-on-release;
         };
 
-        callum_mod: callum_mod {
-            compatible = "zmk,behavior-sticky-key";
-            label = "CALLUM_MOD";
-            bindings = <&kp>;
-            #binding-cells = <1>;
-            release-after-ms = <20000>;
-            quick-release;
-            ignore-modifiers;
-        };
-
         td_layers_1: td_layers_1 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LAYERS_1";
@@ -113,24 +115,23 @@
             flavor = "tap-preferred";
         };
 
-        ht_at_excl: ht_at_excl {
+        ht_at_amp: ht_at_amp {
             compatible = "zmk,behavior-hold-tap";
-            label = "HT_AT_EXCL";
-            bindings = <&mm_at_excl>, <&kp>;
+            label = "HT_AT_AMP";
+            bindings = <&mm_at_amp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             flavor = "balanced";
         };
 
-        mm_at_excl: mm_at_excl {
+        mm_at_amp: mm_at_amp {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_AT_EXCL";
-            bindings = <&kp AT>, <&kp EXCL>;
+            label = "MM_AT_AMP";
+            bindings = <&kp AT>, <&kp AMPERSAND>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RALT)>;
         };
 
         mm_comma_semi: mm_comma_semi {
@@ -146,6 +147,15 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MM_PERIOD_COLON";
             bindings = <&kp PERIOD>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_excl_else: mm_excl_else {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_EXCL_ELSE";
+            bindings = <&kp EXCL>, <&kp AMPERSAND>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -251,18 +261,6 @@
             timeout-ms = <150>;
         };
 
-        combo_excl_l {
-            bindings = <&kp EXCL>;
-            key-positions = <4 15>;
-            layers = <0 1>;
-        };
-
-        combo_excl_r {
-            bindings = <&kp EXCL>;
-            key-positions = <20 7>;
-            layers = <0 1>;
-        };
-
         combo_percent_l {
             bindings = <&kp PERCENT>;
             key-positions = <14 3>;
@@ -278,12 +276,6 @@
         combo_dollar_l {
             bindings = <&kp DOLLAR>;
             key-positions = <1 16>;
-            layers = <1>;
-        };
-
-        combo_amp_l {
-            bindings = <&kp AMPERSAND>;
-            key-positions = <4 13>;
             layers = <1>;
         };
 
@@ -324,21 +316,12 @@
         };
     };
 
-    macros {
-        com: com {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp C &kp O &kp M>;
-            label = "COM";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         hd {
             bindings = <
-&kp LC(UP)      &kp X            &kp W            &kp G                &kp M                &kp J           &com            &mm_period_colon      &ad_fslh              &kp BACKSLASH     &linger GRAVE SQT  &kp RC(UP)
+&kp LC(UP)      &kp X            &kp W            &kp G                &kp M                &kp J           &ad_excl        &mm_period_colon      &ad_fslh              &kp BACKSLASH     &linger GRAVE SQT  &kp RC(UP)
 &kp LGUI        &kp S            &kp N            &kp T                &kp H                &kp K           &mm_comma_semi  &kp A                 &kp E                 &kp I             &kp C              &kp RGUI
 &kp LEFT_SHIFT  &lhm LEFT_GUI B  &lhm LEFT_ALT P  &lhm LEFT_CONTROL D  &lhm_s LEFT_SHIFT L  &kp V           &kp MINUS       &rhm_s RIGHT_SHIFT U  &rhm RIGHT_CONTROL O  &rhm RIGHT_ALT Y  &rhm RIGHT_GUI F   &kp RIGHT_SHIFT
                                                   &kp TAB              &lt 1 SPACE          &td_layers_2    &td_layers_1    &lt 1 R               &kp BACKSPACE
