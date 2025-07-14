@@ -16,7 +16,7 @@ layers:
     - [null, ^, "[", "]", +, null, 6, 7, 8, 9, 0, null]
     - [null, "`", (, ), "=", null, null, 4, 5, 6, ., null]
     - [null, gui, alt, ctrl, shift, null, /, {t: 1, h: shift}, {t: 2, h: ctrl}, {t: 3, h: alt}, {t: 0, h: gui}, null]
-    - {h: Button, type: "trans"}
+    - {t: Tab, type: "trans"}
     - {h: Num,  t: Space, type: "held"}
     - {t: Nav, type: "trans"}
     - {t: Nav, type: "trans"}
@@ -26,7 +26,7 @@ layers:
     - [null, null, home, ↑, end, pg up, null, home, pg dn, pg up, end, null]
     - [null, null, ←, ↓, →, pg dn, null, ←, ↓, ↑, →, null]
     - [null, gui, alt, ctrl, shift, null, null, shift, ctrl, alt, gui, null]
-    - {h: Button, type: "trans"}
+    - {t: Tab, type: "trans"}
     - {h: Num,  t: Space, type: "trans"}
     - {t: tap 1, type: "held"}
     - {t: tap 1, type: "held"}
@@ -36,7 +36,7 @@ layers:
     - [null, null, null, 🔊↑, null, null, null, null, ☀↓, ☼↑, null, null]
     - [null, null, ⏮, 🔈↓, ⏭, null, null, ⏮, 🔈↓, 🔊↑, ⏭, null]
     - [null, null, null, null, ⏯, null, null, ⏯, null, null, null, null]
-    - {h: Button, type: "trans"}
+    - {t: Tab, type: "trans"}
     - {h: Num,  t: Space, type: "trans"}
     - {t: Nav, type: "trans"}
     - {t: tap 2, type: "held"}
@@ -46,7 +46,7 @@ layers:
     - [null, null, null, null, null, null, null, f7, f8, f9, f10, null]
     - [null, null, null, null, null, null, caps, f4, f5, f6, f11, null]
     - [null, gui, alt, ctrl, shift, null, pscr, f1, f2, f3, f12, null]
-    - {h: Button, type: "trans"}
+    - {t: Tab, type: "trans"}
     - {h: Num,  t: Space, type: "trans"}
     - {t: tap 2, type: "held"}
     - {t: Nav, type: "trans"}
@@ -56,7 +56,7 @@ layers:
     - [null, bt clear, null, null, out tog, flash, flash, null, null, null, null, null]
     - [null, bt 0, bt 1, bt 2, bt 3, bt 4, null, null, null, null, null, null]
     - [null, a, w, m, i, x, null, null, null, null, null, null]
-    - {h: Button, type: "trans"}
+    - {t: Tab, type: "trans"}
     - {h: Num,  t: Space, type: "trans"}
     - {t: tap 3, type: "held"}
     - {t: tap 3, type: "held"}
@@ -68,6 +68,8 @@ combos:
   - {p: [15, 27], k: "C-c", l: ["DEF"]}
   - {p: [16, 28], k: "C-v", l: ["DEF"]}
   - {p: [17, 29], k: "C-a", l: ["DEF"]}
+  - {p: [2, 3], k: "q", l: ["DEF"]}
+  - {p: [2, 13], k: "z", d: true, l: ["DEF"]}
   - {p: [2, 3], k: "{", l: ["NUM"]}
   - {p: [3, 4], k: "}", l: ["NUM"]}
   - {p: [14, 15], k: "<", l: ["NUM"]}

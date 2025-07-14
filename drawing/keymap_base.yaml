@@ -12,3 +12,6 @@ layers:
     - {t: Nav}
     - {h: Num, t: r}
     - {t: Delete}
+combos:
+  - {p: [2, 3], k: "q", l: ["DEF"]}
+  - {p: [2, 13], k: "z", d: true, l: ["DEF"]}

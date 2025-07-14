@@ -322,6 +322,16 @@ path.combo { stroke: #7f7f7f; }
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">Delete</text>
 </g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="154" y="18" width="28" height="26" class="combo"/>
+<text x="168" y="32" class="combo tap">q</text>
+</g>
+<g class="combo combopos-1">
+<path d="M112,70 l16,-20" class="combo"/>
+<path d="M112,70 l-16,20" class="combo"/>
+<rect rx="6" ry="6" x="98" y="57" width="28" height="26" class="combo"/>
+<text x="112" y="70" class="combo tap">z</text>
+</g>
 </g>
 </g>
 </svg>
