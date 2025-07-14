@@ -1,4 +1,6 @@
 manifest:
+  defaults:
+    revision: main # version to use for this module and for ZMK
   remotes:
   - name: zmkfirmware
     url-base: https://github.com/zmkfirmware
@@ -6,10 +8,8 @@ manifest:
   - name: zmk
     remote: zmkfirmware
     import: app/west.yml
-    revision: v0.2
   - name: zmk-adaptive-key
     url: https://github.com/urob/zmk-adaptive-key
     path: modules/zmk-adaptive-key
-    revision: v0.2
   self:
     path: config
